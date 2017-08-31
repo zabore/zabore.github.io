@@ -1,0 +1,23 @@
+name: "Emily C. Zabor"
+output_dir: "."
+navbar:
+  title: "Emily C. Zabor"
+  right:
+    - text: "Research and publications"
+      href: research.html
+    - text: "Software"
+      href: software.html
+    - text: "Teaching"
+      href: teaching.html
+    - icon: fa-envelope fa-lg
+      href: mailto:ecz2108@cumc.columbia.edu
+    - icon: fa-github fa-lg
+      href: http://github.com/zabore
+    - icon: fa-twitter fa-lg
+      href: https://twitter.com/zabormetrics
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/emily-zabor-59b902b7/
+output:
+  html_document:
+    theme: sandstone
+    css: 'styles.css'

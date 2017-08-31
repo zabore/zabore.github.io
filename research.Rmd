@@ -1,0 +1,46 @@
+---
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+## Columbia University
+
+My dissertation research, under the advisement of [Dr. Shuang Wang](https://www.mailman.columbia.edu/people/our-faculty/sw2206) at Columbia University and [Dr. Colin Begg](https://www.mskcc.org/profile/colin-begg) at Memorial Sloan Kettering Cancer Center, focuses on statistical methods for the study of etiologic heterogeneity. After using a data example and simulation study to compare and contrast existing methods for the study of etiologic heterogeneity, I am currently working to examine the statistical properties of our method for the study of etiologic heterogeneity and determining the best approach to dimension reduction in the context of high dimension tumor marker data.
+
+#### Selected publications
+
+The below publications represent my work to date on the topic of statistical methods for the study of etiologic heterogeneity:
+
+**Zabor, E. C.**, & Begg, C. B. (2017). A comparison of statistical methods for the study of etiologic heterogeneity. *Stat Med*.
+
+Mauguen, A., **Zabor, E. C.**, Thomas, N. E., Berwick, M., Seshan, V. E., & Begg, C. B.(2017). Defining Cancer Subtypes With Distinctive Etiologic Profiles: An Application to the Epidemiology of Melanoma. *J Am Stat Assoc*, 112(517), 54-63.
+
+Begg, C. B., Rice, M. S., **Zabor, E. C.**, & Tworoger, S. S. (2017). Examining the common aetiology of serous ovarian cancers and basal-like breast cancers using double primaries. *Br J Cancer*.
+
+Begg, C. B., Orlow, I., **Zabor, E. C.**, Arora, A., Sharma, A., Seshan, V. E., Bernstein, J. L. (2015). Identifying Etiologically Distinct Sub-Types of Cancer: A Demonstration Project Involving Breast Cancer. *Cancer Med*, 4(9), 1432-1439.
+
+Begg, C. B., Seshan, V. E., **Zabor, E. C.**, Furberg, H., Arora, A., Shen, R., . . . Hsieh, J. J. (2014). Genomic investigation of etiologic heterogeneity: methodologic challenges. *BMC Med Res Methodol*, 14, 138.
+
+Begg, C. B., **Zabor, E. C.**, Bernstein, J. L., Bernstein, L., Press, M. F., Seshan, V. E. (2013). A conceptual and methodological framework for investigating etiologic heterogeneity. *Stat Med*, 32(29), 5039-5052.
+
+## Memorial Sloan Kettering Cancer Center
+
+At Memorial Sloan Kettering Cancer Center I spent six years collaborating on research projects in genito-urinary cancers, with an emphasis on genetic predictors of patient outcomes. I currently work with the breast surgery service on research comparing patient outcomes according to different treatment strategies. I have also collaborated closely with epidemiologists on research related to smoking and bladder cancer and with health outcomes researchers on long-term outcomes following treatment for lymphoma.
+
+#### Selected publications
+
+The following publications represent a sample of methodological work I have conducted at Memorial Sloan Kettering Cancer Center:
+
+**Zabor, E. C.**, Heller, G., Schwartz, L. H., Chapman, P. B. (2016). Correlating Surrogate Endpoints with Overall Survival at the Individual Patient Level in BRAFV600E-Mutated Metastatic Melanoma Patients Treated with Vemurafenib. *Clin Cancer Res*, 22(6), 1341-1347.
+
+**Zabor, E. C.**, Gonen, M., Chapman, P. B., Panageas, K. S. (2013). Dynamic prognostication using conditional survival estimates. *Cancer*, 119(20), 3589-3592.
+
+## [Google scholar](https://scholar.google.com/citations?user=tLbQTZMAAAAJ&hl=en)
+
+A full list of publications is available at the above Google scholar link.
+
+

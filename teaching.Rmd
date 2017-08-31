@@ -1,0 +1,19 @@
+---
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+### Adjunct professor
+
+Spring 2017: Fundamentals of Biostatistics, Hunter College
+
+Fall 2016: Fundamentals of Biostatistics, Hunter College
+
+### Teaching assistant
+
+Fall 2017: Data Science I, Columbia University
+
+Spring 2010: Advanced Topics in Clinical Trials, The University of Minnesota
+
+Spring 2009: Introduction to Biostatistics, The University of Minnesota
+
