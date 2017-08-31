@@ -3,13 +3,13 @@
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-### Adjunct professor
+### Adjunct professor classes
 
 Spring 2017: Fundamentals of Biostatistics, Hunter College
 
 Fall 2016: Fundamentals of Biostatistics, Hunter College
 
-### Teaching assistant
+### Teaching assistant classes
 
 Fall 2017: Data Science I, Columbia University
 

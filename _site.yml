@@ -17,6 +17,7 @@ navbar:
       href: https://twitter.com/zabormetrics
     - icon: fa-linkedin fa-lg
       href: https://www.linkedin.com/in/emily-zabor-59b902b7/
+    - icon: ai-google-scholar ai-lg
 output:
   html_document:
     theme: sandstone
