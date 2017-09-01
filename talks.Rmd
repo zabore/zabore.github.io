@@ -9,10 +9,63 @@ output:
 
 ## JSM 2017
 
-At the Joint Statistical Meetings in Baltimore, MD, I presented a talk titled "Dimension reduction in the study of etiologic heterogeneity" on August 1, 2017.
+At the Joint Statistical Meetings in Baltimore, MD, I presented a talk titled "Dimension reduction in the study of etiologic heterogeneity" on August 1, 2017. A PDF of the slides is available [here](https://github.com/zabore/talk-slides/blob/master/2017_JSM_Zabor_dimension_reduction_etiologic_heterogeneity.pdf).
 
 <script async class="speakerdeck-embed" data-slide="1" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 Traditionally cancer epidemiologic research has been organized by the site of disease, so that, for example, a research may seek to identify risk factors for breast cancer as a whole. However with the rise of molecular and genomic profiling in recent decades, attention has become increasingly focused on identification of subtypes of disease. As a result, cancer epidemiologic research has shifted in focus to the search for risk factors that differ across subtypes of disease. The concept of differing risk factors according to subtypes of disease is known as etiologic heterogeneity.
 
 <script async class="speakerdeck-embed" data-slide="2" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+A number of statistical methods are available to test for etiologic heterogeneity, and most rely on the use of polytomous logistic regression in the context of a case-control study to test for differences in relative risks according to an individual risk factor. However, these methods rely on a small number of tumor markers that are combined to form predefined subtypes. We have rather sought to develop an approach to search for etiologicallly distinct subtypes in the context of high dimensional tumor marker data. To illustrate the analytic strategy, imagine the situation where there are 3 underlying disease subtypes. Cases have data available on tumor markers, $y_i$, and both cases and controls have data available on risk factors, $x_i$. A polytomous logistic regression model is fit for a set of candidate subtypes, and predicted risks, $r_ji$ are obtained for each subtype $j$. More details follow about how candidate subtypes are identified.
+
+<script async class="speakerdeck-embed" data-slide="3" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+We measure risk heterogeneity using the subtype-specific coefficients of variation, the covariances of predicted risks of individuals in the population, and the subtype-specific prevalences.
+
+<script async class="speakerdeck-embed" data-slide="4" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+The first part of the equation represents the absolute explainable risk variation, defined by the coefficients of variation, $K_j^2$, and the prevalences, $\pi_j^2$, for each subtype $j$.
+
+<script async class="speakerdeck-embed" data-slide="5" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+The second part of the equation represents the heterogeneity of risk profiles, where a low covariance term corresponds to a pair of discordant subtypes and conversely a high covariance term corresponds to a pair of concordant subtypes.
+
+<script async class="speakerdeck-embed" data-slide="6" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+Thus we can construct a constant term $D$ that represents the absolute amount of variation explained by the risk factors, which we seek to maximize.
+
+<script async class="speakerdeck-embed" data-slide="7" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+We have proposed to conduct an analysis of this type in three steps. First we perform k-means clustering with many random starts to identify a set of candidate subtypes. Next we calculate $D$ for each set of candidate subtypes. So for example if we use $1000$ random starts we will obtain $1000$ $D$ metrics. Finally, we select the "optimal" class solution as the one that maximizes $D$. However this approach is somewhat *ad hoc* in nature and to date we have not evaluated how sensitive the approach is to clustering method used.
+
+<script async class="speakerdeck-embed" data-slide="8" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+Here I use a data example to assess the sensitivity of results to different clustering approaches. First I compare two unsupervised clustering approaches, k-means clustering and hierarchical clustering. With hierarchical clustering you can use different distance metrics and different agglomeration algorithms, which is the way the method decides to combine individuals into groups. Next we compare clustering on the full gene set versus doing up front filtering of the gene set using an unsupervised approach and versus doing up front filtering of the gene set using a supervised approach.
+
+<script async class="speakerdeck-embed" data-slide="9" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+The data for this example study come from the Cancer and Steroid Hormone breast cancer case-control study. There were 2990 controls frequency matched to 551 cases. Both cases and controls had available risk factor data on common breast cancer risk factors. Breast cancer cases additionally had data avialable on 202 gene expression values.
+
+<script async class="speakerdeck-embed" data-slide="10" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+For simplicity throughout I focus on a 4-class solution, though selection of the correct number of classes is another challenge in a clustering analysis, and is an active area of research that I will not discuss today. Comparing k-means clustering to hierarchical clustering approaches, we find that hierarchical clustering results in very unbalanced average class size, across 1000 random starts, so that polytomous logistic regresssion could not even usually be applied. As a result, we focus solely on k-means clustering, which results on average in more balanced class size.
+
+<script async class="speakerdeck-embed" data-slide="11" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+We compare clutering on the full gene set
+
+<script async class="speakerdeck-embed" data-slide="12" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+to clustering on principal components, and unsupervised dimension reduction approach, 
+
+<script async class="speakerdeck-embed" data-slide="13" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+to clustering on a gene set pre-filtered according to univariate D for each gene,
+
+<script async class="speakerdeck-embed" data-slide="14" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+and finally to clustering on a gene set pre-filtered according to an F-statistic proposed by Zapala & Schork, which I will go into more detail about in a few slides.
+
+<script async class="speakerdeck-embed" data-slide="15" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
