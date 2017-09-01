@@ -11,7 +11,7 @@ output:
 
 At the Joint Statistical Meetings in Baltimore, MD, I presented a talk titled "Dimension reduction in the study of etiologic heterogeneity" on August 1, 2017. A PDF of the slides is available [here](https://github.com/zabore/talk-slides/blob/master/2017_JSM_Zabor_dimension_reduction_etiologic_heterogeneity.pdf).
 
-<script async class="speakerdeck-embed" data-slide="1" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-slide="1" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js" width="200" height="40"></script>
 
 Traditionally cancer epidemiologic research has been organized by the site of disease, so that, for example, a research may seek to identify risk factors for breast cancer as a whole. However with the rise of molecular and genomic profiling in recent decades, attention has become increasingly focused on identification of subtypes of disease. As a result, cancer epidemiologic research has shifted in focus to the search for risk factors that differ across subtypes of disease. The concept of differing risk factors according to subtypes of disease is known as etiologic heterogeneity.
 
