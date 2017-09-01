@@ -35,3 +35,5 @@ img.resize {
   max-height:50%;
 }
 
+border{ border-width: 25px; border-color: black; border-style: solid;}
+
