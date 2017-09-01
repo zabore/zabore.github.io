@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-### Github packages
+## Github packages
 
 - `condsurv`, a package for conditional survival analysis
 - `ezfun`, a package of personal utility functions to generate tables for use in R Markdown reports

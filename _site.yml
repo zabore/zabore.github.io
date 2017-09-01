@@ -9,6 +9,8 @@ navbar:
       href: software.html
     - text: "Teaching"
       href: teaching.html
+    - text: "Talks"
+      href: talks.html
     - icon: fa-envelope fa-lg
       href: mailto:ecz2108@cumc.columbia.edu
     - icon: fa-github fa-lg
@@ -17,7 +19,6 @@ navbar:
       href: https://twitter.com/zabormetrics
     - icon: fa-linkedin fa-lg
       href: https://www.linkedin.com/in/emily-zabor-59b902b7/
-    - icon: ai-google-scholar ai-lg
 output:
   html_document:
     theme: sandstone
