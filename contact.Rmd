@@ -3,8 +3,6 @@
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-You can contact me in the following ways:
-
 #### Emily C. Zabor
 
 Memorial Sloan Kettering Cancer Center<br>
