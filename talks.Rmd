@@ -11,13 +11,13 @@ output:
 
 At the Joint Statistical Meetings in Baltimore, MD, I presented a talk titled "Dimension reduction in the study of etiologic heterogeneity" on August 1, 2017. A PDF of the slides is available [here](https://github.com/zabore/talk-slides/blob/master/2017_JSM_Zabor_dimension_reduction_etiologic_heterogeneity.pdf).
 
-<script async class="speakerdeck-embed" data-slide="1" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js" width="200" height="40"></script>
+<script async class="speakerdeck-embed" data-slide="1" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 Traditionally cancer epidemiologic research has been organized by the site of disease, so that, for example, a research may seek to identify risk factors for breast cancer as a whole. However with the rise of molecular and genomic profiling in recent decades, attention has become increasingly focused on identification of subtypes of disease. As a result, cancer epidemiologic research has shifted in focus to the search for risk factors that differ across subtypes of disease. The concept of differing risk factors according to subtypes of disease is known as etiologic heterogeneity.
 
 <script async class="speakerdeck-embed" data-slide="2" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
-A number of statistical methods are available to test for etiologic heterogeneity, and most rely on the use of polytomous logistic regression in the context of a case-control study to test for differences in relative risks according to an individual risk factor. However, these methods rely on a small number of tumor markers that are combined to form predefined subtypes. We have rather sought to develop an approach to search for etiologicallly distinct subtypes in the context of high dimensional tumor marker data. To illustrate the analytic strategy, imagine the situation where there are 3 underlying disease subtypes. Cases have data available on tumor markers, $y_i$, and both cases and controls have data available on risk factors, $x_i$. A polytomous logistic regression model is fit for a set of candidate subtypes, and predicted risks, $r_ji$ are obtained for each subtype $j$. More details follow about how candidate subtypes are identified.
+A number of statistical methods are available to test for etiologic heterogeneity, and most rely on the use of polytomous logistic regression in the context of a case-control study to test for differences in relative risks according to an individual risk factor. However, these methods rely on a small number of tumor markers that are combined to form predefined subtypes. We have rather sought to develop an approach to search for etiologicallly distinct subtypes in the context of high dimensional tumor marker data. To illustrate the analytic strategy, imagine the situation where there are 3 underlying disease subtypes. Cases have data available on tumor markers, $y_i$, and both cases and controls have data available on risk factors, $x_i$. A polytomous logistic regression model is fit for a set of candidate subtypes, and predicted risks, $r_ji$ are obtained for each subtype j. More details follow about how candidate subtypes are identified.
 
 <script async class="speakerdeck-embed" data-slide="3" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
@@ -25,7 +25,7 @@ We measure risk heterogeneity using the subtype-specific coefficients of variati
 
 <script async class="speakerdeck-embed" data-slide="4" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
-The first part of the equation represents the absolute explainable risk variation, defined by the coefficients of variation, $K_j^2$, and the prevalences, $\pi_j^2$, for each subtype $j$.
+The first part of the equation represents the absolute explainable risk variation, defined by the coefficients of variation, $K_j^2$, and the prevalences, $\pi_j^2$, for each subtype j.
 
 <script async class="speakerdeck-embed" data-slide="5" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
@@ -37,7 +37,7 @@ Thus we can construct a constant term $D$ that represents the absolute amount of
 
 <script async class="speakerdeck-embed" data-slide="7" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
-We have proposed to conduct an analysis of this type in three steps. First we perform k-means clustering with many random starts to identify a set of candidate subtypes. Next we calculate $D$ for each set of candidate subtypes. So for example if we use $1000$ random starts we will obtain $1000$ $D$ metrics. Finally, we select the "optimal" class solution as the one that maximizes $D$. However this approach is somewhat *ad hoc* in nature and to date we have not evaluated how sensitive the approach is to clustering method used.
+We have proposed to conduct an analysis of this type in three steps. First we perform k-means clustering with many random starts to identify a set of candidate subtypes. Next we calculate D for each set of candidate subtypes. So for example if we use 1000 random starts we will obtain 1000 D metrics. Finally, we select the "optimal" class solution as the one that maximizes D. However this approach is somewhat *ad hoc* in nature and to date we have not evaluated how sensitive the approach is to clustering method used.
 
 <script async class="speakerdeck-embed" data-slide="8" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
@@ -45,7 +45,7 @@ Here I use a data example to assess the sensitivity of results to different clus
 
 <script async class="speakerdeck-embed" data-slide="9" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
-The data for this example study come from the Cancer and Steroid Hormone breast cancer case-control study. There were 2990 controls frequency matched to 551 cases. Both cases and controls had available risk factor data on common breast cancer risk factors. Breast cancer cases additionally had data avialable on 202 gene expression values.
+The data for this example study come from the Cancer and Steroid Hormone breast cancer case-control study. There were 2990 controls frequency matched to 551 cases. Both cases and controls had available risk factor data on common breast cancer risk factors. Breast cancer cases additionally had data avialable on 202 gene expression values. Gene expression data is naturally continuous, but we compare results with dichotomized gene expression data as well.
 
 <script async class="speakerdeck-embed" data-slide="10" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
@@ -68,4 +68,43 @@ to clustering on a gene set pre-filtered according to univariate D for each gene
 and finally to clustering on a gene set pre-filtered according to an F-statistic proposed by Zapala & Schork, which I will go into more detail about in a few slides.
 
 <script async class="speakerdeck-embed" data-slide="15" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+The x-axis shows the number of principal components and the y-axis shows the percentage of variation explained. Using continuous gene expression data, we identify a set of 46 principal components that explain 85% of the variation. Using binary gene expression data, we identify a set of 90 principal components that explain 85% of the variation.
+
+<script async class="speakerdeck-embed" data-slide="16" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+For the supervised filtering approach using univariate D, we first calculate D for each binary gene expression value. Next we permute the class labels 10,000 times to get a reference distribution to calculate a p-value. The p-values are adjusted for multiple comparisons using the false discovery rate method. The gene index is on the x-axis and the $log_{10}$ p-value is on the y-axis. We identify a set of 43 genes with p < 0.05.
+
+<script async class="speakerdeck-embed" data-slide="17" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+Finally, an F-statistic resulting from a multivariate distance matrix regression is using for supervised filtering. A distance matrix formed by the gene expression values is the regression outcome and the risk factors of interest are the regression predictors. First we calculate the F-statistic for each gene individually and order them from largest to smallest F-statistic. Then we serially increase the gene set and each time a gene is added we recalculate the F-statistic. The gene set with the largest F-statistic is selected.
+
+<script async class="speakerdeck-embed" data-slide="18" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+Using this approach we identify a 6-gene set using continuous data and a 2-gene set using binary data.
+
+<script async class="speakerdeck-embed" data-slide="19" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+It is encouraging to note that all 6 of the continuous genes and both of the binary genes selected by the F-statistic are among the 43 genes selected by univariate D. If we look at the top 43 ranked genes according to the two supervised approaches, we find that 32 of the continuouos genes and 35 of the binary genes overlap.
+
+<script async class="speakerdeck-embed" data-slide="20" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+Recall that we seek to maximize D. Using the full gene set, we get a D of 0.200 for the continuous data and 0.231 for the binary data. With the continuous data, we see that both of the supervised approaches result in a higher D than that of the full gene set whereas with the binary data, only the supervised approach using univariate D results in a higher D than that of the full gene set.
+
+<script async class="speakerdeck-embed" data-slide="21" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+Comparing the optimal class solutions using the top 43 ranked continuous elements in each method, we find substantial agreement between the two supervised dimension reduction approaches and moderate agreement between the unsupervised and supervised approaches, as indicated by the numbers on the diagonal and the kappa statistics.
+
+<script async class="speakerdeck-embed" data-slide="22" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+A similar pattern of results is seen for the binary data.
+
+<script async class="speakerdeck-embed" data-slide="23" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+In conclusion, we can identify more strong etiologically distinct subtypes using supervised dimension reduction. However, the results of this data analysis must be interpreted cautiously, as the gold standard class solution is unknown. The F-statistic is desirable as compared to univariate D because of its computational simplicity. Simulation studies are underway to examine properties of these approaches in the context of a gold standard solution.
+
+<script async class="speakerdeck-embed" data-slide="24" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+<script async class="speakerdeck-embed" data-slide="25" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
 
