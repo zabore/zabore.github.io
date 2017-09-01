@@ -30,10 +30,5 @@ img-circle {
     border-radius: 50%;
 }
 
-img.resize {
-  max-width:50%;
-  max-height:50%;
-}
 
-border{ border-width: 25px; border-color: black; border-style: solid;}
 

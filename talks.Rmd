@@ -56,3 +56,9 @@ In conclusion, we can identify more strong etiologically distinct subtypes using
 Many thanks to my dissertation advisors, Colin Begg and Shuang Wang.
 
 
+## MPE 2016
+
+At the Molecular Pathologic Epidemiology meetings held in Boston, MA, I presented a talk titled "A review of statisitcal methods for evaluating etiologic heterogeneity" on May 12, 2016. A PDF of the slides is available [here](https://github.com/zabore/talk-slides/blob/master/Zabor-MPE2016-presentation-2016-05-12.pdf).
+
+<script async class="speakerdeck-embed" data-id="6b0fbacf82074586918d22f899d96317" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+

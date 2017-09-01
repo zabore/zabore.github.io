@@ -1,7 +1,7 @@
 name: "Emily C. Zabor"
 output_dir: "."
 navbar:
-  title: "Emily C. Zabor"
+  title: "Home"
   right:
     - text: "Research and publications"
       href: research.html
@@ -11,8 +11,8 @@ navbar:
       href: teaching.html
     - text: "Talks"
       href: talks.html
-    - icon: fa-envelope fa-lg
-      href: mailto:ecz2108@cumc.columbia.edu
+    - text: "Contact"
+      href: contact.html
     - icon: fa-github fa-lg
       href: http://github.com/zabore
     - icon: fa-twitter fa-lg
@@ -21,5 +21,5 @@ navbar:
       href: https://www.linkedin.com/in/emily-zabor-59b902b7/
 output:
   html_document:
-    theme: sandstone
+    theme: paper
     css: 'styles.css'
