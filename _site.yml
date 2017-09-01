@@ -1,7 +1,7 @@
 name: "Emily C. Zabor"
 output_dir: "."
 navbar:
-  title: "Home"
+  title: "Emily C. Zabor"
   right:
     - text: "Research and publications"
       href: research.html
