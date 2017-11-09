@@ -2,7 +2,7 @@ name: "Emily C. Zabor"
 output_dir: "."
 navbar:
   title: "Emily C. Zabor"
-  right:
+  left:
     - text: "Research and publications"
       href: research.html
     - text: "Software"
@@ -13,6 +13,7 @@ navbar:
       href: talks.html
     - text: "Contact"
       href: contact.html
+  right:
     - icon: fa-github fa-lg
       href: http://github.com/zabore
     - icon: fa-twitter fa-lg
