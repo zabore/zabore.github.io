@@ -275,9 +275,6 @@ div.tocify {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="research.html">Research and publications</a>
 </li>
@@ -312,6 +309,9 @@ div.tocify {
   </a>
 </li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -325,36 +325,17 @@ div.tocify {
 
 
 <p><link rel="stylesheet" href="styles.css" type="text/css"></p>
-<div id="jsm-2017" class="section level2">
-<h2>JSM 2017</h2>
-<p>At the Joint Statistical Meetings in Baltimore, MD, I presented a talk titled “Dimension reduction in the study of etiologic heterogeneity” on August 1, 2017. A PDF of the slides is available <a href="https://github.com/zabore/talk-slides/blob/master/2017_JSM_Zabor_dimension_reduction_etiologic_heterogeneity.pdf">here</a>.</p>
-<script async class="speakerdeck-embed" data-id="abe8ee65f2c34eba9537c421600880d5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
-<p>Traditionally cancer epidemiologic research has been organized by the site of disease, so that, for example, a research may seek to identify risk factors for breast cancer as a whole. However with the rise of molecular and genomic profiling in recent decades, attention has become increasingly focused on identification of subtypes of disease. As a result, cancer epidemiologic research has shifted in focus to the search for risk factors that differ across subtypes of disease. The concept of differing risk factors according to subtypes of disease is known as etiologic heterogeneity.</p>
-<p>A number of statistical methods are available to test for etiologic heterogeneity, and most rely on the use of polytomous logistic regression in the context of a case-control study to test for differences in relative risks according to an individual risk factor. However, these methods rely on a small number of tumor markers that are combined to form predefined subtypes. We have rather sought to develop an approach to search for etiologicallly distinct subtypes in the context of high dimensional tumor marker data. To illustrate the analytic strategy, imagine the situation where there are 3 underlying disease subtypes. Cases have data available on tumor markers, <span class="math inline">\(y_i\)</span>, and both cases and controls have data available on risk factors, <span class="math inline">\(x_i\)</span>. A polytomous logistic regression model is fit for a set of candidate subtypes, and predicted risks, <span class="math inline">\(r_ji\)</span> are obtained for each subtype j. More details follow about how candidate subtypes are identified.</p>
-<p>We measure risk heterogeneity using the subtype-specific coefficients of variation, the covariances of predicted risks of individuals in the population, and the subtype-specific prevalences.</p>
-<p>The first part of the equation represents the absolute explainable risk variation, defined by the coefficients of variation, <span class="math inline">\(K_j^2\)</span>, and the prevalences, <span class="math inline">\(\pi_j^2\)</span>, for each subtype j.</p>
-<p>The second part of the equation represents the heterogeneity of risk profiles, where a low covariance term corresponds to a pair of discordant subtypes and conversely a high covariance term corresponds to a pair of concordant subtypes.</p>
-<p>Thus we can construct a constant term <span class="math inline">\(D\)</span> that represents the absolute amount of variation explained by the risk factors, which we seek to maximize.</p>
-<p>We have proposed to conduct an analysis of this type in three steps. First we perform k-means clustering with many random starts to identify a set of candidate subtypes. Next we calculate D for each set of candidate subtypes. So for example if we use 1000 random starts we will obtain 1000 D metrics. Finally, we select the “optimal” class solution as the one that maximizes D. However this approach is somewhat <em>ad hoc</em> in nature and to date we have not evaluated how sensitive the approach is to clustering method used.</p>
-<p>Here I use a data example to assess the sensitivity of results to different clustering approaches. First I compare two unsupervised clustering approaches, k-means clustering and hierarchical clustering. With hierarchical clustering you can use different distance metrics and different agglomeration algorithms, which is the way the method decides to combine individuals into groups. Next we compare clustering on the full gene set versus doing up front filtering of the gene set using an unsupervised approach and versus doing up front filtering of the gene set using a supervised approach.</p>
-<p>The data for this example study come from the Cancer and Steroid Hormone breast cancer case-control study. There were 2990 controls frequency matched to 551 cases. Both cases and controls had available risk factor data on common breast cancer risk factors. Breast cancer cases additionally had data avialable on 202 gene expression values. Gene expression data is naturally continuous, but we compare results with dichotomized gene expression data as well.</p>
-<p>For simplicity throughout I focus on a 4-class solution, though selection of the correct number of classes is another challenge in a clustering analysis, and is an active area of research that I will not discuss today. Comparing k-means clustering to hierarchical clustering approaches, we find that hierarchical clustering results in very unbalanced average class size, across 1000 random starts, so that polytomous logistic regresssion could not even usually be applied. As a result, we focus solely on k-means clustering, which results on average in more balanced class size.</p>
-<p>We compare clutering on the full gene set to clustering on principal components, and unsupervised dimension reduction approach, to clustering on a gene set pre-filtered according to univariate D for each gene, and finally to clustering on a gene set pre-filtered according to an F-statistic proposed by Zapala &amp; Schork, which I will go into more detail about in a few slides.</p>
-<p>The x-axis shows the number of principal components and the y-axis shows the percentage of variation explained. Using continuous gene expression data, we identify a set of 46 principal components that explain 85% of the variation. Using binary gene expression data, we identify a set of 90 principal components that explain 85% of the variation.</p>
-<p>For the supervised filtering approach using univariate D, we first calculate D for each binary gene expression value. Next we permute the class labels 10,000 times to get a reference distribution to calculate a p-value. The p-values are adjusted for multiple comparisons using the false discovery rate method. The gene index is on the x-axis and the <span class="math inline">\(log_{10}\)</span> p-value is on the y-axis. We identify a set of 43 genes with p &lt; 0.05.</p>
-<p>Finally, an F-statistic resulting from a multivariate distance matrix regression is using for supervised filtering. A distance matrix formed by the gene expression values is the regression outcome and the risk factors of interest are the regression predictors. First we calculate the F-statistic for each gene individually and order them from largest to smallest F-statistic. Then we serially increase the gene set and each time a gene is added we recalculate the F-statistic. The gene set with the largest F-statistic is selected.</p>
-<p>Using this approach we identify a 6-gene set using continuous data and a 2-gene set using binary data.</p>
-<p>It is encouraging to note that all 6 of the continuous genes and both of the binary genes selected by the F-statistic are among the 43 genes selected by univariate D. If we look at the top 43 ranked genes according to the two supervised approaches, we find that 32 of the continuouos genes and 35 of the binary genes overlap.</p>
-<p>Recall that we seek to maximize D. Using the full gene set, we get a D of 0.200 for the continuous data and 0.231 for the binary data. With the continuous data, we see that both of the supervised approaches result in a higher D than that of the full gene set whereas with the binary data, only the supervised approach using univariate D results in a higher D than that of the full gene set.</p>
-<p>Comparing the optimal class solutions using the top 43 ranked continuous elements in each method, we find substantial agreement between the two supervised dimension reduction approaches and moderate agreement between the unsupervised and supervised approaches, as indicated by the numbers on the diagonal and the kappa statistics.</p>
-<p>A similar pattern of results is seen for the binary data.</p>
-<p>In conclusion, we can identify more strong etiologically distinct subtypes using supervised dimension reduction. However, the results of this data analysis must be interpreted cautiously, as the gold standard class solution is unknown. The F-statistic is desirable as compared to univariate D because of its computational simplicity. Simulation studies are underway to examine properties of these approaches in the context of a gold standard solution.</p>
-<p>Many thanks to my dissertation advisors, Colin Begg and Shuang Wang.</p>
+<div id="invited" class="section level2">
+<h2>Invited</h2>
 </div>
-<div id="mpe-2016" class="section level2">
-<h2>MPE 2016</h2>
-<p>At the Molecular Pathologic Epidemiology meetings held in Boston, MA, I presented a talk titled “A review of statisitcal methods for evaluating etiologic heterogeneity” on May 12, 2016. A PDF of the slides is available <a href="https://github.com/zabore/talk-slides/blob/master/Zabor-MPE2016-presentation-2016-05-12.pdf">here</a>.</p>
-<script async class="speakerdeck-embed" data-id="6b0fbacf82074586918d22f899d96317" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+<div id="contributed" class="section level2">
+<h2>Contributed</h2>
+<p>2017 Joint Statistical Meetings, Baltimore, MD: Dimension reduction in the study of etiologic heterogeneity</p>
+<p>2017 Society for Epidemiologic Research, Seattle, WA: A comparison of statistical methods for the study of etiologic heterogeneity (poster)</p>
+<p>2017 Eastern North American Region of the International Biometric Society: : A comparison of statistical methods for the study of etiologic heterogeneity (poster)</p>
+<p>2016 Molecular Pathologic Epidemiology, Boston, MA: A review of statisitcal methods for evaluating etiologic heterogeneity</p>
+<p>2011 Third North American American Congress of Epidemiology, Montreal, Canada: Initial reactions to tobacco and risk of future regular tobacco use (poster)</p>
+<p>2010 American Association for Dental Research, Washington DC: Association between periodontal disease, bacterial vaginosis, and sexual risk behaviours</p>
 </div>
 
 
