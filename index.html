@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -31,10 +31,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -227,8 +229,8 @@ $(document).ready(function () {
 
 <p><link rel="stylesheet" href="styles.css" type="text/css"></p>
 <p><img src="images/emily_2.jpg" style="width:25%; border:10px solid; margin-right: 20px" align="left"></p>
-<p>I graduated from the <a href="http://www.sph.umn.edu/academics/divisions/biostatistics/">University of Minnesota</a> with a MS in biostatistics in 2010, where I was advised by <a href="http://www.biostat.umn.edu/~brad/">Dr. Brad Carlin</a> in my work to develop a method to incorporate patient-specific covariates into an adaptive phase I cancer trial using a Bayesian framework. After graduating, I moved to New York to work as a Research Biostatistician at <a href="https://www.mskcc.org/departments/epidemiology-biostatistics">Memorial Sloan Kettering Cancer Center</a> in the department of Epidemiology &amp; Biostatistics where I am currently employed. In 2012 I began working toward my DrPH in biostatistics as a part-time student at <a href="https://www.mailman.columbia.edu/become-student/departments/biostatistics">Columbia University</a>, where I am investigating statistical methods for the study of etiologic heterogeneity in epidemiologic studies under the advisement of <a href="https://www.mailman.columbia.edu/people/our-faculty/sw2206">Dr. Shuang Wang</a> at Columbia University and <a href="https://www.mskcc.org/profile/colin-begg">Dr. Colin Begg</a> at Memorial Sloan Kettering Cancer Center. My expected graduation date is June 2018.</p>
-<p>My full CV is available <a href="files/Zabor_CV_2017_Q2.pdf">here</a>.</p>
+<p>I graduated from the <a href="http://www.sph.umn.edu/academics/divisions/biostatistics/">University of Minnesota</a> with a MS in biostatistics in 2010. After graduating, I moved to New York to work as a Research Biostatistician at <a href="https://www.mskcc.org/departments/epidemiology-biostatistics">Memorial Sloan Kettering Cancer Center</a> in the department of Epidemiology &amp; Biostatistics where I am currently employed. In 2012 I began working toward my DrPH in biostatistics as a part-time student at <a href="https://www.mailman.columbia.edu/become-student/departments/biostatistics">Columbia University</a>, where I am investigating statistical methods for the study of etiologic heterogeneity in epidemiologic studies under the advisement of <a href="https://www.mailman.columbia.edu/people/our-faculty/sw2206">Dr. Shuang Wang</a> at Columbia University and <a href="https://www.mskcc.org/profile/colin-begg">Dr. Colin Begg</a> at Memorial Sloan Kettering Cancer Center. My expected graduation date is August 2018.</p>
+<p>My full CV is available <a href="files/Zabor_CV_2017_Q4.pdf">here</a>.</p>
 
 
 
