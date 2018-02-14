@@ -3,11 +3,18 @@
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
+
+## Tutorials
+
+You can find materials related to tutorials I have presented at [www.emilyzabor.com/tutorials](http://www.emilyzabor.com/tutorials/).
+
+
 ## Adjunct professor classes
 
 Spring 2017: Fundamentals of Biostatistics, Hunter College
 
 Fall 2016: Fundamentals of Biostatistics, Hunter College
+
 
 ## Teaching assistant classes
 

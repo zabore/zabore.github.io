@@ -3,6 +3,10 @@
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
+I'd love to hear from you, so feel free to reach out. 
+
+And please connect with me on Github, Twitter, and Linkedin (links in top right).
+
 #### Emily C. Zabor
 
 Memorial Sloan Kettering Cancer Center<br>

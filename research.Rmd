@@ -15,7 +15,7 @@ My dissertation research, under the advisement of [Dr. Shuang Wang](https://www.
 
 The below publications represent my work to date on the topic of statistical methods for the study of etiologic heterogeneity:
 
-**Zabor, E. C.**, & Begg, C. B. (2017). A comparison of statistical methods for the study of etiologic heterogeneity. *Stat Med*.
+**Zabor, E. C.**, & Begg, C. B. (2017). A comparison of statistical methods for the study of etiologic heterogeneity. *Stat Med*, 36(25), 4050-4060.
 
 Mauguen, A., **Zabor, E. C.**, Thomas, N. E., Berwick, M., Seshan, V. E., & Begg, C. B.(2017). Defining Cancer Subtypes With Distinctive Etiologic Profiles: An Application to the Epidemiology of Melanoma. *J Am Stat Assoc*, 112(517), 54-63.
 

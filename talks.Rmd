@@ -9,13 +9,19 @@ output:
 
 ## Invited
 
+2018 New York R Conference, New York, NY: *How Long Will I Live? The Statistics Behind Prognosis in Cancer Research*
+
+2018 International Indian Statistical Association, Gainesville, FL: *Title TBD*
+
 ## Contributed
+
+2018 Eastern North American Region of the International Biometric Society, Atlanta, GA: *Statistical properties of the D-metric for measuring etiologic heterogeneity in case-control studies*
 
 2017 Joint Statistical Meetings, Baltimore, MD: *Dimension reduction in the study of etiologic heterogeneity*
 
 2017 Society for Epidemiologic Research, Seattle, WA: *A comparison of statistical methods for the study of etiologic heterogeneity* (poster)
 
-2017 Eastern North American Region of the International Biometric Society: *A comparison of statistical methods for the study of etiologic heterogeneity* (poster)
+2017 Eastern North American Region of the International Biometric Society, Washington DC: *A comparison of statistical methods for the study of etiologic heterogeneity* (poster)
 
 2016 Molecular Pathologic Epidemiology, Boston, MA: *A review of statisitcal methods for evaluating etiologic heterogeneity*
 
