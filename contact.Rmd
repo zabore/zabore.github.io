@@ -3,11 +3,7 @@
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-I'd love to hear from you, so feel free to reach out. 
-
-And please connect with me on Github, Twitter, and Linkedin (links in top right).
-
-#### Emily C. Zabor
+I'd love to hear from you, so feel free to reach out:
 
 Memorial Sloan Kettering Cancer Center<br>
 485 Lexington Ave, 2nd floor<br>
@@ -20,4 +16,6 @@ Mailman School of Public Health<br>
 722 West 168th St, 6th floor<br>
 New York, NY 10032<br>
 ecz2108@cumc.columbia.edu<br>
+
+Or connect with me on GitHub, Twitter, or Linkedin (links in top right).
 
