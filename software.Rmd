@@ -5,6 +5,8 @@
 
 ## Github packages
 
-- `condsurv`, a package for conditional survival analysis
+- `riskclustr`, a package of functions for the study of etiologic heterogeneity
 - `ezfun`, a package of personal utility functions to generate tables for use in R Markdown reports
-- `ethet`, a package of functions for the study of etiologic heterogeneity
+- `condsurv`, a package for conditional survival analysis
+
+
