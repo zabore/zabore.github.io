@@ -9,10 +9,14 @@ output:
 
 ## Invited
 
+2018 R/Medicine, New Haven, CT: *Teaching Survival Analysis to Clinical Collaborators*
+
 2018 New York R Conference, New York, NY: *How Long Will I Live? The Statistics Behind Prognosis in Cancer Research*
 
 
 ## Contributed
+
+2018 Joint Statistical Meetings, Vancouver, BC, Canada: *Validity of a method for identifying disease subtypes that are etiologically heterogeneous*
 
 2018 Eastern North American Region of the International Biometric Society, Atlanta, GA: *Validity of a method for identifying disease subtypes that are etiologically heterogeneous*
 
