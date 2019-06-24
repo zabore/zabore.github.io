@@ -9,11 +9,13 @@ output:
 
 ## Columbia University
 
-My dissertation research, under the advisement of [Dr. Shuang Wang](https://www.mailman.columbia.edu/people/our-faculty/sw2206) at Columbia University and [Dr. Colin Begg](https://www.mskcc.org/profile/colin-begg) at Memorial Sloan Kettering Cancer Center, focuses on statistical methods for the study of etiologic heterogeneity. The first part of my research focused on comparing and contrasting existing methods for the study of etiologic heterogeneity using a simulation study and simplified data example. Next, I examined the statistical properties of our method for the study of etiologic heterogeneity to determine its ability to find the truly most etiologically heterogeneous subtype solutions under a variety of data settings. Finally, I am applying the method to data from the Carolina Breast Cancer Study, and exploring additional methodological challenges that exist in a real data analysis.
+My dissertation research, under the advisement of [Dr. Shuang Wang](https://www.mailman.columbia.edu/people/our-faculty/sw2206) at Columbia University and [Dr. Colin Begg](https://www.mskcc.org/profile/colin-begg) at Memorial Sloan Kettering Cancer Center, focused on statistical methods for the study of etiologic heterogeneity. The first part of my research focused on comparing and contrasting existing methods for the study of etiologic heterogeneity using a simulation study and simplified data example. Next, I examined the statistical properties of our method for the study of etiologic heterogeneity to determine its ability to find the truly most etiologically heterogeneous subtype solutions under a variety of data settings. Finally, I applied the method to data from the Carolina Breast Cancer Study, and explored additional methodological challenges that exist in a real data analysis.
 
 ### Selected publications
 
 The below publications represent my work to date on the topic of statistical methods for the study of etiologic heterogeneity:
+
+**Zabor, E. C.** (2019). riskclustr: Functions to Study Etiologic Heterogeneity. *Journal of Open Source Software*, 4(35): 1269.
 
 **Zabor, E. C.**, & Begg, C. B. (2017). A comparison of statistical methods for the study of etiologic heterogeneity. *Stat Med*, 36(25), 4050-4060.
 
