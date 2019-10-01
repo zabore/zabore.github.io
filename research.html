@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -19,9 +20,6 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -89,7 +87,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -250,106 +247,8 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
-
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
-
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
 
 
 
@@ -359,16 +258,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -437,12 +326,12 @@ div.tocify {
 
 
 <p><link rel="stylesheet" href="styles.css" type="text/css"></p>
-<div id="columbia-university" class="section level2">
-<h2>Columbia University</h2>
+<p>A full list of my publications is available on <a href="https://scholar.google.com/citations?user=tLbQTZMAAAAJ&amp;hl=en">Google scholar</a>.</p>
 <p>My dissertation research, under the advisement of <a href="https://www.mailman.columbia.edu/people/our-faculty/sw2206">Dr. Shuang Wang</a> at Columbia University and <a href="https://www.mskcc.org/profile/colin-begg">Dr. Colin Begg</a> at Memorial Sloan Kettering Cancer Center, focused on statistical methods for the study of etiologic heterogeneity. The first part of my research focused on comparing and contrasting existing methods for the study of etiologic heterogeneity using a simulation study and simplified data example. Next, I examined the statistical properties of our method for the study of etiologic heterogeneity to determine its ability to find the truly most etiologically heterogeneous subtype solutions under a variety of data settings. Finally, I applied the method to data from the Carolina Breast Cancer Study, and explored additional methodological challenges that exist in a real data analysis.</p>
 <div id="selected-publications" class="section level3">
 <h3>Selected publications</h3>
 <p>The below publications represent my work to date on the topic of statistical methods for the study of etiologic heterogeneity:</p>
+<p>Benefield, H. C., <strong>Zabor, E. C.</strong>, Shan, Y., Allott, E. H., Begg, C. B., &amp; Troester, M. A. (2019). Evidence for Etiologic Subtypes of Breast Cancer in the Carolina Breast Cancer Study. <em>Cancer Epidemiol Biomarkers Prev</em>. <a href="doi:10.1158/1055-9965.Epi-19-0365" class="uri">doi:10.1158/1055-9965.Epi-19-0365</a></p>
 <p><strong>Zabor, E. C.</strong> (2019). riskclustr: Functions to Study Etiologic Heterogeneity. <em>Journal of Open Source Software</em>, 4(35): 1269.</p>
 <p><strong>Zabor, E. C.</strong>, &amp; Begg, C. B. (2017). A comparison of statistical methods for the study of etiologic heterogeneity. <em>Stat Med</em>, 36(25), 4050-4060.</p>
 <p>Mauguen, A., <strong>Zabor, E. C.</strong>, Thomas, N. E., Berwick, M., Seshan, V. E., &amp; Begg, C. B.(2017). Defining Cancer Subtypes With Distinctive Etiologic Profiles: An Application to the Epidemiology of Melanoma. <em>J Am Stat Assoc</em>, 112(517), 54-63.</p>
@@ -451,27 +340,9 @@ div.tocify {
 <p>Begg, C. B., Seshan, V. E., <strong>Zabor, E. C.</strong>, Furberg, H., Arora, A., Shen, R., . . . Hsieh, J. J. (2014). Genomic investigation of etiologic heterogeneity: methodologic challenges. <em>BMC Med Res Methodol</em>, 14, 138.</p>
 <p>Begg, C. B., <strong>Zabor, E. C.</strong>, Bernstein, J. L., Bernstein, L., Press, M. F., Seshan, V. E. (2013). A conceptual and methodological framework for investigating etiologic heterogeneity. <em>Stat Med</em>, 32(29), 5039-5052.</p>
 </div>
-</div>
-<div id="memorial-sloan-kettering-cancer-center" class="section level2">
-<h2>Memorial Sloan Kettering Cancer Center</h2>
-<p>At Memorial Sloan Kettering Cancer Center I spent six years collaborating on research projects in genito-urinary cancers, with an emphasis on genetic predictors of patient outcomes. Since then I have worked with the breast surgery service on research comparing patient outcomes according to different treatment strategies. I have also collaborated closely with epidemiologists on research related to smoking and bladder cancer and with health outcomes researchers on long-term outcomes following treatment for lymphoma.</p>
-<div id="selected-publications-1" class="section level3">
-<h3>Selected publications</h3>
-<p>The following publications represent a sample of methodological work I have conducted at Memorial Sloan Kettering Cancer Center:</p>
-<p><strong>Zabor, E. C.</strong>, Coit, D., Gershenwald, J. E., McMasters, K. M., Michaelson, J. S., Stromberg, A. J., &amp; Panageas, K. S. (2018). Variability in Predictions from Online Tools: A Demonstration Using Internet-Based Melanoma Predictors. <em>Ann Surg Oncol</em>, 25(8), 2172-2177.</p>
-<p><strong>Zabor, E. C.</strong>, Heller, G., Schwartz, L. H., Chapman, P. B. (2016). Correlating Surrogate Endpoints with Overall Survival at the Individual Patient Level in BRAFV600E-Mutated Metastatic Melanoma Patients Treated with Vemurafenib. <em>Clin Cancer Res</em>, 22(6), 1341-1347.</p>
-<p><strong>Zabor, E. C.</strong>, Gonen, M., Chapman, P. B., Panageas, K. S. (2013). Dynamic prognostication using conditional survival estimates. <em>Cancer</em>, 119(20), 3589-3592.</p>
-</div>
-</div>
-<div id="google-scholar" class="section level2">
-<h2><a href="https://scholar.google.com/citations?user=tLbQTZMAAAAJ&amp;hl=en">Google scholar</a></h2>
-<p>A full list of publications is available at the above Google scholar link.</p>
-</div>
 
 
 
-</div>
-</div>
 
 </div>
 
@@ -487,6 +358,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

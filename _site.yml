@@ -3,7 +3,7 @@ output_dir: "."
 navbar:
   title: "Emily C. Zabor"
   left:
-    - text: "Writing"
+    - text: "Research"
       href: research.html
     - text: "Speaking"
       href: talks.html

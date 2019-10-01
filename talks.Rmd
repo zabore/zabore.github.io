@@ -1,8 +1,4 @@
 ---
-output:
-  html_document: 
-    toc: true
-    toc_float: true
 ---
 
 <link rel="stylesheet" href="styles.css" type="text/css">

@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -86,7 +87,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -247,18 +247,6 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
@@ -339,9 +327,9 @@ $(document).ready(function () {
 
 <p><link rel="stylesheet" href="styles.css" type="text/css"></p>
 <p><img src="images/emily_2.jpg" style="width:25%; border:10px solid; margin-right: 20px" align="left"></p>
-<p>My interest is in using data as a tool to answer research questions and test hypotheses. I recently joined the biostatistics faculty at Cleveland Clinic in the <a href="(https://www.lerner.ccf.org/qhs/)">Department of Quantitative Health Sciences</a> with a joint appointment in the Taussig Cancer Institute. Previously, I worked for nine years as a research biostatistician at Memorial Sloan Kettering Cancer Center in the <a href="https://www.mskcc.org/departments/epidemiology-biostatistics">Department of Epidemiology &amp; Biostatistics</a>, where I worked primarily in breast and urologic cancers.</p>
-<p>I graduated from the <a href="http://www.sph.umn.edu/academics/divisions/biostatistics/">University of Minnesota</a> with a MS in biostatistics in 2010 and from <a href="https://www.mailman.columbia.edu/become-student/departments/biostatistics">Columbia University</a> with a DrPH in biostatistics in 2019.</p>
-<p>I am an avid R enthusiast and an active member of <a href="https://rladies.org/">R Ladies NYC</a>.</p>
+<p>My interest is in using data as a tool to answer research questions and test hypotheses. I recently joined the biostatistics faculty at Cleveland Clinic in the <a href="https://www.lerner.ccf.org/qhs/zabor/">Department of Quantitative Health Sciences</a> with a joint appointment in the Taussig Cancer Institute. Previously, I worked for nine years as a research biostatistician at Memorial Sloan Kettering Cancer Center in the Department of Epidemiology &amp; Biostatistics, where I worked primarily in breast and urologic cancers.</p>
+<p>I graduated from the University of Minnesota with a MS in biostatistics in 2010 and from Columbia University with a DrPH in biostatistics in 2019.</p>
+<p>I am an avid R enthusiast and an active member of <a href="https://rladies.org/">R Ladies</a>.</p>
 <p>My full CV is available <a href="files/Zabor_Emily_CV.pdf">here</a>.</p>
 
 
@@ -361,6 +349,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
