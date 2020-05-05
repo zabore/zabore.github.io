@@ -1,9 +1,20 @@
 ---
+title: " "
 ---
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
 ## Invited
+
+2020 Cleveland Clinic Florida Cancer Grand Rounds, Weston, FL: *Etiologic heterogeneity in cancer*
+
+2018 Memorial Sloan Kettering Cancer Center Department of Epidemiology & Biostatistics, New York, NY: *Statistical methods for the study of etiologic heterogeneity*
+
+2018 Cleveland Clinic Department of Quantitative Health Sciences, Cleveland, OH: *Statistical methods for the study of etiologic heterogeneity*
+
+2018 NYU School of Medicine Department of Population Health, Division of Biostatistics, New York, NY: *Statistical methods for the study of etiologic heterogeneity*
+
+2018 Mayo Clinic Department of Health Sciences Research, Rochester, MN: *Validity of a method for identifying etiologically heterogeneous disease subtypes*
 
 2018 R/Medicine, New Haven, CT: *Teaching Survival Analysis to Clinical Collaborators*
 
