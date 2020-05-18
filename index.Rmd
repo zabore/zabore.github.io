@@ -1,5 +1,6 @@
 ---
 title: " "
+pagetitle: "Emily C. Zabor"
 ---
 
 <link rel="stylesheet" href="styles.css" type="text/css">
