@@ -1,0 +1,318 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \qc \f0 \sa180 \li0 \fi0 \b \fs36 Example \{gtsummary\} RTF output\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 library(gtsummary)\line
+library(dplyr)\line
+library(survival)\line
+\line
+ex_tbl <-\line
+  coxph(Surv(ttdeath, death) ~ age + grade, data = trial) %>% \line
+  tbl_regression(\line
+    exponentiate = TRUE\line
+  ) %>% \line
+  add_global_p() %>% \line
+  bold_labels() %>% \line
+  italicize_levels()\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 ex_tbl %>% as_gt()\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf400
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c37036\c37036\c37036;\csgray\c0\c0;
+}
+\deftab20
+\cf0
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil
+\clvertalc \clshdrawnil \clheight520 \clbrdrt\brdrs\brdrw40\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw40\brdrcf3 \clbrdrr\brdrnil \clpadl100 \clpadr100 \gaph\cellx935
+\clvertalc \clshdrawnil \clheight520 \clbrdrt\brdrs\brdrw40\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw40\brdrcf3 \clbrdrr\brdrnil \clpadl100 \clpadr100 \gaph\cellx1870
+\clvertalc \clshdrawnil \clheight520 \clbrdrt\brdrs\brdrw40\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw40\brdrcf3 \clbrdrr\brdrnil \clpadl100 \clpadr100 \gaph\cellx2805
+\clvertalc \clshdrawnil \clheight520 \clbrdrt\brdrs\brdrw40\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw40\brdrcf3 \clbrdrr\brdrnil \clpadl100 \clpadr100 \gaph\cellx3740
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 Characteristic \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 HR{\super \i 1} \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 95% CI{\super \i 1} \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 p-value \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+ \row\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx935
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx1870
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx2805
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx3740
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 Age \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 1.01 \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 0.99, 1.02 \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 0.3 \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+ \row\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx935
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx1870
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx2805
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx3740
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 Grade \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2  \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2  \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 0.041 \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+ \row\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx935
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx1870
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx2805
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx3740
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 I \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 --- \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 --- \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2  \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+ \row\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx935
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx1870
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx2805
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx3740
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 II \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 1.20 \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 0.73, 1.97 \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2  \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+ \row\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw40\brdrcf3 \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx935
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw40\brdrcf3 \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx1870
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw40\brdrcf3 \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx2805
+\clvertalc \clshdrawnil \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrs\brdrw40\brdrcf3 \clbrdrr\brdrnil \clpadl100 \clpadr100 \clpadt50 \clpadb50 \gaph\cellx3740
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 III \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 1.80 \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 1.13, 2.87 \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0 \cell
+\pard\intbl\itap1\pardeftab20\qc\partightenfactor0
+\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2  \kerning1\expnd0\expndtw0 \up0 \nosupersub \ulnone \outl0\strokewidth0\expnd0\expndtw0\kerning0
+\up0 \nosupersub \ulnone \outl0\strokewidth0 \strokec2 \cell \lastrow\row\pard\pardeftab720\sl288\slmult1\partightenfactor0
+{\super \i 1}HR = Hazard Ratio, CI = Confidence Interval\
+}
+\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 ex_tbl %>% as_kable()\par}
+{
+\trowd \trgaph120
+\clbrdrb\brdrs\cellx2160\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx6480\clbrdrb\brdrs\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\b Characteristic}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\b HR}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\b 95% CI}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\b p-value}\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2160\cellx4320\cellx6480\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\b Age}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 1.01\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 0.99, 1.02\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 0.3\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2160\cellx4320\cellx6480\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\b Grade}\par}
+\cell}
+{\cell}
+{\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 0.041\par}
+\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2160\cellx4320\cellx6480\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\i I}\par}
+\cell}
+{\cell}
+{\cell}
+{\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2160\cellx4320\cellx6480\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\i II}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 1.20\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 0.73, 1.97\par}
+\cell}
+{\cell}
+}
+\intbl\row}
+{
+\trowd \trgaph120
+\cellx2160\cellx4320\cellx6480\cellx8640
+\trkeep\intbl
+{
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 {\i III}\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 1.80\par}
+\cell}
+{{\pard\intbl \ql \f0 \sa0 \li0 \fi0 1.13, 2.87\par}
+\cell}
+{\cell}
+}
+\intbl\row}
+{\pard \ql \f0 \sa180 \li0 \fi0 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 ex_tbl %>% as_flex_table()\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Output not supported!\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 ex_tbl %>% as_kable_extra()\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Output not supported!\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 ex_tbl %>% as_hux_table()\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 
+{
+\trowd
+\trqc \clbrdrt\clbrdrl\clbrdrb\brdrs\brdrw8\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx1080 
+\clbrdrt\clbrdrl\clbrdrb\brdrs\brdrw8\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx2160 
+\clbrdrt\clbrdrl\clbrdrb\brdrs\brdrw8\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx3240 
+\clbrdrt\clbrdrl\clbrdrb\brdrs\brdrw8\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx4320 \pard\intbl\ql{Characteristic}\cell
+\pard\intbl\qc{HR}\cell
+\pard\intbl\qc{95% CI}\cell
+\pard\intbl\qc{p-value}\cell
+\row
+}
+
+{
+\trowd
+\trqc \clbrdrt\brdrs\brdrw8\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx1080 
+\clbrdrt\brdrs\brdrw8\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx2160 
+\clbrdrt\brdrs\brdrw8\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx3240 
+\clbrdrt\brdrs\brdrw8\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx4320 \pard\intbl\ql\b {Age}\b0\cell
+\pard\intbl\qc{1.01}\cell
+\pard\intbl\qc{0.99, 1.02}\cell
+\pard\intbl\qc{0.3}\cell
+\row
+}
+
+{
+\trowd
+\trqc \clbrdrt\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx1080 
+\clbrdrt\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx2160 
+\clbrdrt\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx3240 
+\clbrdrt\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx4320 \pard\intbl\ql\b {Grade}\b0\cell
+\pard\intbl\qc{}\cell
+\pard\intbl\qc{}\cell
+\pard\intbl\qc{0.041}\cell
+\row
+}
+
+{
+\trowd
+\trqc \clbrdrt\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl300 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx1080 
+\clbrdrt\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx2160 
+\clbrdrt\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx3240 
+\clbrdrt\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx4320 \pard\intbl\ql\i {I}\i0\cell
+\pard\intbl\qc{\u8212?}\cell
+\pard\intbl\qc{\u8212?}\cell
+\pard\intbl\qc{}\cell
+\row
+}
+
+{
+\trowd
+\trqc \clbrdrt\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl300 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx1080 
+\clbrdrt\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx2160 
+\clbrdrt\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx3240 
+\clbrdrt\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx4320 \pard\intbl\ql\i {II}\i0\cell
+\pard\intbl\qc{1.20}\cell
+\pard\intbl\qc{0.73, 1.97}\cell
+\pard\intbl\qc{}\cell
+\row
+}
+
+{
+\trowd
+\trqc \clbrdrt\clbrdrl\clbrdrb\brdrs\brdrw16\clbrdrr\clvertalt\clpadfl3\clpadl300 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx1080 
+\clbrdrt\clbrdrl\clbrdrb\brdrs\brdrw16\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx2160 
+\clbrdrt\clbrdrl\clbrdrb\brdrs\brdrw16\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx3240 
+\clbrdrt\clbrdrl\clbrdrb\brdrs\brdrw16\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx4320 \pard\intbl\ql\i {III}\i0\cell
+\pard\intbl\qc{1.80}\cell
+\pard\intbl\qc{1.13, 2.87}\cell
+\pard\intbl\qc{}\cell
+\row
+}
+
+{
+\trowd
+\trqc \clmgf\clbrdrt\brdrs\brdrw16\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx1080 
+\clmrg\clbrdrt\brdrs\brdrw16\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx2160 
+\clmrg\clbrdrt\brdrs\brdrw16\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx3240 
+\clmrg\clbrdrt\brdrs\brdrw16\clbrdrl\clbrdrb\clbrdrr\clvertalt\clpadfl3\clpadl120 \clpadft3\clpadt120 \clpadfb3\clpadb120 \clpadfr3\clpadr120 \cellx4320 \pard\intbl\ql{HR = Hazard Ratio, CI = Confidence Interval}\cell
+\pard\intbl\qc{}\cell
+\pard\intbl\qc{}\cell
+\pard\intbl\qc{}\cell
+\row
+}
+\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 ex_tbl %>% as_tibble()\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 ## # A tibble: 5 x 4\line
+##   `**Characteristic**` `**HR**` `**95% CI**` `**p-value**`\line
+##   <chr>                <chr>    <chr>        <chr>        \line
+## 1 __Age__              1.01     0.99, 1.02   0.3          \line
+## 2 __Grade__            <NA>     <NA>         0.041        \line
+## 3 _I_                  <NA>     <NA>         <NA>         \line
+## 4 _II_                 1.20     0.73, 1.97   <NA>         \line
+## 5 _III_                1.80     1.13, 2.87   <NA>\par}
+}
