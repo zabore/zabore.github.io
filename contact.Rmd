@@ -2,14 +2,17 @@
 ---
 
 <link rel="stylesheet" href="styles.css" type="text/css">
+<link rel="stylesheet" href="academicicons/css/academicons.min.css"/>
 
-I'd love to hear from you, so feel free to reach out:
+I'd love to hear from you, so feel free to reach out.
 
-Cleveland Clinic<br>
-9500 Euclid Ave<br>
+<img src="images/CC_CancerInstitute_c.jpg" style="width:25%; margin-right: 50px" align="right">
+
+**Cleveland Clinic**<br>
+9500 Euclid Ave. CA-60<br>
 Cleveland, OH 44195<br>
-646-888-8299<br>
-zabore2@ccf.org<br>
+216-387-8625<br>
+[zabore2@ccf.org](zabore2@ccf.org)<br>
 
-Or connect with me on GitHub, Twitter, or Linkedin (links in top right).
+Or connect with me on [GitHub](https://github.com/zabore), [Twitter](https://twitter.com/zabormetrics), or [Linkedin](https://www.linkedin.com/in/emily-zabor-59b902b7/)
 

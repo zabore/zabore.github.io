@@ -4,8 +4,32 @@ pagetitle: "Emily C. Zabor"
 ---
 
 <link rel="stylesheet" href="styles.css" type="text/css">
+<link rel="stylesheet" href="academicicons/css/academicons.min.css"/>
 
-A full list of my publications is available on [Google scholar](https://scholar.google.com/citations?user=tLbQTZMAAAAJ&hl=en).
+## Clinical trials
+
+Appropriate clinical trial designs are essential to the testing of new therapeutics in oncology. New discoveries in cancer biology have shifted some focus away from chemotherapeutic drugs and toward biomarker-targeted treatments and immunotherapies. As a result, novel statistical approaches are needed.
+
+### Selected publications
+
+**Zabor, E. C.**, Kane, M. J., Roychoudhury, S., Nie, L., & Hobss, B. P. (Under review).
+Bayesian Basket Trial Design with False Discovery Rate Control.
+
+**Zabor, E. C.**, Kaizer, A. M., & Hobbs, B. P. (2020). Randomized Controlled Trials. *Chest*, 158(1s), S79-s87. doi:10.1016/j.chest.2020.03.013
+
+**Zabor, E. C.**, Heller, G., Schwartz, L. H., & Chapman, P. B. (2016). Correlating Surrogate Endpoints with Overall Survival at the Individual Patient Level in BRAFV600E-Mutated Metastatic Melanoma Patients Treated with Vemurafenib. *Clin Cancer Res*, 22(6), 1341-1347. doi:10.1158/1078-0432.ccr-15-1441
+
+## Observational studies
+
+In a hospital setting it is natural to take advantage of the large quantities of data available through electronic health records to conduct retrospective data analyses. Careful thought is needed when applying statistical methods to ensure accurate and interpretable results.
+
+### Selected publications
+
+**Zabor, E. C.**, Coit, D., Gershenwald, J. E., McMasters, K. M., Michaelson, J. S., Stromberg, A. J., & Panageas, K. S. (2018). Variability in Predictions from Online Tools: A Demonstration Using Internet-Based Melanoma Predictors. *Ann Surg Oncol*, 25(8), 2172-2177. doi:10.1245/s10434-018-6370-4
+
+**Zabor, E. C.**, Gonen, M., Chapman, P. B., & Panageas, K. S. (2013). Dynamic prognostication using conditional survival estimates. *Cancer*, 119(20), 3589-3592. doi:10.1002/cncr.28273
+
+## Etiologic heterogeneity
 
 My dissertation research, under the advisement of [Dr. Shuang Wang](https://www.mailman.columbia.edu/people/our-faculty/sw2206) at Columbia University and [Dr. Colin Begg](https://www.mskcc.org/profile/colin-begg) at Memorial Sloan Kettering Cancer Center, focused on statistical methods for the study of etiologic heterogeneity. The first part of my research focused on comparing and contrasting existing methods for the study of etiologic heterogeneity using a simulation study and simplified data example. Next, I examined the statistical properties of our method for the study of etiologic heterogeneity to determine its ability to find the truly most etiologically heterogeneous subtype solutions under a variety of data settings. Finally, I applied the method to data from the Carolina Breast Cancer Study, and explored additional methodological challenges that exist in a real data analysis.
 
@@ -13,7 +37,7 @@ My dissertation research, under the advisement of [Dr. Shuang Wang](https://www.
 
 The below publications represent my work to date on the topic of statistical methods for the study of etiologic heterogeneity:
 
-Benefield, H. C., **Zabor, E. C.**, Shan, Y., Allott, E. H., Begg, C. B., & Troester, M. A. (2019). Evidence for Etiologic Subtypes of Breast Cancer in the Carolina Breast Cancer Study. *Cancer Epidemiol Biomarkers Prev*. doi:10.1158/1055-9965.Epi-19-0365
+Benefield, H. C., **Zabor, E. C.**, Shan, Y., Allott, E. H., Begg, C. B., & Troester, M. A. (2019). Evidence for Etiologic Subtypes of Breast Cancer in the Carolina Breast Cancer Study. *Cancer Epidemiol Biomarkers Prev*, 28(11), 1784-1791. 
 
 **Zabor, E. C.** (2019). riskclustr: Functions to Study Etiologic Heterogeneity. *Journal of Open Source Software*, 4(35): 1269.
 

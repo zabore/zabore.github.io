@@ -4,15 +4,17 @@ pagetitle: "Emily C. Zabor"
 ---
 
 <link rel="stylesheet" href="styles.css" type="text/css">
+<link rel="stylesheet" href="academicicons/css/academicons.min.css"/>
 
-<img src="images/emily_2.jpg" style="width:25%; border:10px solid; margin-right: 20px" align="left">
+<img src="images/emily_2.jpg" style="width:25%; border:5px solid; margin-right: 20px" align="left">
 
-My interest is in using data as a tool to answer research questions and test hypotheses. I recently joined the biostatistics faculty at Cleveland Clinic in the [Department of Quantitative Health Sciences](https://www.lerner.ccf.org/qhs/zabor/) with a joint appointment in the Taussig Cancer Institute. Previously, I worked for nine years as a research biostatistician  at Memorial Sloan Kettering Cancer Center in the Department of Epidemiology & Biostatistics, where I worked primarily in breast and urologic cancers.
+I am an Assistant Staff Biostatistician at the Cleveland Clinic in the [Department of Quantitative Health Sciences](https://www.lerner.ccf.org/qhs/zabor/), with a joint appointment in the Taussig Cancer Institute. I also hold an academic appointment as Assistant Professor of Medicine at the Cleveland Clinic Lerner College of Medicine of Case Western Reserve University. 
 
-I graduated from the University of Minnesota with a MS in biostatistics in 2010 and from Columbia University with a DrPH in biostatistics in 2019.
+My research interests are in clinical trial design and statistical methods for observational studies, with applications to oncology.
+
+I earned my MS in biostatistics in 2010 from The University of Minnesota and my DrPH in biostatistics in 2019 from Columbia University.  
 
 I am an avid R enthusiast and an active member of [R Ladies](https://rladies.org/). 
 
-My full CV is available [here](files/Zabor_Emily_CV.pdf).
 
 
