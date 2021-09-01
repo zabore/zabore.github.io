@@ -13,24 +13,38 @@
 
 <title>Emily C. Zabor</title>
 
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
-<style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -43,32 +57,7 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -79,10 +68,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -99,40 +84,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 64px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h2 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h3 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h4 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h5 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h6 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -160,7 +118,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -172,7 +130,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -183,10 +141,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -198,7 +169,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -308,19 +278,19 @@ $(document).ready(function () {
 </li>
 <li>
   <a href="http://github.com/zabore">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
 <li>
   <a href="https://twitter.com/zabormetrics">
-    <span class="fa fa-twitter fa-lg"></span>
+    <span class="fab fa-twitter fa-lg"></span>
      
   </a>
 </li>
 <li>
   <a href="https://www.linkedin.com/in/emily-zabor-59b902b7/">
-    <span class="fa fa-linkedin fa-lg"></span>
+    <span class="fab fa-linkedin fa-lg"></span>
      
   </a>
 </li>
@@ -329,7 +299,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -343,7 +313,9 @@ $(document).ready(function () {
 <p>Appropriate clinical trial designs are essential to the testing of new therapeutics in oncology. New discoveries in cancer biology have shifted some focus away from chemotherapeutic drugs and toward biomarker-targeted treatments and immunotherapies. As a result, novel statistical approaches are needed.</p>
 <div id="selected-publications" class="section level3">
 <h3>Selected publications</h3>
+<p><strong>Zabor, E. C.</strong>, Kaizer, A. M., Garrett-Mayer, E. &amp; Hobbs, B. P. (Under review). Optimal sequential predictive probability designs for early phase oncology expansion cohorts.</p>
 <p><strong>Zabor, E. C.</strong>, Kane, M. J., Roychoudhury, S., Nie, L., &amp; Hobss, B. P. (Under review). Bayesian Basket Trial Design with False Discovery Rate Control.</p>
+<p>Kaizer, A. M., <strong>Zabor, E. C.</strong>, Nie, L. &amp; Hobbs, B. P. (Under review). Bayesian and Frequentist approaches to sequential monitoring for futility in oncology basket trials: A comparison of Simon’s two-stage design and Bayesian predictive probability monitoring with information sharing across baskets.</p>
 <p><strong>Zabor, E. C.</strong>, Kaizer, A. M., &amp; Hobbs, B. P. (2020). Randomized Controlled Trials. <em>Chest</em>, 158(1s), S79-s87. <a href="doi:10.1016/j.chest.2020.03.013" class="uri">doi:10.1016/j.chest.2020.03.013</a></p>
 <p><strong>Zabor, E. C.</strong>, Heller, G., Schwartz, L. H., &amp; Chapman, P. B. (2016). Correlating Surrogate Endpoints with Overall Survival at the Individual Patient Level in BRAFV600E-Mutated Metastatic Melanoma Patients Treated with Vemurafenib. <em>Clin Cancer Res</em>, 22(6), 1341-1347. <a href="doi:10.1158/1078-0432.ccr-15-1441" class="uri">doi:10.1158/1078-0432.ccr-15-1441</a></p>
 </div>
@@ -353,6 +325,8 @@ $(document).ready(function () {
 <p>In a hospital setting it is natural to take advantage of the large quantities of data available through electronic health records to conduct retrospective data analyses. Careful thought is needed when applying statistical methods to ensure accurate and interpretable results.</p>
 <div id="selected-publications-1" class="section level3">
 <h3>Selected publications</h3>
+<p>Eaton, A. A. and <strong>Zabor, E. C.</strong> (Under review). Analysis of composite endpoints with component-wise censoring in the presence of differential visit schedules.</p>
+<p><strong>Zabor, E. C.</strong>, Reddy, C. A., Tendulkar, R. D., &amp; Patil, S. (2021). Logistic Regression in Clinical Studies. Int J Radiat Oncol Biol Phys. <a href="doi:10.1016/j.ijrobp.2021.08.007" class="uri">doi:10.1016/j.ijrobp.2021.08.007</a></p>
 <p><strong>Zabor, E. C.</strong>, Coit, D., Gershenwald, J. E., McMasters, K. M., Michaelson, J. S., Stromberg, A. J., &amp; Panageas, K. S. (2018). Variability in Predictions from Online Tools: A Demonstration Using Internet-Based Melanoma Predictors. <em>Ann Surg Oncol</em>, 25(8), 2172-2177. <a href="doi:10.1245/s10434-018-6370-4" class="uri">doi:10.1245/s10434-018-6370-4</a></p>
 <p><strong>Zabor, E. C.</strong>, Gonen, M., Chapman, P. B., &amp; Panageas, K. S. (2013). Dynamic prognostication using conditional survival estimates. <em>Cancer</em>, 119(20), 3589-3592. <a href="doi:10.1002/cncr.28273" class="uri">doi:10.1002/cncr.28273</a></p>
 </div>
@@ -363,6 +337,7 @@ $(document).ready(function () {
 <div id="selected-publications-2" class="section level3">
 <h3>Selected publications</h3>
 <p>The below publications represent my work to date on the topic of statistical methods for the study of etiologic heterogeneity:</p>
+<p><strong>Zabor, E. C.</strong>, Seshan, V. E., Wang, S., &amp; Begg, C. B. (2021). Validity of a method for identifying disease subtypes that are etiologically heterogeneous. Stat Methods Med Res, 9622802211032704. <a href="doi:10.1177/09622802211032704" class="uri">doi:10.1177/09622802211032704</a></p>
 <p>Benefield, H. C., <strong>Zabor, E. C.</strong>, Shan, Y., Allott, E. H., Begg, C. B., &amp; Troester, M. A. (2019). Evidence for Etiologic Subtypes of Breast Cancer in the Carolina Breast Cancer Study. <em>Cancer Epidemiol Biomarkers Prev</em>, 28(11), 1784-1791.</p>
 <p><strong>Zabor, E. C.</strong> (2019). riskclustr: Functions to Study Etiologic Heterogeneity. <em>Journal of Open Source Software</em>, 4(35): 1269.</p>
 <p><strong>Zabor, E. C.</strong>, &amp; Begg, C. B. (2017). A comparison of statistical methods for the study of etiologic heterogeneity. <em>Stat Med</em>, 36(25), 4050-4060.</p>
@@ -383,7 +358,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -401,7 +376,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

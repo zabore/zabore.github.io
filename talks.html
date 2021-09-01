@@ -13,24 +13,38 @@
 
 <title>Emily C. Zabor</title>
 
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
-<style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -43,32 +57,7 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -79,10 +68,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -99,40 +84,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 64px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h2 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h3 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h4 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h5 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h6 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -160,7 +118,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -172,7 +130,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -183,10 +141,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -198,7 +169,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -308,19 +278,19 @@ $(document).ready(function () {
 </li>
 <li>
   <a href="http://github.com/zabore">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
 <li>
   <a href="https://twitter.com/zabormetrics">
-    <span class="fa fa-twitter fa-lg"></span>
+    <span class="fab fa-twitter fa-lg"></span>
      
   </a>
 </li>
 <li>
   <a href="https://www.linkedin.com/in/emily-zabor-59b902b7/">
-    <span class="fa fa-linkedin fa-lg"></span>
+    <span class="fab fa-linkedin fa-lg"></span>
      
   </a>
 </li>
@@ -329,7 +299,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -340,7 +310,10 @@ $(document).ready(function () {
 <p><link rel="stylesheet" href="styles.css" type="text/css"> <link rel="stylesheet" href="academicicons/css/academicons.min.css"/></p>
 <div id="invited" class="section level2">
 <h2>Invited</h2>
-<p>2020 Greater Cleveland R Group, Cleveland, OH: <em>Creating presentation-ready summary tables with {gtsummary}</em> (<a href="http://www.emilyzabor.com/cleveland-r-gtsummary/#1">slides</a>)</p>
+<p>2021 Joint Statistical Meetings, virtual: <em>Correlating Surrogate Endpoints with Overall Survival at the Individual Patient Level for Precision Oncology</em> (<a href="https://github.com/zabore/slidedecks/blob/master/Zabor-JSM2021.pdf">slides</a>)</p>
+<p>2021 American Urological Association Methods in Clinical Urology Research (MCURe) Workshop, virtual: <em>Reporting Effect Size and Precision in Clinical Research</em></p>
+<p>2021 International Indian Statistical Association Conference, virtual: <em>Bayesian basket trial design with false discovery rate control</em> (<a href="https://github.com/zabore/slidedecks/blob/master/zabor_iisa2021.pdf">slides</a>)</p>
+<p>2020 Greater Cleveland R Group, virtual: <em>Creating presentation-ready summary tables with {gtsummary}</em> (<a href="http://www.emilyzabor.com/cleveland-r-gtsummary/#1">slides</a>)</p>
 <p>2020 Cleveland Clinic Florida Cancer Grand Rounds, Weston, FL: <em>Etiologic heterogeneity in cancer</em></p>
 <p>2018 Memorial Sloan Kettering Cancer Center Department of Epidemiology &amp; Biostatistics, New York, NY: <em>Statistical methods for the study of etiologic heterogeneity</em></p>
 <p>2018 Cleveland Clinic Department of Quantitative Health Sciences, Cleveland, OH: <em>Statistical methods for the study of etiologic heterogeneity</em></p>
@@ -351,6 +324,7 @@ $(document).ready(function () {
 </div>
 <div id="contributed" class="section level2">
 <h2>Contributed</h2>
+<p>2021 R/Medicine Conference, virtual: <em>Designing early phase clinical trials with {ppseq}</em> (<a href="http://www.emilyzabor.com/rmedicine2021">slides</a>)</p>
 <p>2018 Joint Statistical Meetings, Vancouver, BC, Canada: <em>Validity of a method for identifying disease subtypes that are etiologically heterogeneous</em></p>
 <p>2018 Eastern North American Region of the International Biometric Society, Atlanta, GA: <em>Validity of a method for identifying disease subtypes that are etiologically heterogeneous</em></p>
 <p>2017 Joint Statistical Meetings, Baltimore, MD: <em>Dimension reduction in the study of etiologic heterogeneity</em></p>
@@ -370,7 +344,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -388,7 +362,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

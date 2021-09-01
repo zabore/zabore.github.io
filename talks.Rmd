@@ -8,7 +8,13 @@ pagetitle: "Emily C. Zabor"
 
 ## Invited
 
-2020 Greater Cleveland R Group, Cleveland, OH: *Creating presentation-ready summary tables with {gtsummary}* ([slides](http://www.emilyzabor.com/cleveland-r-gtsummary/#1))
+2021 Joint Statistical Meetings, virtual: *Correlating Surrogate Endpoints with Overall Survival at the Individual Patient Level for Precision Oncology* ([slides](https://github.com/zabore/slidedecks/blob/master/Zabor-JSM2021.pdf))
+
+2021 American Urological Association Methods in Clinical Urology Research (MCURe) Workshop, virtual: *Reporting Effect Size and Precision in Clinical Research*
+
+2021 International Indian Statistical Association Conference, virtual: *Bayesian basket trial design with false discovery rate control* ([slides](https://github.com/zabore/slidedecks/blob/master/zabor_iisa2021.pdf))
+
+2020 Greater Cleveland R Group, virtual: *Creating presentation-ready summary tables with {gtsummary}* ([slides](http://www.emilyzabor.com/cleveland-r-gtsummary/#1))
 
 2020 Cleveland Clinic Florida Cancer Grand Rounds, Weston, FL: *Etiologic heterogeneity in cancer*
 
@@ -26,6 +32,8 @@ pagetitle: "Emily C. Zabor"
 
 
 ## Contributed
+
+2021 R/Medicine Conference, virtual: *Designing early phase clinical trials with {ppseq}* ([slides](http://www.emilyzabor.com/rmedicine2021))
 
 2018 Joint Statistical Meetings, Vancouver, BC, Canada: *Validity of a method for identifying disease subtypes that are etiologically heterogeneous*
 

@@ -12,12 +12,21 @@ Appropriate clinical trial designs are essential to the testing of new therapeut
 
 ### Selected publications
 
+**Zabor, E. C.**, Kaizer, A. M., Garrett-Mayer, E. & Hobbs, B. P. (Under review). Optimal
+sequential predictive probability designs for early phase oncology expansion cohorts.
+
 **Zabor, E. C.**, Kane, M. J., Roychoudhury, S., Nie, L., & Hobss, B. P. (Under review).
 Bayesian Basket Trial Design with False Discovery Rate Control.
+
+Kaizer, A. M., **Zabor, E. C.**, Nie, L. & Hobbs, B. P. (Under review). Bayesian and
+Frequentist approaches to sequential monitoring for futility in oncology basket trials: A
+comparison of Simon’s two-stage design and Bayesian predictive probability monitoring with
+information sharing across baskets.
 
 **Zabor, E. C.**, Kaizer, A. M., & Hobbs, B. P. (2020). Randomized Controlled Trials. *Chest*, 158(1s), S79-s87. doi:10.1016/j.chest.2020.03.013
 
 **Zabor, E. C.**, Heller, G., Schwartz, L. H., & Chapman, P. B. (2016). Correlating Surrogate Endpoints with Overall Survival at the Individual Patient Level in BRAFV600E-Mutated Metastatic Melanoma Patients Treated with Vemurafenib. *Clin Cancer Res*, 22(6), 1341-1347. doi:10.1158/1078-0432.ccr-15-1441
+
 
 ## Observational studies
 
@@ -25,9 +34,16 @@ In a hospital setting it is natural to take advantage of the large quantities of
 
 ### Selected publications
 
+Eaton, A. A. and **Zabor, E. C.** (Under review). Analysis of composite endpoints with
+component-wise censoring in the presence of differential visit schedules.
+
+**Zabor, E. C.**, Reddy, C. A., Tendulkar, R. D., & Patil, S. (2021). Logistic Regression in
+Clinical Studies. Int J Radiat Oncol Biol Phys. doi:10.1016/j.ijrobp.2021.08.007
+
 **Zabor, E. C.**, Coit, D., Gershenwald, J. E., McMasters, K. M., Michaelson, J. S., Stromberg, A. J., & Panageas, K. S. (2018). Variability in Predictions from Online Tools: A Demonstration Using Internet-Based Melanoma Predictors. *Ann Surg Oncol*, 25(8), 2172-2177. doi:10.1245/s10434-018-6370-4
 
 **Zabor, E. C.**, Gonen, M., Chapman, P. B., & Panageas, K. S. (2013). Dynamic prognostication using conditional survival estimates. *Cancer*, 119(20), 3589-3592. doi:10.1002/cncr.28273
+
 
 ## Etiologic heterogeneity
 
@@ -36,6 +52,10 @@ My dissertation research, under the advisement of [Dr. Shuang Wang](https://www.
 ### Selected publications
 
 The below publications represent my work to date on the topic of statistical methods for the study of etiologic heterogeneity:
+
+**Zabor, E. C.**, Seshan, V. E., Wang, S., & Begg, C. B. (2021). Validity of a method for
+identifying disease subtypes that are etiologically heterogeneous. Stat Methods Med Res,
+9622802211032704. doi:10.1177/09622802211032704
 
 Benefield, H. C., **Zabor, E. C.**, Shan, Y., Allott, E. H., Begg, C. B., & Troester, M. A. (2019). Evidence for Etiologic Subtypes of Breast Cancer in the Carolina Breast Cancer Study. *Cancer Epidemiol Biomarkers Prev*, 28(11), 1784-1791. 
 
