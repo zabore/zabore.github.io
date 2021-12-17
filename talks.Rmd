@@ -8,6 +8,8 @@ pagetitle: "Emily C. Zabor"
 
 ## Invited
 
+2021 International Conference on Statistics for Twenty-First Century, virtual: *Brief Introduction to Phase II Trials in Oncology*
+
 2021 Joint Statistical Meetings, virtual: *Correlating Surrogate Endpoints with Overall Survival at the Individual Patient Level for Precision Oncology* ([slides](https://github.com/zabore/slidedecks/blob/master/Zabor-JSM2021.pdf))
 
 2021 American Urological Association Methods in Clinical Urology Research (MCURe) Workshop, virtual: *Reporting Effect Size and Precision in Clinical Research*

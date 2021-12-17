@@ -6,18 +6,20 @@ pagetitle: "Emily C. Zabor"
 <link rel="stylesheet" href="styles.css" type="text/css">
 <link rel="stylesheet" href="academicicons/css/academicons.min.css"/>
 
+
 ## CRAN packages
 
-- [`riskclustr`](https://cran.r-project.org/web/packages/riskclustr/index.html) (author), a package of functions for the study of etiologic heterogeneity
+- [`ppseq`](http://www.emilyzabor.com/ppseq/) (author), a package of functions to design clinical trials with sequential predictive probability monitoring for futility
 
-- [`gtsummary`](https://cran.r-project.org/web/packages/gtsummary/index.html) (contributor) a package for creating presentation-ready summary tables
+- [`riskclustr`](https://www.emilyzabor.com/riskclustr/) (author), a package of functions for the study of etiologic heterogeneity
+
+- [`gtsummary`](https://www.danieldsjoberg.com/gtsummary/) (contributor) a package for creating presentation-ready summary tables
+
 
 ## Github packages
 
-- [`ppseq`](http://www.emilyzabor.com/ppseq/), a package of functions to design clinical trials with sequential predictive probability monitoring for futility
+- [`ezfun`](https://www.emilyzabor.com/ezfun/), a package of personal utility functions to generate tables for use in R Markdown reports
 
-- [`ezfun`](https://github.com/zabore/ezfun), a package of personal utility functions to generate tables for use in R Markdown reports
-
-- [`condsurv`](https://github.com/zabore/condsurv), a package for conditional survival analysis
+- [`condsurv`](https://www.emilyzabor.com/condsurv/), a package for conditional survival analysis
 
 
