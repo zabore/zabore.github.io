@@ -12,16 +12,20 @@ Appropriate clinical trial designs are essential to the testing of new therapeut
 
 ### Selected publications
 
-**Zabor, E. C.**, Kaizer, A. M., Garrett-Mayer, E. & Hobbs, B. P. (Under review). Optimal
+**Zabor, E. C.**, Kaizer, A. M., Garrett-Mayer, E. & Hobbs, B. P. (Accepted, pending publication). Optimal
 sequential predictive probability designs for early phase oncology expansion cohorts.
 
-**Zabor, E. C.**, Kane, M. J., Roychoudhury, S., Nie, L., & Hobss, B. P. (Under review).
-Bayesian Basket Trial Design with False Discovery Rate Control.
+Hobbs, B. P., Pestana, R. C., **Zabor, E. C.**, Kaizer, A. M., & Hong, D. S. (Accepted, pending publication). Basket trials: review of current practice and innovations for future trials.
 
-Kaizer, A. M., **Zabor, E. C.**, Nie, L. & Hobbs, B. P. (Under review). Bayesian and
+**Zabor, E. C.**, Hobbs, B. P., Kane, M. J. (Under review). ppseq: An R Package for Sequential Predictive Probability Monitoring.
+
+Kaizer, A. M., **Zabor, E. C.**, Nie, L. & Hobbs, B. P. (Revise & resubmit). Bayesian and
 Frequentist approaches to sequential monitoring for futility in oncology basket trials: A
 comparison of Simon’s two-stage design and Bayesian predictive probability monitoring with
 information sharing across baskets.
+
+**Zabor, E. C.**, Kane, M. J., Roychoudhury, S., Nie, L., & Hobss, B. P. (2022).
+Bayesian Basket Trial Design with False Discovery Rate Control. *Clin Trials*, 17407745211073624. doi:10.1177/17407745211073624
 
 **Zabor, E. C.**, Kaizer, A. M., & Hobbs, B. P. (2020). Randomized Controlled Trials. *Chest*, 158(1s), S79-s87. doi:10.1016/j.chest.2020.03.013
 
@@ -34,11 +38,11 @@ In a hospital setting it is natural to take advantage of the large quantities of
 
 ### Selected publications
 
-Eaton, A. A. and **Zabor, E. C.** (Under review). Analysis of composite endpoints with
-component-wise censoring in the presence of differential visit schedules.
+Eaton, A. A.* and **Zabor, E. C.*** (2022). Analysis of Composite Endpoints with Component-Wise Censoring in the Presence of Differential Visit Schedules. *Stat Med*. doi:10.1002/sim.9312
+*equally contributing authors
 
-**Zabor, E. C.**, Reddy, C. A., Tendulkar, R. D., & Patil, S. (2021). Logistic Regression in
-Clinical Studies. Int J Radiat Oncol Biol Phys. doi:10.1016/j.ijrobp.2021.08.007
+
+**Zabor, E. C.**, Reddy, C. A., Tendulkar, R. D., & Patil, S. (2022). Logistic Regression in Clinical Studies. *Int J Radiat Oncol Biol Phys*, 112(2), 271-277. doi:10.1016/j.ijrobp.2021.08.007
 
 **Zabor, E. C.**, Coit, D., Gershenwald, J. E., McMasters, K. M., Michaelson, J. S., Stromberg, A. J., & Panageas, K. S. (2018). Variability in Predictions from Online Tools: A Demonstration Using Internet-Based Melanoma Predictors. *Ann Surg Oncol*, 25(8), 2172-2177. doi:10.1245/s10434-018-6370-4
 
@@ -54,8 +58,7 @@ My dissertation research, under the advisement of [Dr. Shuang Wang](https://www.
 The below publications represent my work to date on the topic of statistical methods for the study of etiologic heterogeneity:
 
 **Zabor, E. C.**, Seshan, V. E., Wang, S., & Begg, C. B. (2021). Validity of a method for
-identifying disease subtypes that are etiologically heterogeneous. Stat Methods Med Res,
-9622802211032704. doi:10.1177/09622802211032704
+identifying disease subtypes that are etiologically heterogeneous. *Stat Methods Med Res*, 30(9), 2045-2056. doi:10.1177/09622802211032704
 
 Benefield, H. C., **Zabor, E. C.**, Shan, Y., Allott, E. H., Begg, C. B., & Troester, M. A. (2019). Evidence for Etiologic Subtypes of Breast Cancer in the Carolina Breast Cancer Study. *Cancer Epidemiol Biomarkers Prev*, 28(11), 1784-1791. 
 
