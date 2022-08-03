@@ -1,0 +1,38 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this blog",
+      "description": "Some additional details about the blog",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-08-03T10:24:37-04:00"
+    },
+    {
+      "path": "contact.html",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n\r\n\r\nEmily C. Zabor Cleveland Clinic 9500 Euclid\r\nAve. CA-60 Cleveland, OH 44195 216-387-8625zabore2@ccf.org\r\n\r\nOr connect with me on GitHub,\r\nTwitter, or Linkedin\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-08-03T10:24:39-04:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Emily C. Zabor",
+      "author": [],
+      "contents": "\r\n\r\n          \r\n          \r\n          Emily C. Zabor\r\n          \r\n          \r\n          Tutorials\r\n          Software\r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          \r\n          ☰\r\n          \r\n          \r\n      \r\n        \r\n          \r\n            Emily C. Zabor\r\n          \r\n          \r\n            \r\n              \r\n              I am an Assistant Staff Biostatistician at the\r\n              Cleveland Clinic in the Department of\r\n              Quantitative Health Sciences, with a joint appointment\r\n              in the Taussig Cancer Institute. I also hold an academic\r\n              appointment as Assistant Professor of Medicine at the\r\n              Cleveland Clinic Lerner College of Medicine of Case\r\n              Western Reserve University.\r\n              My research interests are in clinical trial design and\r\n              statistical methods for observational studies, with\r\n              applications to oncology.\r\n              I earned my MS in biostatistics from The University of\r\n              Minnesota and my DrPH in biostatistics from Columbia\r\n              University.\r\n            \r\n            \r\n              \r\n              I am an Assistant Staff Biostatistician at the\r\n              Cleveland Clinic in the Department of\r\n              Quantitative Health Sciences, with a joint appointment\r\n              in the Taussig Cancer Institute. I also hold an academic\r\n              appointment as Assistant Professor of Medicine at the\r\n              Cleveland Clinic Lerner College of Medicine of Case\r\n              Western Reserve University.\r\n              My research interests are in clinical trial design and\r\n              statistical methods for observational studies, with\r\n              applications to oncology.\r\n              I earned my MS in biostatistics from The University of\r\n              Minnesota and my DrPH in biostatistics from Columbia\r\n              University.\r\n            \r\n          \r\n\r\n          \r\n            \r\n              \r\n          \r\n\r\n          \r\n            \r\n              \r\n                              \r\n            \r\n          \r\n        \r\n      \r\n    \r\n\r\n    \r\n    \r\n    ",
+      "last_modified": "2022-08-03T10:24:39-04:00"
+    },
+    {
+      "path": "software.html",
+      "author": [],
+      "contents": "\r\n\r\nCRAN packages\r\nppseq\r\n(author), a package of functions to design clinical trials with\r\nsequential predictive probability monitoring for futility\r\nriskclustr\r\n(author), a package of functions for the study of etiologic\r\nheterogeneity\r\ngtsummary\r\n(contributor) a package for creating presentation-ready summary\r\ntables\r\nGithub packages\r\nezfun, a\r\npackage of personal utility functions to generate tables for use in R\r\nMarkdown reports\r\ncondsurv, a\r\npackage for conditional survival analysis\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-08-03T10:24:40-04:00"
+    },
+    {
+      "path": "tutorials.html",
+      "author": [],
+      "contents": "\r\n\r\nSurvival\r\nanalysis in R: a detailed tutorial on conducting survival analyses\r\nin R, including an introduction to the basics of survival analysis,\r\nlandmark analyses and time-dependent covariates, competing risks, and a\r\nselection of advanced topics.\r\nCreating\r\nwebsites in R: a basic introduction to creating simple websites in\r\nRMarkdown, using a website for my cats as an example.\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-08-03T10:24:40-04:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

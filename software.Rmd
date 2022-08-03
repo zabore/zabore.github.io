@@ -1,9 +1,10 @@
 ---
-title: " "
-pagetitle: "Emily C. Zabor"
+pagetitle: "R Software"
+output: 
+  distill::distill_article:
+    toc: false
 ---
 
-<link rel="stylesheet" href="styles.css" type="text/css">
 <link rel="stylesheet" href="academicicons/css/academicons.min.css"/>
 
 

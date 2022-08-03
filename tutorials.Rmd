@@ -1,0 +1,12 @@
+---
+pagetitle: "R Tutorials"
+output: 
+  distill::distill_article:
+    toc: false
+---
+
+<link rel="stylesheet" href="academicicons/css/academicons.min.css"/>
+
+[Survival analysis in R](https://www.emilyzabor.com/tutorials/survival_analysis_in_r_tutorial.html):  a detailed tutorial on conducting survival analyses in R, including an introduction to the basics of survival analysis, landmark analyses and time-dependent covariates, competing risks, and a selection of advanced topics.
+
+[Creating websites in R](https://www.emilyzabor.com/tutorials/rmarkdown_websites_tutorial.html): a basic introduction to creating simple websites in RMarkdown, using a website for my cats as an example.
