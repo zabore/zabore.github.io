@@ -1,15 +1,47 @@
 ---
 title: "Emily C. Zabor"
-image: "images/emily-touched-8.jpg"
+image: "images/emily-touched-8-crop.jpg"
+links:
+  - label: '`r icons::academicons("google-scholar")`'
+    url: "https://scholar.google.com/citations?user=tLbQTZMAAAAJ&hl=en"
+  - label: '`r fontawesome::fa("github")`'
+    url: "http://github.com/zabore"
+  - label: '`r fontawesome::fa("twitter")`'
+    url: "https://twitter.com/zabormetrics"
+  - label: '`r fontawesome::fa("linkedin")`'
+    url: "https://www.linkedin.com/in/emily-zabor-59b902b7/"
 output: 
-  postcards::jolla
+  postcards::trestles
 site: distill::distill_website
 ---
 
 <link rel="stylesheet" href="academicicons/css/academicons.min.css"/>
 
-I am an Assistant Staff Biostatistician at the Cleveland Clinic in the [Department of Quantitative Health Sciences](https://www.lerner.ccf.org/qhs/zabor/), with a joint appointment in the Taussig Cancer Institute. I also hold an academic appointment as Assistant Professor of Medicine at the Cleveland Clinic Lerner College of Medicine of Case Western Reserve University. 
+# About 
 
-My research interests are in clinical trial design and statistical methods for observational studies, with applications to oncology.
+I am an Assistant Staff Biostatistician at the Cleveland Clinic in the Department of Quantitative Health Sciences, with a joint appointment in the Taussig Cancer Institute. I also hold an academic appointment as Assistant Professor of Medicine at the Cleveland Clinic Lerner College of Medicine of Case Western Reserve University. 
 
-I earned my MS in biostatistics from The University of Minnesota and my DrPH in biostatistics from Columbia University.  
+My research interests are in early phase clinical trial design and statistical methods for observational studies, with applications to oncology.
+
+I earned my MS degree in biostatistics from The University of Minnesota and my DrPH degree in biostatistics from Columbia University.  
+
+Please see my [CV](./files/Zabor_Emily_CV.pdf) for details of my academic work.
+
+
+# Tutorials
+
+[Survival analysis in R](https://www.emilyzabor.com/tutorials/survival_analysis_in_r_tutorial.html): A detailed tutorial on conducting survival analyses in R, including an introduction to the basics of survival analysis, landmark analyses and time-dependent covariates, competing risks, and a selection of advanced topics.
+
+
+# R Software
+
+- [`ppseq`](http://www.emilyzabor.com/ppseq/): A package of functions to design clinical trials with sequential predictive probability monitoring for futility
+
+- [`riskclustr`](https://www.emilyzabor.com/riskclustr/): A package of functions for the study of etiologic heterogeneity
+
+- [`condsurv`](https://www.emilyzabor.com/condsurv/): A package for conditional survival analysis
+
+
+# Contact
+
+You can reach me by email at [zabore2@ccf.org](mailto:zabore2@ccf.org).

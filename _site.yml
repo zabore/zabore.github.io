@@ -3,24 +3,6 @@ output_dir: "docs"
 base_url: emilyzabor.com
 description: |
   Emily Zabor's website
-navbar:
-  title: "Emily C. Zabor"
-  right:
-    - text: "Tutorials"
-      href: tutorials.html
-    - text: "Software"
-      href: software.html
-    - icon: fa-envelope fa-lg
-      href: contact.html
-    - icon: ai ai-google-scholar ai-lg
-      href: https://scholar.google.com/citations?user=tLbQTZMAAAAJ&hl=en
-    - icon: ai ai-cv ai-lg
-      href: ./files/Zabor_Emily_CV.pdf
-    - icon: fab fa-github fa-lg
-      href: http://github.com/zabore
-    - icon: fab fa-twitter fa-lg
-      href: https://twitter.com/zabormetrics
-    - icon: fab fa-linkedin fa-lg
-      href: https://www.linkedin.com/in/emily-zabor-59b902b7/
+title: "Emily C. Zabor"
 output: distill::distill_article
 theme: theme.css
