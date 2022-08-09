@@ -17,7 +17,7 @@ site: distill::distill_website
 
 <link rel="stylesheet" href="academicicons/css/academicons.min.css"/>
 
-`r emo::ji("loud")`<span style="color:#00843d;">**I am currently hiring for a postdoctoral researcher in cancer biostatistics to join me in the Department of Quantitative Health Sciences at Cleveland Clinic. Please e-mail me at [zabore2@ccf.org](mailto:zabore2@ccf.org) for more information.**</span>`r emo::ji("loud")`
+`r emo::ji("loud")`<span style="color:#00843d;">**I am currently hiring for a postdoctoral researcher in cancer biostatistics to join me in the Department of Quantitative Health Sciences at Cleveland Clinic. Please [click here](postdoc-ad.html) for details.**</span>`r emo::ji("loud")`
 
 # About 
 
