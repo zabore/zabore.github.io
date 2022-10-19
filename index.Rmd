@@ -36,16 +36,16 @@ Please see my [CV](./files/Zabor_Emily_CV.pdf) for details of my academic work.
 
 # Tutorials
 
-[Survival analysis in R](https://www.emilyzabor.com/tutorials/survival_analysis_in_r_tutorial.html): A detailed tutorial on conducting survival analyses in R, including an introduction to the basics of survival analysis, landmark analyses and time-dependent covariates, competing risks, and a selection of advanced topics.
+[Survival analysis in R](https://www.emilyzabor.net/tutorials/survival_analysis_in_r_tutorial.html): A detailed tutorial on conducting survival analyses in R, including an introduction to the basics of survival analysis, landmark analyses and time-dependent covariates, competing risks, and a selection of advanced topics.
 
 
 # R Software
 
-- **{ppseq}**: A package of functions to design clinical trials with sequential Bayesian predictive probability monitoring for futility. Currently functionality is available for one-arm and two-arm clinical trials, and functionality for basket trials is under development. Details at [http://www.emilyzabor.com/ppseq/](http://www.emilyzabor.com/ppseq/)
+- **{ppseq}**: A package of functions to design clinical trials with sequential Bayesian predictive probability monitoring for futility. Currently functionality is available for one-arm and two-arm clinical trials, and functionality for basket trials is under development. Details at [http://www.emilyzabor.net/ppseq/](http://www.emilyzabor.net/ppseq/)
 
-- **{riskclustr}**: A package of functions for the study of etiologic heterogeneity. Details at [https://www.emilyzabor.com/riskclustr/](https://www.emilyzabor.com/riskclustr/)
+- **{riskclustr}**: A package of functions for the study of etiologic heterogeneity. Details at [https://www.emilyzabor.net/riskclustr/](https://www.emilyzabor.net/riskclustr/)
 
-- **{condsurv}**: A package for conditional survival analysis. Details at [https://www.emilyzabor.com/condsurv/](https://www.emilyzabor.com/condsurv/)
+- **{condsurv}**: A package for conditional survival analysis. Details at [https://www.emilyzabor.net/condsurv/](https://www.emilyzabor.net/condsurv/)
 
 
 # Contact

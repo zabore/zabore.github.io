@@ -179,6 +179,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1251,15 +1252,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -1782,7 +1789,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1821,43 +1828,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <div class="d-article">
-<p>I am seeking a postdoctoral researcher in cancer biostatistics to
-join me in the Department of Quantitative Health Sciences at Cleveland
-Clinic.</p>
+<p>I am seeking a postdoctoral researcher in cancer biostatistics to join me in the Department of Quantitative Health Sciences at Cleveland Clinic.</p>
 <p><strong>About the position</strong></p>
-<p>The main focus of the postdoctoral researcher will be the development
-of statistical methods for early phase oncology clinical trials. The
-postdoctoral researcher will be mentored in a variety of professional
-and analytic skills that will serve them in their early career as a
-biostatistician including independent statistical methods research,
-simulation studies, the oral and written communication of scientific
-results, and conducting effective scientific collaborations. In addition
-to publishing manuscripts, the postdoctoral researcher will have the
-opportunity to contribute to R package development. The postdoctoral
-researcher will also have the opportunity to work on collaborative
-projects in a variety of oncology applications, such as development of
-prediction models, cost-effectiveness analyses, survival modeling, and
-analysis of electronic health records data. Experience or interest in
-Bayesian statistics and R programming would be useful for this
-position.</p>
+<p>The main focus of the postdoctoral researcher will be the development of statistical methods for early phase oncology clinical trials. The postdoctoral researcher will be mentored in a variety of professional and analytic skills that will serve them in their early career as a biostatistician including independent statistical methods research, simulation studies, the oral and written communication of scientific results, and conducting effective scientific collaborations. In addition to publishing manuscripts, the postdoctoral researcher will have the opportunity to contribute to R package development. The postdoctoral researcher will also have the opportunity to work on collaborative projects in a variety of oncology applications, such as development of prediction models, cost-effectiveness analyses, survival modeling, and analysis of electronic health records data. Experience or interest in Bayesian statistics and R programming would be useful for this position.</p>
 <p><strong>Details</strong></p>
-<p>Cleveland Clinic provides a comprehensive benefits package that
-includes paid time off, parental leave, annual travel stipend, and
-health care benefits. Additional details of the included benefits are
-available on request. The salary range for this position is in line with
-current NIH postdoctoral pay, $56,000-$58,000 per year. The position is
-for up to 2 years, depending on satisfactory performance in the first
-year. Start date is flexible and the position will remain open until
-filled.</p>
+<p>Cleveland Clinic provides a comprehensive benefits package that includes paid time off, parental leave, annual travel stipend, and health care benefits. Additional details of the included benefits are available on request. The salary range for this position is in line with current NIH postdoctoral pay. The position is for up to 2 years, depending on satisfactory performance in the first year. Start date is flexible and the position will remain open until filled.</p>
 <p><strong>To apply</strong></p>
-<p>Interested applicants should send 1) a letter of interest describing
-their research interests, relevant skills and experience, and career
-goals, 2) their most up-to-date CV, and 3) the names and contact
-information for 2-3 references via e-mail to <a
-href="mailto:zabore2@ccf.org" class="email">zabore2@ccf.org</a>. All
-applications will be considered thoroughly and equally.</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Interested applicants should send 1) a letter of interest describing their research interests, relevant skills and experience, and career goals, 2) their most up-to-date CV, and 3) the names and contact information for 2-3 references via e-mail to <a href="mailto:zabore2@ccf.org" class="email">zabore2@ccf.org</a>. All applications will be considered thoroughly and equally.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

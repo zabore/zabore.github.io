@@ -1,18 +1,4 @@
----
-title: "Postdtoral researcher advertisement"
-site: distill::distill_website
----
 
-Dr. Emily Zabor (https://www.emilyzabor.com/) is seeking a postdoctoral researcher in cancer biostatistics to work in the Department of Quantitative Health Sciences at Cleveland Clinic.
-
-About the position:
-The main focus of the postdoctoral researcher will be the development of statistical methods for early phase oncology clinical trials. The postdoctoral researcher will be mentored in a variety of professional and analytic skills that will serve them in their early career as a biostatistician including independent statistical methods research, simulation studies, the oral and written communication of scientific results, and conducting effective scientific collaborations. In addition to publishing manuscripts, the postdoctoral researcher will have the opportunity to contribute to R package development. The postdoctoral researcher will also have the opportunity to work on collaborative projects in a variety of oncology applications, such as development of prediction models, cost-effectiveness analyses, survival modeling, and analysis of electronic health records data. Experience or interest in Bayesian statistics and R programming would be useful for this position. 
-
-Details:
-Cleveland Clinic provides a comprehensive benefits package that includes paid time off, parental leave, annual travel stipend, and health care benefits. Additional details of the included benefits are available on request. The salary range for this position is in line with current NIH postdoctoral pay, $56,000-$58,000 per year. The position is for up to 2 years, depending on satisfactory performance in the first year. Start date is flexible and the position will remain open until filled.
-
-To apply:
-Interested applicants should send 1) a letter of interest describing their research interests, relevant skills and experience, and career goals, 2) their most up-to-date CV, and 3) the names and contact information for 2-3 references via e-mail at zabore2@ccf.org. All applications will be considered thoroughly and equally.
 
 
 
