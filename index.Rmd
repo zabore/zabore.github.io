@@ -21,7 +21,6 @@ site: distill::distill_website
 set.seed(1234)
 ```
 
-`r emo::ji("loud")`<span style="color:#00843d;">**I am currently hiring for a postdoctoral researcher in cancer biostatistics to join me in the Department of Quantitative Health Sciences at Cleveland Clinic. Please [click here](postdoc-ad.html) for details.**</span>`r emo::ji("loud")`
 
 # About 
 
