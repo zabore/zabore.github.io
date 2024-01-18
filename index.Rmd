@@ -2,7 +2,7 @@
 title: "Emily C. Zabor"
 image: "images/emily-touched-8-crop.jpg"
 links:
-  - label: '`r icons::academicons("google-scholar")`'
+  - label: '`r fontawesome::fa("graduation-cap")`'
     url: "https://scholar.google.com/citations?user=tLbQTZMAAAAJ&hl=en"
   - label: '`r fontawesome::fa("github")`'
     url: "http://github.com/zabore"
