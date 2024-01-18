@@ -6,8 +6,6 @@ links:
     url: "https://scholar.google.com/citations?user=tLbQTZMAAAAJ&hl=en"
   - label: '`r fontawesome::fa("github")`'
     url: "http://github.com/zabore"
-  - label: '`r fontawesome::fa("twitter")`'
-    url: "https://twitter.com/zabormetrics"
   - label: '`r fontawesome::fa("linkedin")`'
     url: "https://www.linkedin.com/in/emily-zabor-59b902b7/"
 output: 
@@ -24,13 +22,13 @@ set.seed(1234)
 
 # About 
 
-I am an Assistant Staff Biostatistician at the Cleveland Clinic in the Department of Quantitative Health Sciences, with a joint appointment in the Taussig Cancer Institute. I also hold an academic appointment as Assistant Professor of Medicine at the Cleveland Clinic Lerner College of Medicine of Case Western Reserve University. 
+I am an Associate Staff Biostatistician at the Cleveland Clinic in the Department of Quantitative Health Sciences, with a joint appointment in the Taussig Cancer Institute. I also hold an academic appointment as Assistant Professor of Medicine at the Cleveland Clinic Lerner College of Medicine of Case Western Reserve University. 
 
 My research interests are in early phase clinical trial design and statistical methods for observational studies, with applications to oncology.
 
 I earned my MS degree in biostatistics from The University of Minnesota and my DrPH degree in biostatistics from Columbia University.  
 
-Please see my [CV](./files/Zabor_Emily_CV.pdf) for details of my academic work.
+Please see my [CV](./files/Zabor-Emily-CV.pdf) for details of my academic work.
 
 
 # Tutorials
