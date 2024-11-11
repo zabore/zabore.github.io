@@ -4,7 +4,7 @@ title: "Test slides"
 
 > Here are my test slides
 
-[Full Screen](slides.qmd)
+[Full Screen](slides.html)
 
 ```{=html}
 <iframe class="slide-deck" src="slides.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
