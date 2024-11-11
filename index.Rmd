@@ -47,7 +47,7 @@ Please see my [CV](./files/Zabor-Emily-CV.pdf) for details of my academic work.
 
 # Presentations
 
-[Test slides](slides/2024-rladies-philadelphia/)
+[R-Ladies Philly](slides/2024-rladies-philly/) (2024-12-17)
 
 
 # Contact

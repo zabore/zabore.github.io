@@ -1,0 +1,298 @@
+---
+title: "Introduction to Survival Analysis in R"
+subtitle: "R-Ladies Philly"
+date: 2024-12-17
+author: "Emily C. Zabor"
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: false
+    logo: CC_c.png
+    theme: [default, custom.scss]
+title-slide-attributes:
+  data-background-image: CC_hires_r.png
+  data-background-position: bottom
+  data-background-size: 20%
+  data-background-color: "#0078bf"
+include-in-header:
+  - text: |
+      <style>
+      #title-slide .title {
+        color: #FFFFFF;
+        font-size: 1.2em;
+      } .subtitle {
+        color: #FFFFFF;
+      } .quarto-title-authors {
+        color: #FFFFFF;
+      } .date {
+        color: #FFFFFF;
+      }
+      </style>
+  - text: |
+      <style>
+      .reveal .slide-logo {
+        max-height: unset;
+        height: 40px !important;
+      }
+      </style>
+include-after-body: nologo-script.js
+---
+
+
+```{r}
+library(tibble)
+library(ggplot2)
+library(ezfun)
+library(survival)
+```
+
+```{r}
+# See https://github.com/posit-conf-2023/quarto-r/blob/main/materials/1-single-docs/1-welcome-to-quarto/index.qmd 
+# And associated https://posit-conf-2023.github.io/quarto-r/
+# For example of how I set this up folder-structure-wise
+# And how I embedded the slides in the webpage
+```
+
+
+## What are survival data anyway?
+
+![](images/distinct-start-end.png)
+
+
+## Examples from cancer
+
+- Time from diagnosis to death
+- Time from surgery to recurrence of disease
+- Time from start of treatment to progression of disease
+- Time from response to recurrence of disease
+
+
+## Examples from other fields
+
+- Time from HIV infection to development of AIDS
+- Time to from diagnosis with heart disease to heart attack
+- Time from dicharge from rehabilitation facility to recurrence of substance abuse
+- Time from birth to initiation of sexual activity
+- Time from production to machine malfunction
+
+
+## A rose by any other name...
+
+Because time-to-event data are common in many fields, it also goes by names besides survival analysis including:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- Reliability analysis
+- Duration analysis
+- Event history analysis
+- Time-to-event analysis
+:::
+
+::: {.column width="50%"}
+![](images/tomayto-tomahto.jpg)
+:::
+
+::::
+
+
+## What is censoring? 
+
+::: {style="font-size: 125%;"}
+
+**Censoring** occurs when the event of interest is not observed after a period of follow-up
+
+:::
+
+
+## But isn't this just binary data??
+
+- **Binary data** doesn't have the ability to change depending on the time of analysis, e.g. 5-year survival will have the same value whether it is analyzed at 5 years and 1 day, 5 years and 2 days, 6 years, etc. Either a participant died by 5 years or they didn't.
+
+- **Time-to-event data** may have different values depending on the time of analysis, e.g. overall survival will have different values depending on whether it is analyzed at 5 years and 1 day or at 6 years, since additional participants can die between those two time points.
+
+
+## Right censoring example
+
+```{r swimmer, echo = FALSE, fig.width = 8, fig.height = 4}
+set.seed(20241111)
+fkdt <- tibble(Subject = as.factor(1:10), 
+                   Years = sample(4:20, 10, replace = T),
+                   censor = sample(c("Censor", rep("Event", 2)), 10, 
+                                   replace = T))
+
+ggplot(fkdt, aes(Subject, Years)) + 
+  geom_bar(stat = "identity", width = 0.2, fill = ccf_cols("ccf_black")) + 
+  geom_point(data = fkdt, 
+             aes(Subject, Years, color = censor, shape = censor), 
+             size = 5) + 
+  geom_hline(yintercept = 18, linetype = "dashed", 
+             color = ccf_cols("ccf_blue")) + 
+  annotate(geom = "text", y = 17.6, x = 9, label = "Time of analysis", 
+           color = ccf_cols("ccf_blue"), angle = 90, size = 5) +
+  coord_flip() +
+  theme_minimal() + 
+  theme(legend.title = element_blank(),
+        legend.position = "bottom") + 
+  scale_color_manual(values = ccf_cols(c("ccf_green", "lightning_yellow"))) 
+
+ggsave("images/swimmer-plot.png")
+```
+
+
+## Reasons for censoring
+
+A subject may be censored due to:
+
+- Loss to follow-up
+- Withdrawal from study
+- No event by end of fixed study period
+
+
+## Other types of censoring
+
+- Left censoring: when the event or censoring occurred before a study has started or data is collected
+- Interval censoring: when the event or censoring occurred between two dates but when is not known exactly
+
+Today we will focus only on **right** censoring.
+
+
+## Recall this plot
+
+```{r echo = FALSE}
+knitr::include_graphics("images/swimmer-plot.png")
+```
+
+
+## Analysis must account for censored patients
+
+How would we compute the proportion who are event-free at 18 years?
+
+ - Subjects 1 and 9 **had the event before 10 years**
+ - Subjects 2 and 6 were **event-free at 10 years**
+ - Subjects 3, 4, and 5 **had the event after 10 years**
+ - Subjects 7, 8, and 10 were **censored before 10 years**
+ 
+ 
+## Additional reasons for survival analysis
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r fuptimes, echo = FALSE, fig.width = 5, fig.height = 5}
+ggplot(lung, aes(x = time, fill = factor(status))) +
+  geom_histogram(bins = 25, alpha = 0.5, position = "identity") +
+  scale_fill_manual(values = ezfun::ccf_palette("contrast"), 
+                    labels = c("Censored", "Dead")) +
+  ezfun::theme_ezbasic() +
+  labs(x = "Days",
+       y = "Count")
+```
+:::
+
+::: {.column width="50%"}
+- Distribution of follow-up times is skewed
+- Distribution may differ between censored and event patients
+- Follow-up times are always positive
+:::
+
+::::
+
+
+## (A very small amount of) mathematical notation
+
+To analyze survival data, we need to know the observed time $Y_i$ and the event indicator $\delta_i$. For subject $i$:
+
+- Observed time $Y_i = \min(T_i, C_i)$ where $T_i$ = event time and $C_i$ = censoring time
+- Event indicator $\delta_i$ = 1 if event observed (i.e. $T_i \leq C_i$), = 0 if censored (i.e. $T_i > C_i$) 
+
+
+## Survival is observed as a step function
+
+The probability that a subject will survive beyond any given specified time
+
+$$S(t) = Pr(T>t) = 1 - F(t)$$
+
+$S(t)$: survival function
+$F(t) = Pr(T \leq t)$: cumulative distribution function
+
+In theory the survival function is smooth; in practice we observe events on a discrete time scale.
+
+
+## Definitions
+
+The **survival probability** at a certain time, $S(t)$, is a conditional probability of surviving beyond that time, given that an individual has survived just prior to that time. The survival probability can be estimated as the number of patients who are alive without loss to follow-up at that time, divided by the number of patients who were alive just prior to that time.
+
+The **Kaplan-Meier** estimate of survival probability at a given time is the product of these conditional probabilities up until that given time. 
+
+At time 0, the survival probability is 1, i.e. $S(t_0) = 1$.
+
+
+## Example data
+
+NEED TO ADD DATES TO THE EXAMPLE DATA NEXT
+
+To access the example data used throughout this talk, install and load the {cancersimdata} package from my GitHub repo:
+
+```{r eval = FALSE, echo = TRUE}
+# If needed, install the remotes package first
+# install.packages("remotes")
+remotes::install_github(zabore/cancersimdata)
+library(cancersimdata)
+```
+
+
+## Connect with me
+
+<!-- I installed these icons through the terminal by running the code "quarto add quarto-ext/fontawesome" -->
+<!-- The _extensions folder was built under the zabore.github.io folder and I didn't know how to access it so I copied it under the 2024-rladies-philly folder -->
+
+{{< fa envelope >}} [zabore2@ccf.org](zabore2@ccf.org)
+
+{{< fa globe >}} [https://www.emilyzabor.com/](https://www.emilyzabor.com/)
+
+{{< fa brands github >}} [https://github.com/zabore](https://github.com/zabore)
+
+{{< fa brands linkedin >}} [https://www.linkedin.com/in/emily-zabor-59b902b7/](https://www.linkedin.com/in/emily-zabor-59b902b7/)
+
+{{< fa brands bluesky >}} [https://bsky.app/profile/zabore.bsky.social/](https://bsky.app/profile/zabore.bsky.social/)
+
+
+## Further reading
+
+::: {style="font-size: 50%;"}
+
+> Clark, T., Bradburn, M., Love, S., & Altman, D. (2003). Survival analysis part I: Basic concepts and first analyses. 232-238. ISSN 0007-0920.
+
+> M J Bradburn, T G Clark, S B Love, & D G Altman. (2003). Survival Analysis Part II: Multivariate data analysis – an introduction to concepts and methods. British Journal of Cancer, 89(3), 431-436.
+
+> Bradburn, M., Clark, T., Love, S., & Altman, D. (2003). Survival analysis Part III: Multivariate data analysis -- choosing a model and assessing its adequacy and fit. 89(4), 605-11.
+
+> Clark, T., Bradburn, M., Love, S., & Altman, D. (2003). Survival analysis part IV: Further concepts and methods in survival analysis. 781-786. ISSN 0007-0920.
+
+:::
+
+
+```{r}
+knitr::knit_exit()
+```
+
+
+
+
+
+
+## Common research questions relate to times and probabilities
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](images/people-dead-alive.png)
+:::
+
+::: {.column width="50%"}
+- What is the probability of remaining event-free for a certain number of years?
+- What is the average amount of event-free time?
+:::
+
+::::
