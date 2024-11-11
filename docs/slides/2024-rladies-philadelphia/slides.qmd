@@ -1,0 +1,69 @@
+---
+title: "Introduction to Survival Analysis in R"
+subtitle: "R-Ladies Philly"
+date: "2024-12-17"
+author: "Emily C. Zabor"
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: false
+    logo: CC_c.png
+    theme: [default, custom.scss]
+title-slide-attributes:
+  data-background-image: CC_hires_r.png
+  data-background-position: bottom
+  data-background-size: 20%
+  data-background-color: "#0078bf"
+include-in-header:
+  - text: |
+      <style>
+      #title-slide .title {
+        color: #FFFFFF;
+        font-size: 1.2em;
+      } .subtitle {
+        color: #FFFFFF;
+      } .quarto-title-authors {
+        color: #FFFFFF;
+      } .date {
+        color: #FFFFFF;
+      }
+      </style>
+  - text: |
+      <style>
+      .reveal .slide-logo {
+        max-height: unset;
+        height: 40px !important;
+      }
+      </style>
+include-after-body: nologo-script.js
+---
+
+
+## The basics
+
+Survival data are time-to-event data that consist of a distinct start time and end time.
+
+Examples from cancer:
+
+- Time from surgery to death
+- Time from start of treatment to progression
+- Time from response to recurrence
+
+## Examples from other fields
+
+Time-to-event data are common in many other fields. Some other examples include:
+
+- Time from HIV infection to development of AIDS
+- Time to heart attack
+- Time to onset of substance abuse
+- Time to initiation of sexual activity
+- Time to machine malfunction
+
+## A rose by any other name
+
+Because time-to-event data are common in many fields, it also goes by names besides survival analysis including:
+
+- Reliability analysis
+- Duration analysis
+- Event history analysis
+- Time-to-event analysis

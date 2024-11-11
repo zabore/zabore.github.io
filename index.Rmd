@@ -45,6 +45,11 @@ Please see my [CV](./files/Zabor-Emily-CV.pdf) for details of my academic work.
 - **{condsurv}**: A package for conditional survival analysis. Details at [https://www.emilyzabor.com/condsurv/](https://www.emilyzabor.com/condsurv/)
 
 
+# Presentations
+
+[Test slides](slides/2024-rladies-philadelphia/)
+
+
 # Contact
 
 You can reach me by email at [zabore2@ccf.org](mailto:zabore2@ccf.org).
