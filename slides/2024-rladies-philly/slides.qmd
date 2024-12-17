@@ -164,7 +164,7 @@ ggplot(fkdt, aes(Subject, Years)) +
         legend.position = "bottom") + 
   scale_color_manual(values = ccf_cols(c("ccf_green", "lightning_yellow"))) 
 
-ggsave("images/swimmer-plot.png")
+ggsave("images/swimmer-plot.png", width = 6, height = 4)
 ```
 
 
@@ -179,6 +179,8 @@ A subject may be censored due to:
 
 ## Other types of censoring
 
+::: {style="font-size: 80%;"}
+
 - Left censoring: when the event or censoring occurred before a study has started or data is collected
 - Interval censoring: when the event or censoring occurred between two dates but when is not known exactly
 
@@ -186,12 +188,16 @@ A subject may be censored due to:
 
 Today we will focus only on **right** censoring.
 
+:::
+
 
 ## Recall this plot {.nostretch}
 
-![](images/swimmer-plot.png){width = "50%"}
+![](images/swimmer-plot.png)
 
 ## Censoring must be considered in the analysis
+
+::: {style="font-size: 80%;"}
 
 How would we compute the proportion who are event-free at 15 years?
 
@@ -200,6 +206,8 @@ How would we compute the proportion who are event-free at 15 years?
  - The remaining subjects were **event-free and still being followed at 15 years**
 
 And how would you compute the median time-to-event when the event time is unknown for some patients?
+
+:::
 
 
 ## Additional reasons for survival analysis {.nostretch}
@@ -395,7 +403,7 @@ ggplot(bc_rt_data, aes(x = os_years, fill = factor(os_event))) +
   geom_histogram(bins = 25, alpha = 0.5, position = "identity")
 ```
 
-```{r echo = FALSE, fig.height = 5, fig.width = 6}
+```{r echo = FALSE, fig.height = 4.5, fig.width = 6}
 ggplot(bc_rt_data, aes(x = os_years, fill = factor(os_event))) +
   geom_histogram(bins = 25, alpha = 0.5, position = "identity") +
   scale_fill_manual(values = ezfun::ccf_palette("contrast"), 
@@ -712,7 +720,7 @@ Ignoring censoring leads to an **overestimate** of the overall survival probabil
 
 ::: {.column width="50%"}
 
-```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height = 5, fig.width = 5}
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height = 4.5, fig.width = 4.5}
 fakedata2 <- 
   bc_rt_data |> 
   mutate(
@@ -756,6 +764,8 @@ survfit(Surv(os_years, os_event) ~ 1,
 
 ## Estimating median survival time
 
+::: {style="font-size: 80%;"}
+
 Another quantity of interest in a survival analysis is the average survival time, which we quantify using the median. 
 
 *Note that survival times are not expected to be normally distributed so the mean is not an appropriate summary.*
@@ -768,12 +778,14 @@ survfit(Surv(os_years, os_event) ~ 1, data = bc_rt_data)
 
 We see the median survival time is is NA, which means that it has not yet been reached in this study. This is common in scenarios when the event rate is low, or follow-up time is short.
 
+:::
+
 
 ## What does median survival mean? {.nostretch}
 
 Median survival is the time on the x-axis corresponding to a survival probability of 0.5 on the y-axis. Here we see there is no time where the horizontal line at 0.5 meets the survival curve.
 
-```{r, message = FALSE, echo = FALSE, fig.height = 5, fig.width = 6}
+```{r, message = FALSE, echo = FALSE, fig.height = 4.5, fig.width = 5.5}
 plot2 <- plot_main
 
 plot2 <- 
@@ -817,7 +829,7 @@ Ignoring censoring leads to an **underestimate** of median survival time because
 
 ::: {.column width="50%"}
 
-```{r echo = FALSE, fig.height = 5, fig.width = 5, message = FALSE, warning = FALSE}
+```{r echo = FALSE, fig.height = 4.5, fig.width = 4.5, message = FALSE, warning = FALSE}
 fakedata <- 
   bc_rt_data |> 
   filter(os_event == 1) |> 
@@ -849,7 +861,7 @@ We can produce nice tables of median survival time estimates using the `tbl_surv
 ```{r warning = FALSE, echo = T}
 #| output-location: column
 survfit(Surv(os_years, os_event) ~ 1, 
-        data = bc_rt_data) %>% 
+        data = bc_rt_data) |> 
   tbl_survfit(
     probs = 0.5,
     label_header = 
@@ -859,10 +871,18 @@ survfit(Surv(os_years, os_event) ~ 1,
 
 <br>
 
+::: {style="font-size: 60%;"}
+
 *In this case, this table is not informative, but is included for demonstration purposes. In a dataset like this where median survival is not reached, x-time estimates can be presented instead, sometimes for multiple timepoints*
+
+:::
+
+
 
 
 ## Comparing survival times between groups
+
+::: {style="font-size: 80%;"}
 
 We can conduct between-group significance tests using a **log-rank test**. 
 
@@ -874,8 +894,12 @@ The log-rank test equally weights observations over the entire follow-up time an
 
 There are versions that more heavily weight the early or late follow-up that could be more appropriate depending on the research question (see `?survdiff` for different test options).
 
+:::
+
 
 ## Conducting the log-rank test
+
+::: {style="font-size: 80%;"}
 
 We get the log-rank p-value using the `survdiff()` function from the survival package. For example, we can test whether there was a difference in survival time according to PMRT:
 
@@ -885,10 +909,12 @@ survdiff(Surv(os_years, os_event) ~ rt, data = bc_rt_data)
 
 We see that there was a significant difference in overall survival according to PMRT, with a p-value of p = `r ifelse(survdiff(Surv(os_years, os_event) ~ rt, data = bc_rt_data)$pvalue<.001, "<.001", round(survdiff(Surv(os_years, os_event) ~ rt, data = bc_rt_data)$pvalue, 3))`.
 
+:::
+
 
 ## Add log-rank p-value to Kaplan-Meier plot {.nostretch}
 
-```{r echo = T, fig.height = 5, fig.width = 5}
+```{r echo = T, fig.height = 4.5, fig.width = 4.5}
 #| code-line-numbers: "21"
 #| output-location: column
 survfit2(
@@ -917,8 +943,6 @@ survfit2(
 
 ## The Cox regression model
 
-::: {style="font-size: 75%;"}
-
 We may want to quantify an effect size for a single variable, or include more than one variable into a regression model to account for the effects of multiple variables.
 
 The Cox regression model is a semi-parametric model that can be used to fit univariate and multivariable regression models that have survival outcomes.
@@ -928,6 +952,9 @@ $$h(t|X_i) = h_0(t) \exp(\beta_1 X_{i1} + \cdots + \beta_p X_{ip})$$
 $h(t)$:  hazard, or the instantaneous rate at which events occur
 $h_0(t)$: underlying baseline hazard
 
+
+## Cox regression assumptions
+
 Some key assumptions of the model:
 
 - non-informative censoring
@@ -935,7 +962,6 @@ Some key assumptions of the model:
 
 *Note that parametric regression models for survival outcomes are also available, but they won't be addressed in this tutorial.*
 
-:::
 
 ## How to interpret a hazard ratio
 
@@ -963,7 +989,7 @@ mod1 <- coxph(Surv(os_years, os_event) ~ rt, data = bc_rt_data)
 
 We can creates tables of results using the `tbl_regression()` function from the gtsummary package, with the option to exponentiate set to TRUE to return the hazard ratio rather than the log hazard ratio:
 
-```{r warning = FALSE}
+```{r warning = FALSE, echo = T}
 #| output-location: column
 mod1 |> 
   tbl_regression(
