@@ -1,0 +1,5 @@
+---
+title: "Presentation slides"
+---
+
+[R-Ladies Philly: Introduction to Survival Analysis in R](slides/2024-rladies-philly)
