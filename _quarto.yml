@@ -20,4 +20,4 @@ format:
     toc: true
 
 
-
+plugins: jekyll-redirect-from

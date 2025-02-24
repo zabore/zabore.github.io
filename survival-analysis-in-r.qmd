@@ -1,6 +1,6 @@
 ---
 title: "Survival analysis in R"
-redirect_from:
+aliases:
   - /tutorials/survival_analysis_in_r_tutorial/
   - https://www.emilyzabor.com/tutorials/survival_analysis_in_r_tutorial.html
 ---
