@@ -1,0 +1,1039 @@
+---
+title: "Introduction to Survival Analysis in R"
+subtitle: "R-Ladies Philly"
+date: 2024-12-17
+author: "Emily C. Zabor"
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: false
+    logo: CC_c.png
+    theme: [default, custom.scss]
+title-slide-attributes:
+  data-background-image: CC_hires_r.png
+  data-background-position: bottom
+  data-background-size: 20%
+  data-background-color: "#0078bf"
+include-in-header:
+  - text: |
+      <style>
+      #title-slide .title {
+        color: #FFFFFF;
+        font-size: 1.2em;
+      } .subtitle {
+        color: #FFFFFF;
+      } .quarto-title-authors {
+        color: #FFFFFF;
+      } .date {
+        color: #FFFFFF;
+      }
+      </style>
+  - text: |
+      <style>
+      .reveal .slide-logo {
+        max-height: unset;
+        height: 40px !important;
+      }
+      </style>
+include-after-body: nologo-script.js
+---
+
+
+```{r}
+library(tibble)
+library(ggplot2)
+library(ezfun)
+library(survival)
+library(dplyr)
+```
+
+```{r}
+# See https://github.com/posit-conf-2023/quarto-r/blob/main/materials/1-single-docs/1-welcome-to-quarto/index.qmd 
+# And associated https://posit-conf-2023.github.io/quarto-r/
+# For example of how I set this up folder-structure-wise
+# And how I embedded the slides in the webpage
+```
+
+
+## Hello
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Who am I**
+
+Associate Staff Biostatistician at the Cleveland Clinic in the Department of Quantitative Health Sciences and the Taussig Cancer Institute.
+
+Applied cancer biostatistics and methods research in early phase oncology clinical trial design and methods for retrospective data analysis.
+:::
+
+::: {.column width="50%"}
+**Why am I here**
+
+Sometimes, despite the actual focus of your career, you end up best known for a website post on survival analysis in R that you made for an internal training back in 2018 `r emo::ji("shrug")`.
+
+Full tutorial is available on my [website](https://www.emilyzabor.com/tutorials/survival_analysis_in_r_tutorial.html).
+:::
+
+::::
+
+
+## What are survival data anyway?
+
+![](images/distinct-start-end.png)
+
+
+## Examples from cancer
+
+- Time from diagnosis to death
+- Time from surgery to recurrence of disease
+- Time from start of treatment to progression of disease
+- Time from response to recurrence of disease
+
+
+## Examples from other fields
+
+- Time from HIV infection to development of AIDS
+- Time to from diagnosis with heart disease to heart attack
+- Time from dicharge from rehabilitation facility to recurrence of substance abuse
+- Time from birth to initiation of sexual activity
+- Time from production to machine malfunction
+
+
+## A rose by any other name...
+
+Because time-to-event data are common in many fields, it also goes by names besides survival analysis including:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- Reliability analysis
+- Duration analysis
+- Event history analysis
+- Time-to-event analysis
+:::
+
+::: {.column width="50%"}
+![](images/tomayto-tomahto.jpg)
+:::
+
+::::
+
+
+## What is censoring? 
+
+::: {style="font-size: 125%;"}
+
+**Censoring** occurs when the event of interest is not observed after a period of follow-up
+
+:::
+
+
+## But isn't this just binary data??
+
+- **Binary data** doesn't have the ability to change depending on the time of analysis, e.g. 5-year survival will have the same value whether it is analyzed at 5 years and 1 day, 5 years and 2 days, 6 years, etc. Either a participant died by 5 years or they didn't.
+
+- **Time-to-event data** may have different values depending on the time of analysis, e.g. overall survival will have different values depending on whether it is analyzed at 5 years and 1 day or at 6 years, since additional participants can die between those two time points.
+
+
+## Right censoring example {.nostretch}
+
+```{r swimmer, echo = FALSE, fig.width = 8, fig.height = 6}
+set.seed(20241111)
+fkdt <- tibble(
+  Subject = as.factor(1:10), 
+  Years = sample(4:20, 10, replace = T),
+  censor = sample(c("Censor", rep("Event", 2)), 10, replace = T)) |> 
+  mutate(
+    # Shorten the time scale
+    Years = Years - 3
+  )
+
+ggplot(fkdt, aes(Subject, Years)) + 
+  geom_bar(stat = "identity", width = 0.2, fill = ccf_cols("ccf_black")) + 
+  geom_point(data = fkdt, 
+             aes(Subject, Years, color = censor, shape = censor), 
+             size = 5) + 
+  geom_hline(yintercept = 15, linetype = "dashed",
+             color = ccf_cols("ccf_blue")) +
+  annotate(geom = "text", y = 14.6, x = 8.5, label = "Time of analysis",
+           color = ccf_cols("ccf_blue"), angle = 90, size = 4) +
+  coord_flip() +
+  theme_minimal() + 
+  theme(legend.title = element_blank(),
+        legend.position = "bottom") + 
+  scale_color_manual(values = ccf_cols(c("ccf_green", "lightning_yellow"))) 
+
+ggsave("images/swimmer-plot.png", width = 6, height = 4)
+```
+
+
+## Reasons for censoring
+
+A subject may be censored due to:
+
+- Loss to follow-up
+- Withdrawal from study
+- No event by end of fixed study period
+
+
+## Other types of censoring
+
+::: {style="font-size: 80%;"}
+
+- Left censoring: when the event or censoring occurred before a study has started or data is collected
+- Interval censoring: when the event or censoring occurred between two dates but when is not known exactly
+
+    - Common in cancer studies where, for example, disease recurrence can only be detected by imaging, but the actual recurrence is known to have developed some time between the prior negative imaging and the current positive imaging
+
+Today we will focus only on **right** censoring.
+
+:::
+
+
+## Recall this plot {.nostretch}
+
+![](images/swimmer-plot.png)
+
+## Censoring must be considered in the analysis
+
+::: {style="font-size: 80%;"}
+
+How would we compute the proportion who are event-free at 15 years?
+
+ - Subjects 7, 8, and 10 **had the event before 15 years**
+ - Subjects 1 and 9 were **censored before 15 years**
+ - The remaining subjects were **event-free and still being followed at 15 years**
+
+And how would you compute the median time-to-event when the event time is unknown for some patients?
+
+:::
+
+
+## Additional reasons for survival analysis {.nostretch}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r fuptimes, echo = FALSE, fig.width = 5, fig.height = 5}
+ggplot(lung, aes(x = time, fill = factor(status))) +
+  geom_histogram(bins = 25, alpha = 0.5, position = "identity") +
+  scale_fill_manual(values = ezfun::ccf_palette("contrast"), 
+                    labels = c("Censored", "Dead")) +
+  ezfun::theme_ezbasic() +
+  labs(x = "Days",
+       y = "Count")
+```
+:::
+
+::: {.column width="50%"}
+- Distribution of follow-up times is skewed
+- Distribution may differ between censored and event patients
+- Follow-up times are always positive
+:::
+
+::::
+
+
+## Data components for survival analysis
+
+To analyze survival data, we need to know the observed time ($Y_i$) and the event indicator ($\delta_i$). For a subject (denoted by $i$):
+
+- Observed time is the minimum of the event time ($T_i$) and censoring time ($C_i$) ($Y_i = \min(T_i, C_i)$) 
+- Event indicator ($\delta_i$) is 1 if the event is observed (i.e. $T_i \leq C_i$) and 0 if censored (i.e. $T_i > C_i$) 
+
+
+## Load needed packages
+
+```{r echo = T}
+library(dplyr)
+library(ggplot2)
+library(lubridate)
+library(survival)
+library(ggsurvfit)
+library(gtsummary)
+```
+
+
+
+## Load example data
+
+To access the example data used throughout this talk, install and load the cancersimdata package from my GitHub repo:
+
+```{r eval = FALSE, echo = TRUE}
+# If needed, install the remotes package first
+install.packages("remotes")
+
+# Then install the GitHub repository for the dataset
+remotes::install_github("zabore/cancersimdata")
+
+# Finally, load the repository
+library(cancersimdata)
+```
+
+```{r}
+library(cancersimdata)
+```
+
+
+## Example data background
+
+`bc_rt_data` is a synthetic dataset based on real breast cancer data. The dataset contains information on 3000 women with T1-2N1M0 breast cancer, who had a mastectomy between 1995-2015. 
+
+The original study examined the association between post-mastectomy radiation therapy and disease recurrence.
+
+::: {style="font-size: 75%;"}
+
+> Sittenfeld SMC, Zabor EC, ..., Tendulkar RD. A multi-institutional prediction model to estimate the risk of recurrence and mortality after mastectomy for T1-2N1 breast cancer. Cancer. 2022 Aug 15;128(16):3057-3066. doi: 10.1002/cncr.34352. Epub 2022 Jun 17. PMID: 35713598; PMCID: PMC9539507.
+
+:::
+
+## Example data contents
+
+Relevant variables include:
+
+- rt: PMRT indicator, 1 = yes, 0 = no
+- os_event: Death indicator, 1 = dead, 0 = censored
+- date_of_mastecomy: Date of mastectomy
+- date_last_follow_up_death: Date of last follow-up or death
+
+<!-- #'   \item{age_dx_yrs}{Age at diagnosis in years} -->
+<!-- #'   \item{tumor_size_cm}{Tumor size in cm} -->
+<!-- #'   \item{grade}{Tumor grade, I, II, or III} -->
+<!-- #'   \item{n_ln_pos_3_vs_1or2}{Number of positive lymph nodes, 1 = 3, -->
+<!-- #'   0 = 1 or 2} -->
+<!-- #'   \item{er_or_pr_pos}{ER/PR status, 1 = ER+ or PR+, 0 = ER- and PR-} -->
+<!-- #'   \item{her2_pos}{Her2 status, 1 = positive, 0 = negative} -->
+<!-- #'   \item{optimal_systemic_therapy}{Receipt of optimal systemic therapy, -->
+<!-- #'   1 = yes (endocrine therapy if ER+ or PR+, trastuzumab if Her2+, -->
+<!-- #'   and CHT if ER- and PR-), 0 = no} -->
+
+
+## Example data format
+
+```{r echo = TRUE}
+bc_rt_data |> 
+  select(rt, os_event, date_of_mastectomy, date_last_follow_up_death) |> 
+  print(n = 10)
+```
+
+
+## Event indicator
+
+It is important to pay attention to the format of the event indicator.
+
+The `Surv()` function in the survival package accepts by default TRUE/FALSE, where TRUE is event and FALSE is censored; 1/0 where 1 is event and 0 is censored; or 2/1 where 2 is event and 1 is censored. **Please take care to ensure the event indicator is properly formatted.**
+
+Here we see that the documentation stipulates 1 is event (death) and 0 is censored.
+
+
+## Start and end dates
+
+Here, the start and end dates are in the dataset, formatted as character variables.
+
+We need to:
+
+1. Convert them to date format
+2. Calculate the follow-up times
+
+
+## Formatting dates
+
+The lubridate package offers a more comprehensive and user-friendly suite of functions for date manipulation. See the [lubridate website](https://lubridate.tidyverse.org/) for details.
+
+The `mdy()` function converts character values ordered month day year:
+
+```{r echo = T}
+bc_rt_data <- 
+  bc_rt_data |> 
+  mutate(
+    date_of_mastectomy = mdy(date_of_mastectomy), 
+    date_last_follow_up_death = mdy(date_last_follow_up_death)
+  )
+```
+
+
+## Formatted dates
+
+```{r echo = TRUE}
+bc_rt_data |> 
+  select(rt, os_event, date_of_mastectomy, date_last_follow_up_death) |> 
+  print(n = 10)
+```
+
+
+## Calculating follow-up times
+
+`%--%` is a special operator that creates an interval from a specific instant to another instant.
+
+`dyears(1)` converts the interval to be on the years scale
+
+```{r echo = TRUE}
+bc_rt_data <-
+  bc_rt_data |> 
+  mutate(
+    os_years = (date_of_mastectomy %--% date_last_follow_up_death) / dyears(1)
+  )
+```
+
+<br>
+
+::: {style="font-size: 75%;"}
+
+*Note that os_years is already a variable in this dataset, and we are simply overwriting it here with our own calculation, for demonstration purposes*
+
+:::
+
+
+## Checking follow-up times
+
+In real-world data it is common to encounter errors in data, such as end dates that come before start dates, etc.
+
+Typically as a quick check, I look at the numeric and visual distribution of follow-up times.
+
+
+## Checking follow-up times {.nostretch}
+
+```{r echo = TRUE}
+summary(bc_rt_data$os_years)
+```
+
+```{r echo = TRUE, eval = FALSE}
+ggplot(bc_rt_data, aes(x = os_years, fill = factor(os_event))) +
+  geom_histogram(bins = 25, alpha = 0.5, position = "identity")
+```
+
+```{r echo = FALSE, fig.height = 4.5, fig.width = 6}
+ggplot(bc_rt_data, aes(x = os_years, fill = factor(os_event))) +
+  geom_histogram(bins = 25, alpha = 0.5, position = "identity") +
+  scale_fill_manual(values = ezfun::ccf_palette("contrast"), 
+                    labels = c("Censored", "Dead")) +
+  ezfun::theme_ezbasic() +
+  labs(x = "Years", y = "Count")
+```
+
+
+
+## The survival package {.nostretch}
+
+The basis of the survival ecosystem in R.
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+![](images/survival-hex-sticker.png){width=80%}
+
+:::
+
+::: {.column width="60%"}
+
+<br>
+
+::: {style="font-size: 75%;"}
+
+- Began development in 1985
+- Total of 11.9M downloads
+- Active development ongoing
+- Many detailed vignettes covering both the basics and advanced topics
+- Includes the essential methods
+
+:::
+
+:::
+
+::::
+
+
+## The gtsummary package {.nostretch}
+
+::: {style="font-size: 75%;"}
+
+Create highly customizable tables, see [https://www.danieldsjoberg.com/gtsummary/](https://www.danieldsjoberg.com/gtsummary/) for details.
+
+:::
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+![](images/gtsummary-hex-sticker.png){width=90%}
+
+:::
+
+::: {.column width="60%"}
+
+::: {style="font-size: 75%;"}
+
+Use `tbl_survfit()` to create:
+
+- Tables of median event-free time
+- Tables of x-time event-free probability
+
+Use `tbl_uvregression()` to create:
+
+- Tables of univariate Cox regression results
+
+Use `tbl_regression()` to create:
+
+- Tables of multivariable Cox regression results
+
+:::
+
+:::
+
+::::
+
+
+## The ggsurvfit package {.nostretch}
+
+::: {style="font-size: 75%;"}
+
+Uses ggplot2 as the basis so known customizations are available with the `+` operator. See [https://www.danieldsjoberg.com/ggsurvfit/](https://www.danieldsjoberg.com/ggsurvfit/) for details.
+
+:::
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+![](images/ggsurvfit-hex-sticker.png){width=80%}
+
+:::
+
+::: {.column width="60%"}
+
+::: {style="font-size: 75%;"}
+- Plot Kaplan-Meier curves using `ggsurvfit`
+- Plot cumulative incidence curves for competing risks using `ggcuminc`
+- Plot multi-state models using `ggsurvfit`
+- Options to add confidence intervals, risk tables, quantiles, and more
+
+:::
+
+:::
+
+::::
+
+
+## Packages, in summary
+
+![](images/hex-add-equals-heart.png)
+
+
+
+## Survival object
+
+The `Surv()` function creates a survival object for use as the response in a model formula. There is one value for each subject that is the survival time, followed by a `+` if the subject was censored. 
+
+```{r survfunc}
+Surv(bc_rt_data$os_years, bc_rt_data$os_event)[1:10]
+```
+
+We see that that the first 9 subjects were censored at variaous times, and the 10th subject had an event at 5.5 years.
+
+
+## Kaplan-Meier
+
+The **Kaplan-Meier** method is the most common way to estimate survival times and probabilities. It is a non-parametric approach that results in a step function, where there is a step down each time an event occurs.
+
+
+## Survival curves
+
+The `survfit()` function creates survival curves using the Kaplan-Meier method based on a formula. 
+
+```{r survfit, echo = T}
+s1 <- survfit(Surv(os_years, os_event) ~ 1, data = bc_rt_data)
+```
+
+Some key components of this `survfit` object that will be used to create survival curves include:
+
+- `time`: the timepoints at which the curve has a step, i.e. at least one event occurred
+- `surv`: the survival probability estimate at the corresponding `time`
+
+
+## Kaplan-Meier curves with ggsurvfit
+
+The ggsurvfit package works best if you create the `survfit` object using the included `survfit2()` function, which uses the same syntax to what we saw previously with `survfit()`. 
+
+`survfit2()` tracks the environment from the function call, which allows the plot to have better default values for labeling and p-value reporting.
+
+```{r echo = T}
+s2 <- survfit2(Surv(os_years, os_event) ~ 1, data = bc_rt_data)
+```
+
+
+## Plotting the curves {.nostretch}
+
+```{r echo = T, fig.height = 5, fig.width = 6}
+#| code-line-numbers: "1-11"
+#| output-location: column
+s2 |> 
+  ggsurvfit() +
+  labs(
+    x = "Years from mastectomy",
+    y = "Overall survival probability"
+  ) + 
+  scale_y_continuous(
+    limits = c(0, 1)) + 
+  scale_x_continuous(
+    limits = c(0, 15), 
+    breaks = seq(0, 15, 5)) + 
+  add_confidence_interval() + 
+  add_risktable(
+    risktable_stats = "n.risk")
+```
+
+
+## Add confidence intervals {.nostretch}
+
+```{r echo = T, fig.height = 8, fig.height = 5, fig.width = 6}
+#| code-line-numbers: "12"
+#| output-location: column
+s2 |> 
+  ggsurvfit() +
+  labs(
+    x = "Years from mastectomy",
+    y = "Overall survival probability"
+  ) + 
+  scale_y_continuous(
+    limits = c(0, 1)) + 
+  scale_x_continuous(
+    limits = c(0, 15), 
+    breaks = seq(0, 15, 5)) + 
+  add_confidence_interval() + 
+  add_risktable(
+    risktable_stats = "n.risk")
+```
+
+
+## Add risk table {.nostretch}
+
+```{r echo = T, fig.height = 8, fig.height = 5, fig.width = 6}
+#| code-line-numbers: "13-14"
+#| output-location: column
+s2 |> 
+  ggsurvfit() +
+  labs(
+    x = "Years from mastectomy",
+    y = "Overall survival probability"
+  ) + 
+  scale_y_continuous(
+    limits = c(0, 1)) + 
+  scale_x_continuous(
+    limits = c(0, 15), 
+    breaks = seq(0, 15, 5)) + 
+  add_confidence_interval() + 
+  add_risktable(
+    risktable_stats = "n.risk")
+```
+
+
+## Survival curves: common mistakes
+
+1. Plotting the y-axis on a scale other than 0, 1
+2. Plotting the x-axis beyond the limit of reasonable confidence
+3. Adding too much extra information to plot face, e.g. hazard ratios, p-values, median survival time, etc
+4. Using default/non-descriptive axis labels
+5. Ignoring negative or missing survival times
+
+
+## Estimating x-time survival
+
+::: {style="font-size: 85%;"}
+
+One quantity of interest in a survival analysis is the probability of surviving beyond a certain point in time (x).
+
+For example, to estimate the probability of surviving to 10 years, use `summary` with the `times` argument.
+
+```{r 5yrest, echo = T}
+summary(survfit(Surv(os_years, os_event) ~ 1, data = bc_rt_data), times = 10)
+```
+
+We find that the 10-year probability of survival in this study is `r round(summary(s2, times = 10)$surv * 100)`%. 
+
+The associated lower and upper bounds of the 95\% confidence interval are also displayed.
+
+:::
+
+
+## What does x-time survival mean? {.nostretch}
+
+The 10-year survival probability is the point on the y-axis that corresponds to 10 years on the x-axis for the survival curve.
+
+```{r, message = FALSE, fig.height = 5, fig.width = 6}
+plot_main <-
+  survfit2(Surv(os_years, os_event) ~ 1, data = bc_rt_data) |> 
+  ggsurvfit() +
+  labs(
+    x = "Years from mastectomy",
+    y = "Overall survival probability"
+    ) + 
+  scale_y_continuous(limits = c(0, 1)) + 
+  scale_x_continuous(
+    limits = c(0, 15), 
+    breaks = seq(0, 15, 5)) + 
+  add_confidence_interval() +
+  add_risktable(risktable_stats = "n.risk")
+
+plot1 <- 
+  plot_main + 
+  geom_segment(x = 10, xend = 10, y = -0.05, yend = 0.727, 
+               linewidth = 1.2, color = ccf_cols("ccf_green")) +
+  geom_segment(x = 10, xend = -40, y = 0.727, yend = 0.727,
+               linewidth = 1.2, color = ccf_cols("ccf_green"),
+               arrow = arrow(length = unit(0.2, "inches"))) 
+
+plot1
+```
+
+
+## x-time survival: common mistakes
+
+::: {style="font-size: 85%;"}
+
+Using a "naive" estimate:
+
+`r table(bc_rt_data$os_event[bc_rt_data$os_years <= 10])[2]` of the `r nrow(bc_rt_data)` patients in the data died by 10 years so the "naive" estimate is calculated as:
+
+$$\Big(1 - \frac{501}{3000}\Big) \times 100 = 83\%$$
+You get an **incorrect** estimate of the 10-year probability of survival when you ignore the fact that `r table(bc_rt_data$os_event[bc_rt_data$os_years <= 10])[1]` patients were censored before 10 years.
+
+Recall the **correct** estimate of the 10-year probability of survival, accounting for censoring using the Kaplan-Meier method, was `r round(summary(s2, times = 10)$surv * 100)`%.
+
+:::
+
+
+## Illustration: overestimation using naive estimate {.small .nostretch}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {style="font-size: 75%;"}
+
+Ignoring censoring leads to an **overestimate** of the overall survival probability. Censored subjects only contribute information for a portion of the follow-up time, and then fall out of the risk set, pulling down the cumulative probability of survival. Ignoring censoring erroneously treats patients who are censored as part of the risk set for the entire follow-up period.
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height = 4.5, fig.width = 4.5}
+fakedata2 <- 
+  bc_rt_data |> 
+  mutate(
+    os_years = ifelse(os_event == 1, os_years, 21.26489), 
+    group = "Ignoring censoring") |> 
+  full_join(mutate(bc_rt_data, group = "With censoring"))
+
+survfit2(Surv(os_years, os_event) ~ group, data = fakedata2) |> 
+  ggsurvfit() +
+  labs(
+    x = "Days",
+    y = "Overall survival probability"
+    ) + 
+  scale_y_continuous(limits = c(0, 1)) + 
+  scale_x_continuous(limits = c(0, 15), breaks = seq(0, 15, 5)) +
+  add_confidence_interval() + 
+  scale_color_manual(values = ccf_palette("contrast"))+ 
+  scale_fill_manual(values = ccf_palette("contrast"))
+```
+
+:::
+
+::::
+
+
+## Table of x-time survival probability
+
+We can produce nice tables of x-time survival probability estimates using the `tbl_survfit()` function from the gtsummary package:
+
+```{r echo = T}
+#| output-location: column
+survfit(Surv(os_years, os_event) ~ 1, 
+        data = bc_rt_data) |> 
+  tbl_survfit(
+    times = 10,
+    label_header = 
+      "**10-year survival (95% CI)**"
+  )
+```
+
+
+## Estimating median survival time
+
+::: {style="font-size: 80%;"}
+
+Another quantity of interest in a survival analysis is the average survival time, which we quantify using the median. 
+
+*Note that survival times are not expected to be normally distributed so the mean is not an appropriate summary.*
+
+We can obtain the median survival directly from the `survfit` object:
+
+```{r}
+survfit(Surv(os_years, os_event) ~ 1, data = bc_rt_data)
+```
+
+We see the median survival time is is NA, which means that it has not yet been reached in this study. This is common in scenarios when the event rate is low, or follow-up time is short.
+
+:::
+
+
+## What does median survival mean? {.nostretch}
+
+Median survival is the time on the x-axis corresponding to a survival probability of 0.5 on the y-axis. Here we see there is no time where the horizontal line at 0.5 meets the survival curve.
+
+```{r, message = FALSE, echo = FALSE, fig.height = 4.5, fig.width = 5.5}
+plot2 <- plot_main
+
+plot2 <- 
+  plot_main +
+  geom_hline(yintercept = 0.5, linewidth = 1.2, color = ccf_cols("ccf_green"))
+
+plot2
+```
+
+
+## Median survival: common mistakes
+
+Using a "naive" estimate.
+
+Summarize the median survival time among the `r table(bc_rt_data$os_event)[2]` patients who died:
+
+```{r}
+bc_rt_data |> 
+  filter(os_event == 1) |> 
+  summarize(median_surv = median(os_years))
+```
+
+You get an **incorrect** estimate of median survival time of `r round(median(bc_rt_data$os_years[bc_rt_data$os_event == 1]), 1)` years when you ignore the fact that censored patients also contribute follow-up time.
+
+Recall the **correct** estimate of median survival was not reached.
+
+
+## Illustration: underestimation of median survival {.small .nostretch}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {style="font-size: 75%;"}
+
+Ignoring censoring leads to an **underestimate** of median survival time because the follow-up time that censored patients contribute is excluded, and the risk set is artificially small.
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+```{r echo = FALSE, fig.height = 4.5, fig.width = 4.5, message = FALSE, warning = FALSE}
+fakedata <- 
+  bc_rt_data |> 
+  filter(os_event == 1) |> 
+  mutate(group = "Ignoring censoring") |>  
+  full_join(mutate(bc_rt_data, group = "With censoring"))
+
+survfit2(Surv(os_years, os_event) ~ group, data = fakedata) |> 
+  ggsurvfit() +
+  labs(
+    x = "Years from mastectomy",
+    y = "Overall survival probability"
+    ) + 
+  scale_y_continuous(limits = c(0, 1)) + 
+  scale_x_continuous(limits = c(0, 15), breaks = seq(0, 15, 5)) +
+  add_confidence_interval() + 
+  scale_color_manual(values = ccf_palette("contrast"))+ 
+  scale_fill_manual(values = ccf_palette("contrast"))
+```
+
+:::
+
+::::
+
+
+## Table of median survival
+
+We can produce nice tables of median survival time estimates using the `tbl_survfit()` function from the gtsummary package:
+
+```{r warning = FALSE, echo = T}
+#| output-location: column
+survfit(Surv(os_years, os_event) ~ 1, 
+        data = bc_rt_data) |> 
+  tbl_survfit(
+    probs = 0.5,
+    label_header = 
+      "**Median survival (95% CI)**"
+  )
+```
+
+<br>
+
+::: {style="font-size: 60%;"}
+
+*In this case, this table is not informative, but is included for demonstration purposes. In a dataset like this where median survival is not reached, x-time estimates can be presented instead, sometimes for multiple timepoints*
+
+:::
+
+
+
+
+## Comparing survival times between groups
+
+::: {style="font-size: 80%;"}
+
+We can conduct between-group significance tests using a **log-rank test**. 
+
+<br>
+
+The log-rank test equally weights observations over the entire follow-up time and is the most common way to compare survival times between groups. 
+
+<br>
+
+There are versions that more heavily weight the early or late follow-up that could be more appropriate depending on the research question (see `?survdiff` for different test options).
+
+:::
+
+
+## Conducting the log-rank test
+
+::: {style="font-size: 80%;"}
+
+We get the log-rank p-value using the `survdiff()` function from the survival package. For example, we can test whether there was a difference in survival time according to PMRT:
+
+```{r echo = T}
+survdiff(Surv(os_years, os_event) ~ rt, data = bc_rt_data)
+```
+
+We see that there was a significant difference in overall survival according to PMRT, with a p-value of p = `r ifelse(survdiff(Surv(os_years, os_event) ~ rt, data = bc_rt_data)$pvalue<.001, "<.001", round(survdiff(Surv(os_years, os_event) ~ rt, data = bc_rt_data)$pvalue, 3))`.
+
+:::
+
+
+## Add log-rank p-value to Kaplan-Meier plot {.nostretch}
+
+```{r echo = T, fig.height = 4.5, fig.width = 4.5}
+#| code-line-numbers: "21"
+#| output-location: column
+survfit2(
+  Surv(os_years, os_event) ~ rt, 
+  data = bc_rt_data) |> 
+  ggsurvfit() +
+  labs(
+    x = "Years from mastectomy",
+    y = "Overall survival probability"
+  ) + 
+  scale_y_continuous(
+    limits = c(0, 1)) + 
+  scale_x_continuous(
+    limits = c(0, 15), 
+    breaks = seq(0, 15, 5)) + 
+  add_risktable(
+    risktable_stats = "n.risk"
+    ) + 
+  scale_color_manual(
+    values = ccf_palette("contrast"),
+    labels = c("No RT", "RT")
+  ) +
+  add_pvalue()
+```
+
+
+## The Cox regression model
+
+We may want to quantify an effect size for a single variable, or include more than one variable into a regression model to account for the effects of multiple variables.
+
+The Cox regression model is a semi-parametric model that can be used to fit univariate and multivariable regression models that have survival outcomes.
+
+$$h(t|X_i) = h_0(t) \exp(\beta_1 X_{i1} + \cdots + \beta_p X_{ip})$$
+
+$h(t)$:  hazard, or the instantaneous rate at which events occur
+$h_0(t)$: underlying baseline hazard
+
+
+## Cox regression assumptions
+
+Some key assumptions of the model:
+
+- non-informative censoring
+- proportional hazards
+
+*Note that parametric regression models for survival outcomes are also available, but they won't be addressed in this tutorial.*
+
+
+## How to interpret a hazard ratio
+
+The quantity of interest from a Cox regression model is a **hazard ratio (HR)**, which represents the instantaneous rate of occurrence of the event of interest in those who are still at risk for the event. 
+
+<br>
+
+If you have a regression parameter $\beta$, then HR = $\exp(\beta)$.
+
+<br>
+
+A HR < 1 indicates reduced hazard of event whereas a HR > 1 indicates an increased hazard of event. 
+
+
+## Fitting Cox models
+
+Fit regression models using the `coxph()` function from the survival package, which takes a `Surv()` object on the left hand side and has standard syntax for regression formulas in `R` on the right hand side.
+
+```{r echo = T}
+mod1 <- coxph(Surv(os_years, os_event) ~ rt, data = bc_rt_data)
+```
+
+
+## Table of Cox model results
+
+We can creates tables of results using the `tbl_regression()` function from the gtsummary package, with the option to exponentiate set to TRUE to return the hazard ratio rather than the log hazard ratio:
+
+```{r warning = FALSE, echo = T}
+#| output-location: column
+mod1 |> 
+  tbl_regression(
+    exp = TRUE,
+    label = list(rt ~ "PMRT")
+    ) 
+```
+
+HR = 0.72 implies that receipt of PMRT is associated with 0.72 times the hazard of death as compared to no PMRT.
+
+
+## Cox regression: common mistakes
+
+1. Overfitting. This occurs when there are too few events to support the number of included variables. Rule of thumb is 10-15 events per degree of freedom.
+2. Interpreting a hazard as a risk - they are related, but they are not the same.
+3. Overlooking the proportional hazards assumption
+
+
+## Connect with me
+
+<!-- I installed these icons through the terminal by running the code "quarto add quarto-ext/fontawesome" -->
+<!-- The _extensions folder was built under the zabore.github.io folder and I didn't know how to access it so I copied it under the 2024-rladies-philly folder -->
+
+{{< iconify ic:baseline-email >}} [zabore2@ccf.org](zabore2@ccf.org)
+
+{{< iconify hugeicons:internet >}} [https://www.emilyzabor.com/](https://www.emilyzabor.com/)
+
+{{< iconify mdi:github >}} [https://github.com/zabore](https://github.com/zabore)
+
+{{< iconify mdi:linkedin >}} [https://www.linkedin.com/in/emily-zabor-59b902b7/](https://www.linkedin.com/in/emily-zabor-59b902b7/)
+
+{{< iconify ri:bluesky-fill >}} [https://bsky.app/profile/zabore.bsky.social/](https://bsky.app/profile/zabore.bsky.social/)
+
+
+## Further reading
+
+::: {style="font-size: 50%;"}
+
+> Clark, T., Bradburn, M., Love, S., & Altman, D. (2003). Survival analysis part I: Basic concepts and first analyses. 232-238. ISSN 0007-0920.
+
+> M J Bradburn, T G Clark, S B Love, & D G Altman. (2003). Survival Analysis Part II: Multivariate data analysis – an introduction to concepts and methods. British Journal of Cancer, 89(3), 431-436.
+
+> Bradburn, M., Clark, T., Love, S., & Altman, D. (2003). Survival analysis Part III: Multivariate data analysis -- choosing a model and assessing its adequacy and fit. 89(4), 605-11.
+
+> Clark, T., Bradburn, M., Love, S., & Altman, D. (2003). Survival analysis part IV: Further concepts and methods in survival analysis. 781-786. ISSN 0007-0920.
+
+:::

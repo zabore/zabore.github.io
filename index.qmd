@@ -1,0 +1,23 @@
+---
+title: "Emily C. Zabor"
+about:
+  template: broadside
+  image: images/emily-touched-8.jpg
+  links:
+    - text: "{{< iconify ic:baseline-email size=2xl >}}"
+      href: mailto:zabore2@ccf.org
+    - text: "{{< iconify mdi:linkedin size=2xl >}}"
+      href: https://www.linkedin.com/in/emily-zabor-59b902b7/
+    - text: "{{< iconify mdi:github size=2xl >}}"
+      href: http://github.com/zabore
+    - text: "{{< iconify academicons:google-scholar size=2xl >}}"
+      href: https://scholar.google.com/citations?user=tLbQTZMAAAAJ&hl=en&oi=ao
+---
+
+I am an Associate Staff Biostatistician at the Cleveland Clinic in the Department of Quantitative Health Sciences, with a joint appointment in the Taussig Cancer Institute. I also hold an academic appointment as Associate Professor of Medicine at the Cleveland Clinic Lerner College of Medicine of Case Western Reserve University. 
+
+My research interests are in early phase clinical trial design, statistical methods for observational studies, prediction models, and survival analysis. I am an enthusiastic R user.
+
+I earned an MS degree in biostatistics from The University of Minnesota and a DrPH degree in biostatistics from Columbia University.  
+
+Please see my [**CV**](files/Zabor-Emily-CV.pdf) for details of my academic work.

@@ -1,0 +1,478 @@
+[
+  {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "Tutorials\nSurvival analysis in R: A detailed tutorial on conducting survival analyses in R, including an introduction to the basics of survival analysis, landmark analyses and time-dependent covariates, competing risks, and a selection of advanced topics.\n\n\nCourses\nR for Cleveland Clinic Molecular Medicine PhD program: Five one-hour sessions on the basics of R, followed by two two-hour sessions introducing biostatistics and epidemiology methods in R."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#hello",
+    "href": "talks/2024-rladies-philly/slides.html#hello",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Hello",
+    "text": "Hello\n\n\nWho am I\nAssociate Staff Biostatistician at the Cleveland Clinic in the Department of Quantitative Health Sciences and the Taussig Cancer Institute.\nApplied cancer biostatistics and methods research in early phase oncology clinical trial design and methods for retrospective data analysis.\n\nWhy am I here\nSometimes, despite the actual focus of your career, you end up best known for a website post on survival analysis in R that you made for an internal training back in 2018 🤷.\nFull tutorial is available on my website."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#what-are-survival-data-anyway",
+    "href": "talks/2024-rladies-philly/slides.html#what-are-survival-data-anyway",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "What are survival data anyway?",
+    "text": "What are survival data anyway?"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#examples-from-cancer",
+    "href": "talks/2024-rladies-philly/slides.html#examples-from-cancer",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Examples from cancer",
+    "text": "Examples from cancer\n\nTime from diagnosis to death\nTime from surgery to recurrence of disease\nTime from start of treatment to progression of disease\nTime from response to recurrence of disease"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#examples-from-other-fields",
+    "href": "talks/2024-rladies-philly/slides.html#examples-from-other-fields",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Examples from other fields",
+    "text": "Examples from other fields\n\nTime from HIV infection to development of AIDS\nTime to from diagnosis with heart disease to heart attack\nTime from dicharge from rehabilitation facility to recurrence of substance abuse\nTime from birth to initiation of sexual activity\nTime from production to machine malfunction"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#a-rose-by-any-other-name",
+    "href": "talks/2024-rladies-philly/slides.html#a-rose-by-any-other-name",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "A rose by any other name…",
+    "text": "A rose by any other name…\nBecause time-to-event data are common in many fields, it also goes by names besides survival analysis including:\n\n\n\nReliability analysis\nDuration analysis\nEvent history analysis\nTime-to-event analysis"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#what-is-censoring",
+    "href": "talks/2024-rladies-philly/slides.html#what-is-censoring",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "What is censoring?",
+    "text": "What is censoring?\n\nCensoring occurs when the event of interest is not observed after a period of follow-up"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#but-isnt-this-just-binary-data",
+    "href": "talks/2024-rladies-philly/slides.html#but-isnt-this-just-binary-data",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "But isn’t this just binary data??",
+    "text": "But isn’t this just binary data??\n\nBinary data doesn’t have the ability to change depending on the time of analysis, e.g. 5-year survival will have the same value whether it is analyzed at 5 years and 1 day, 5 years and 2 days, 6 years, etc. Either a participant died by 5 years or they didn’t.\nTime-to-event data may have different values depending on the time of analysis, e.g. overall survival will have different values depending on whether it is analyzed at 5 years and 1 day or at 6 years, since additional participants can die between those two time points."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#right-censoring-example",
+    "href": "talks/2024-rladies-philly/slides.html#right-censoring-example",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Right censoring example",
+    "text": "Right censoring example"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#reasons-for-censoring",
+    "href": "talks/2024-rladies-philly/slides.html#reasons-for-censoring",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Reasons for censoring",
+    "text": "Reasons for censoring\nA subject may be censored due to:\n\nLoss to follow-up\nWithdrawal from study\nNo event by end of fixed study period"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#other-types-of-censoring",
+    "href": "talks/2024-rladies-philly/slides.html#other-types-of-censoring",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Other types of censoring",
+    "text": "Other types of censoring\n\n\nLeft censoring: when the event or censoring occurred before a study has started or data is collected\nInterval censoring: when the event or censoring occurred between two dates but when is not known exactly\n\nCommon in cancer studies where, for example, disease recurrence can only be detected by imaging, but the actual recurrence is known to have developed some time between the prior negative imaging and the current positive imaging\n\n\nToday we will focus only on right censoring."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#recall-this-plot",
+    "href": "talks/2024-rladies-philly/slides.html#recall-this-plot",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Recall this plot",
+    "text": "Recall this plot"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#censoring-must-be-considered-in-the-analysis",
+    "href": "talks/2024-rladies-philly/slides.html#censoring-must-be-considered-in-the-analysis",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Censoring must be considered in the analysis",
+    "text": "Censoring must be considered in the analysis\n\nHow would we compute the proportion who are event-free at 15 years?\n\nSubjects 7, 8, and 10 had the event before 15 years\nSubjects 1 and 9 were censored before 15 years\nThe remaining subjects were event-free and still being followed at 15 years\n\nAnd how would you compute the median time-to-event when the event time is unknown for some patients?"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#additional-reasons-for-survival-analysis",
+    "href": "talks/2024-rladies-philly/slides.html#additional-reasons-for-survival-analysis",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Additional reasons for survival analysis",
+    "text": "Additional reasons for survival analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\nDistribution of follow-up times is skewed\nDistribution may differ between censored and event patients\nFollow-up times are always positive"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#data-components-for-survival-analysis",
+    "href": "talks/2024-rladies-philly/slides.html#data-components-for-survival-analysis",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Data components for survival analysis",
+    "text": "Data components for survival analysis\nTo analyze survival data, we need to know the observed time (\\(Y_i\\)) and the event indicator (\\(\\delta_i\\)). For a subject (denoted by \\(i\\)):\n\nObserved time is the minimum of the event time (\\(T_i\\)) and censoring time (\\(C_i\\)) (\\(Y_i = \\min(T_i, C_i)\\))\nEvent indicator (\\(\\delta_i\\)) is 1 if the event is observed (i.e. \\(T_i \\leq C_i\\)) and 0 if censored (i.e. \\(T_i &gt; C_i\\))"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#load-needed-packages",
+    "href": "talks/2024-rladies-philly/slides.html#load-needed-packages",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Load needed packages",
+    "text": "Load needed packages\n\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(lubridate)\nlibrary(survival)\nlibrary(ggsurvfit)\nlibrary(gtsummary)"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#load-example-data",
+    "href": "talks/2024-rladies-philly/slides.html#load-example-data",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Load example data",
+    "text": "Load example data\nTo access the example data used throughout this talk, install and load the cancersimdata package from my GitHub repo:\n\n# If needed, install the remotes package first\ninstall.packages(\"remotes\")\n\n# Then install the GitHub repository for the dataset\nremotes::install_github(\"zabore/cancersimdata\")\n\n# Finally, load the repository\nlibrary(cancersimdata)"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#example-data-background",
+    "href": "talks/2024-rladies-philly/slides.html#example-data-background",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Example data background",
+    "text": "Example data background\nbc_rt_data is a synthetic dataset based on real breast cancer data. The dataset contains information on 3000 women with T1-2N1M0 breast cancer, who had a mastectomy between 1995-2015.\nThe original study examined the association between post-mastectomy radiation therapy and disease recurrence.\n\n\nSittenfeld SMC, Zabor EC, …, Tendulkar RD. A multi-institutional prediction model to estimate the risk of recurrence and mortality after mastectomy for T1-2N1 breast cancer. Cancer. 2022 Aug 15;128(16):3057-3066. doi: 10.1002/cncr.34352. Epub 2022 Jun 17. PMID: 35713598; PMCID: PMC9539507."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#example-data-contents",
+    "href": "talks/2024-rladies-philly/slides.html#example-data-contents",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Example data contents",
+    "text": "Example data contents\nRelevant variables include:\n\nrt: PMRT indicator, 1 = yes, 0 = no\nos_event: Death indicator, 1 = dead, 0 = censored\ndate_of_mastecomy: Date of mastectomy\ndate_last_follow_up_death: Date of last follow-up or death"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#example-data-format",
+    "href": "talks/2024-rladies-philly/slides.html#example-data-format",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Example data format",
+    "text": "Example data format\n\nbc_rt_data |&gt; \n  select(rt, os_event, date_of_mastectomy, date_last_follow_up_death) |&gt; \n  print(n = 10)\n\n# A tibble: 3,000 × 4\n      rt os_event date_of_mastectomy date_last_follow_up_death\n   &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;              &lt;chr&gt;                    \n 1     0        0 09/11/2004         07/24/2009               \n 2     0        0 08/06/2011         11/07/2016               \n 3     0        0 06/10/1998         11/04/2005               \n 4     1        0 10/06/2013         04/30/2019               \n 5     1        0 11/22/2002         01/17/2008               \n 6     0        0 01/31/2013         01/12/2019               \n 7     1        0 05/03/2014         08/23/2016               \n 8     0        0 02/16/1998         11/12/2004               \n 9     1        0 03/04/2014         02/07/2020               \n10     1        1 03/06/1998         09/08/2003               \n# ℹ 2,990 more rows"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#event-indicator",
+    "href": "talks/2024-rladies-philly/slides.html#event-indicator",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Event indicator",
+    "text": "Event indicator\nIt is important to pay attention to the format of the event indicator.\nThe Surv() function in the survival package accepts by default TRUE/FALSE, where TRUE is event and FALSE is censored; 1/0 where 1 is event and 0 is censored; or 2/1 where 2 is event and 1 is censored. Please take care to ensure the event indicator is properly formatted.\nHere we see that the documentation stipulates 1 is event (death) and 0 is censored."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#start-and-end-dates",
+    "href": "talks/2024-rladies-philly/slides.html#start-and-end-dates",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Start and end dates",
+    "text": "Start and end dates\nHere, the start and end dates are in the dataset, formatted as character variables.\nWe need to:\n\nConvert them to date format\nCalculate the follow-up times"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#formatting-dates",
+    "href": "talks/2024-rladies-philly/slides.html#formatting-dates",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Formatting dates",
+    "text": "Formatting dates\nThe lubridate package offers a more comprehensive and user-friendly suite of functions for date manipulation. See the lubridate website for details.\nThe mdy() function converts character values ordered month day year:\n\nbc_rt_data &lt;- \n  bc_rt_data |&gt; \n  mutate(\n    date_of_mastectomy = mdy(date_of_mastectomy), \n    date_last_follow_up_death = mdy(date_last_follow_up_death)\n  )"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#formatted-dates",
+    "href": "talks/2024-rladies-philly/slides.html#formatted-dates",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Formatted dates",
+    "text": "Formatted dates\n\nbc_rt_data |&gt; \n  select(rt, os_event, date_of_mastectomy, date_last_follow_up_death) |&gt; \n  print(n = 10)\n\n# A tibble: 3,000 × 4\n      rt os_event date_of_mastectomy date_last_follow_up_death\n   &lt;dbl&gt;    &lt;dbl&gt; &lt;date&gt;             &lt;date&gt;                   \n 1     0        0 2004-09-11         2009-07-24               \n 2     0        0 2011-08-06         2016-11-07               \n 3     0        0 1998-06-10         2005-11-04               \n 4     1        0 2013-10-06         2019-04-30               \n 5     1        0 2002-11-22         2008-01-17               \n 6     0        0 2013-01-31         2019-01-12               \n 7     1        0 2014-05-03         2016-08-23               \n 8     0        0 1998-02-16         2004-11-12               \n 9     1        0 2014-03-04         2020-02-07               \n10     1        1 1998-03-06         2003-09-08               \n# ℹ 2,990 more rows"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#calculating-follow-up-times",
+    "href": "talks/2024-rladies-philly/slides.html#calculating-follow-up-times",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Calculating follow-up times",
+    "text": "Calculating follow-up times\n%--% is a special operator that creates an interval from a specific instant to another instant.\ndyears(1) converts the interval to be on the years scale\n\nbc_rt_data &lt;-\n  bc_rt_data |&gt; \n  mutate(\n    os_years = (date_of_mastectomy %--% date_last_follow_up_death) / dyears(1)\n  )\n\n\n\nNote that os_years is already a variable in this dataset, and we are simply overwriting it here with our own calculation, for demonstration purposes"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#checking-follow-up-times",
+    "href": "talks/2024-rladies-philly/slides.html#checking-follow-up-times",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Checking follow-up times",
+    "text": "Checking follow-up times\nIn real-world data it is common to encounter errors in data, such as end dates that come before start dates, etc.\nTypically as a quick check, I look at the numeric and visual distribution of follow-up times."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#checking-follow-up-times-1",
+    "href": "talks/2024-rladies-philly/slides.html#checking-follow-up-times-1",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Checking follow-up times",
+    "text": "Checking follow-up times\n\nsummary(bc_rt_data$os_years)\n\n    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. \n 0.02464  4.46749  6.35729  6.56711  8.55852 21.26489 \n\n\n\nggplot(bc_rt_data, aes(x = os_years, fill = factor(os_event))) +\n  geom_histogram(bins = 25, alpha = 0.5, position = \"identity\")"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#the-survival-package",
+    "href": "talks/2024-rladies-philly/slides.html#the-survival-package",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "The survival package",
+    "text": "The survival package\nThe basis of the survival ecosystem in R.\n\n\n\n\n\n\n\nBegan development in 1985\nTotal of 11.9M downloads\nActive development ongoing\nMany detailed vignettes covering both the basics and advanced topics\nIncludes the essential methods"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#the-gtsummary-package",
+    "href": "talks/2024-rladies-philly/slides.html#the-gtsummary-package",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "The gtsummary package",
+    "text": "The gtsummary package\n\nCreate highly customizable tables, see https://www.danieldsjoberg.com/gtsummary/ for details.\n\n\n\n\n\n\nUse tbl_survfit() to create:\n\nTables of median event-free time\nTables of x-time event-free probability\n\nUse tbl_uvregression() to create:\n\nTables of univariate Cox regression results\n\nUse tbl_regression() to create:\n\nTables of multivariable Cox regression results"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#the-ggsurvfit-package",
+    "href": "talks/2024-rladies-philly/slides.html#the-ggsurvfit-package",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "The ggsurvfit package",
+    "text": "The ggsurvfit package\n\nUses ggplot2 as the basis so known customizations are available with the + operator. See https://www.danieldsjoberg.com/ggsurvfit/ for details.\n\n\n\n\n\n\n\nPlot Kaplan-Meier curves using ggsurvfit\nPlot cumulative incidence curves for competing risks using ggcuminc\nPlot multi-state models using ggsurvfit\nOptions to add confidence intervals, risk tables, quantiles, and more"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#packages-in-summary",
+    "href": "talks/2024-rladies-philly/slides.html#packages-in-summary",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Packages, in summary",
+    "text": "Packages, in summary"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#survival-object",
+    "href": "talks/2024-rladies-philly/slides.html#survival-object",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Survival object",
+    "text": "Survival object\nThe Surv() function creates a survival object for use as the response in a model formula. There is one value for each subject that is the survival time, followed by a + if the subject was censored.\n\n\n [1] 4.865161+ 5.256674+ 7.403149+ 5.563313+ 5.152635+ 5.946612+ 2.308008+\n [8] 6.737851+ 5.930185+ 5.508556 \n\n\nWe see that that the first 9 subjects were censored at variaous times, and the 10th subject had an event at 5.5 years."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#kaplan-meier",
+    "href": "talks/2024-rladies-philly/slides.html#kaplan-meier",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Kaplan-Meier",
+    "text": "Kaplan-Meier\nThe Kaplan-Meier method is the most common way to estimate survival times and probabilities. It is a non-parametric approach that results in a step function, where there is a step down each time an event occurs."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#survival-curves",
+    "href": "talks/2024-rladies-philly/slides.html#survival-curves",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Survival curves",
+    "text": "Survival curves\nThe survfit() function creates survival curves using the Kaplan-Meier method based on a formula.\n\ns1 &lt;- survfit(Surv(os_years, os_event) ~ 1, data = bc_rt_data)\n\nSome key components of this survfit object that will be used to create survival curves include:\n\ntime: the timepoints at which the curve has a step, i.e. at least one event occurred\nsurv: the survival probability estimate at the corresponding time"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#kaplan-meier-curves-with-ggsurvfit",
+    "href": "talks/2024-rladies-philly/slides.html#kaplan-meier-curves-with-ggsurvfit",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Kaplan-Meier curves with ggsurvfit",
+    "text": "Kaplan-Meier curves with ggsurvfit\nThe ggsurvfit package works best if you create the survfit object using the included survfit2() function, which uses the same syntax to what we saw previously with survfit().\nsurvfit2() tracks the environment from the function call, which allows the plot to have better default values for labeling and p-value reporting.\n\ns2 &lt;- survfit2(Surv(os_years, os_event) ~ 1, data = bc_rt_data)"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#plotting-the-curves",
+    "href": "talks/2024-rladies-philly/slides.html#plotting-the-curves",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Plotting the curves",
+    "text": "Plotting the curves\n\n\ns2 |&gt; \n  ggsurvfit() +\n  labs(\n    x = \"Years from mastectomy\",\n    y = \"Overall survival probability\"\n  ) + \n  scale_y_continuous(\n    limits = c(0, 1)) + \n  scale_x_continuous(\n    limits = c(0, 15), \n    breaks = seq(0, 15, 5)) + \n  add_confidence_interval() + \n  add_risktable(\n    risktable_stats = \"n.risk\")"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#add-confidence-intervals",
+    "href": "talks/2024-rladies-philly/slides.html#add-confidence-intervals",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Add confidence intervals",
+    "text": "Add confidence intervals\n\n\ns2 |&gt; \n  ggsurvfit() +\n  labs(\n    x = \"Years from mastectomy\",\n    y = \"Overall survival probability\"\n  ) + \n  scale_y_continuous(\n    limits = c(0, 1)) + \n  scale_x_continuous(\n    limits = c(0, 15), \n    breaks = seq(0, 15, 5)) + \n  add_confidence_interval() + \n  add_risktable(\n    risktable_stats = \"n.risk\")"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#add-risk-table",
+    "href": "talks/2024-rladies-philly/slides.html#add-risk-table",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Add risk table",
+    "text": "Add risk table\n\n\ns2 |&gt; \n  ggsurvfit() +\n  labs(\n    x = \"Years from mastectomy\",\n    y = \"Overall survival probability\"\n  ) + \n  scale_y_continuous(\n    limits = c(0, 1)) + \n  scale_x_continuous(\n    limits = c(0, 15), \n    breaks = seq(0, 15, 5)) + \n  add_confidence_interval() + \n  add_risktable(\n    risktable_stats = \"n.risk\")"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#survival-curves-common-mistakes",
+    "href": "talks/2024-rladies-philly/slides.html#survival-curves-common-mistakes",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Survival curves: common mistakes",
+    "text": "Survival curves: common mistakes\n\nPlotting the y-axis on a scale other than 0, 1\nPlotting the x-axis beyond the limit of reasonable confidence\nAdding too much extra information to plot face, e.g. hazard ratios, p-values, median survival time, etc\nUsing default/non-descriptive axis labels\nIgnoring negative or missing survival times"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#estimating-x-time-survival",
+    "href": "talks/2024-rladies-philly/slides.html#estimating-x-time-survival",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Estimating x-time survival",
+    "text": "Estimating x-time survival\n\nOne quantity of interest in a survival analysis is the probability of surviving beyond a certain point in time (x).\nFor example, to estimate the probability of surviving to 10 years, use summary with the times argument.\n\nsummary(survfit(Surv(os_years, os_event) ~ 1, data = bc_rt_data), times = 10)\n\nCall: survfit(formula = Surv(os_years, os_event) ~ 1, data = bc_rt_data)\n\n time n.risk n.event survival std.err lower 95% CI upper 95% CI\n   10    386     501    0.727  0.0125        0.703        0.752\n\n\nWe find that the 10-year probability of survival in this study is 73%.\nThe associated lower and upper bounds of the 95% confidence interval are also displayed."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#what-does-x-time-survival-mean",
+    "href": "talks/2024-rladies-philly/slides.html#what-does-x-time-survival-mean",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "What does x-time survival mean?",
+    "text": "What does x-time survival mean?\nThe 10-year survival probability is the point on the y-axis that corresponds to 10 years on the x-axis for the survival curve."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#x-time-survival-common-mistakes",
+    "href": "talks/2024-rladies-philly/slides.html#x-time-survival-common-mistakes",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "x-time survival: common mistakes",
+    "text": "x-time survival: common mistakes\n\nUsing a “naive” estimate:\n501 of the 3000 patients in the data died by 10 years so the “naive” estimate is calculated as:\n\\[\\Big(1 - \\frac{501}{3000}\\Big) \\times 100 = 83\\%\\] You get an incorrect estimate of the 10-year probability of survival when you ignore the fact that 2113 patients were censored before 10 years.\nRecall the correct estimate of the 10-year probability of survival, accounting for censoring using the Kaplan-Meier method, was 73%."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#illustration-overestimation-using-naive-estimate",
+    "href": "talks/2024-rladies-philly/slides.html#illustration-overestimation-using-naive-estimate",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Illustration: overestimation using naive estimate",
+    "text": "Illustration: overestimation using naive estimate\n\n\n\nIgnoring censoring leads to an overestimate of the overall survival probability. Censored subjects only contribute information for a portion of the follow-up time, and then fall out of the risk set, pulling down the cumulative probability of survival. Ignoring censoring erroneously treats patients who are censored as part of the risk set for the entire follow-up period."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#table-of-x-time-survival-probability",
+    "href": "talks/2024-rladies-philly/slides.html#table-of-x-time-survival-probability",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Table of x-time survival probability",
+    "text": "Table of x-time survival probability\nWe can produce nice tables of x-time survival probability estimates using the tbl_survfit() function from the gtsummary package:\n\n\nsurvfit(Surv(os_years, os_event) ~ 1, \n        data = bc_rt_data) |&gt; \n  tbl_survfit(\n    times = 10,\n    label_header = \n      \"**10-year survival (95% CI)**\"\n  )\n\n\n\n\n\n\n\n\nCharacteristic\n10-year survival (95% CI)\n\n\n\n\nOverall\n73% (70%, 75%)"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#estimating-median-survival-time",
+    "href": "talks/2024-rladies-philly/slides.html#estimating-median-survival-time",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Estimating median survival time",
+    "text": "Estimating median survival time\n\nAnother quantity of interest in a survival analysis is the average survival time, which we quantify using the median.\nNote that survival times are not expected to be normally distributed so the mean is not an appropriate summary.\nWe can obtain the median survival directly from the survfit object:\n\n\nCall: survfit(formula = Surv(os_years, os_event) ~ 1, data = bc_rt_data)\n\n        n events median 0.95LCL 0.95UCL\n[1,] 3000    526     NA      NA      NA\n\n\nWe see the median survival time is is NA, which means that it has not yet been reached in this study. This is common in scenarios when the event rate is low, or follow-up time is short."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#what-does-median-survival-mean",
+    "href": "talks/2024-rladies-philly/slides.html#what-does-median-survival-mean",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "What does median survival mean?",
+    "text": "What does median survival mean?\nMedian survival is the time on the x-axis corresponding to a survival probability of 0.5 on the y-axis. Here we see there is no time where the horizontal line at 0.5 meets the survival curve."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#median-survival-common-mistakes",
+    "href": "talks/2024-rladies-philly/slides.html#median-survival-common-mistakes",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Median survival: common mistakes",
+    "text": "Median survival: common mistakes\nUsing a “naive” estimate.\nSummarize the median survival time among the 526 patients who died:\n\n\n# A tibble: 1 × 1\n  median_surv\n        &lt;dbl&gt;\n1        4.79\n\n\nYou get an incorrect estimate of median survival time of 4.8 years when you ignore the fact that censored patients also contribute follow-up time.\nRecall the correct estimate of median survival was not reached."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#illustration-underestimation-of-median-survival",
+    "href": "talks/2024-rladies-philly/slides.html#illustration-underestimation-of-median-survival",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Illustration: underestimation of median survival",
+    "text": "Illustration: underestimation of median survival\n\n\n\nIgnoring censoring leads to an underestimate of median survival time because the follow-up time that censored patients contribute is excluded, and the risk set is artificially small."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#table-of-median-survival",
+    "href": "talks/2024-rladies-philly/slides.html#table-of-median-survival",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Table of median survival",
+    "text": "Table of median survival\nWe can produce nice tables of median survival time estimates using the tbl_survfit() function from the gtsummary package:\n\n\nsurvfit(Surv(os_years, os_event) ~ 1, \n        data = bc_rt_data) |&gt; \n  tbl_survfit(\n    probs = 0.5,\n    label_header = \n      \"**Median survival (95% CI)**\"\n  )\n\n\n\n\n\n\n\n\nCharacteristic\nMedian survival (95% CI)\n\n\n\n\nOverall\n— (—, —)\n\n\n\n\n\n\n\n\n\nIn this case, this table is not informative, but is included for demonstration purposes. In a dataset like this where median survival is not reached, x-time estimates can be presented instead, sometimes for multiple timepoints"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#comparing-survival-times-between-groups",
+    "href": "talks/2024-rladies-philly/slides.html#comparing-survival-times-between-groups",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Comparing survival times between groups",
+    "text": "Comparing survival times between groups\n\nWe can conduct between-group significance tests using a log-rank test.\n\nThe log-rank test equally weights observations over the entire follow-up time and is the most common way to compare survival times between groups.\n\nThere are versions that more heavily weight the early or late follow-up that could be more appropriate depending on the research question (see ?survdiff for different test options)."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#conducting-the-log-rank-test",
+    "href": "talks/2024-rladies-philly/slides.html#conducting-the-log-rank-test",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Conducting the log-rank test",
+    "text": "Conducting the log-rank test\n\nWe get the log-rank p-value using the survdiff() function from the survival package. For example, we can test whether there was a difference in survival time according to PMRT:\n\nsurvdiff(Surv(os_years, os_event) ~ rt, data = bc_rt_data)\n\nCall:\nsurvdiff(formula = Surv(os_years, os_event) ~ rt, data = bc_rt_data)\n\nn=2823, 177 observations deleted due to missingness.\n\n        N Observed Expected (O-E)^2/E (O-E)^2/V\nrt=0 1147      233      195      7.55      12.7\nrt=1 1676      246      284      5.17      12.7\n\n Chisq= 12.7  on 1 degrees of freedom, p= 4e-04 \n\n\nWe see that there was a significant difference in overall survival according to PMRT, with a p-value of p = &lt;.001."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#add-log-rank-p-value-to-kaplan-meier-plot",
+    "href": "talks/2024-rladies-philly/slides.html#add-log-rank-p-value-to-kaplan-meier-plot",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Add log-rank p-value to Kaplan-Meier plot",
+    "text": "Add log-rank p-value to Kaplan-Meier plot\n\n\nsurvfit2(\n  Surv(os_years, os_event) ~ rt, \n  data = bc_rt_data) |&gt; \n  ggsurvfit() +\n  labs(\n    x = \"Years from mastectomy\",\n    y = \"Overall survival probability\"\n  ) + \n  scale_y_continuous(\n    limits = c(0, 1)) + \n  scale_x_continuous(\n    limits = c(0, 15), \n    breaks = seq(0, 15, 5)) + \n  add_risktable(\n    risktable_stats = \"n.risk\"\n    ) + \n  scale_color_manual(\n    values = ccf_palette(\"contrast\"),\n    labels = c(\"No RT\", \"RT\")\n  ) +\n  add_pvalue()"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#the-cox-regression-model",
+    "href": "talks/2024-rladies-philly/slides.html#the-cox-regression-model",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "The Cox regression model",
+    "text": "The Cox regression model\nWe may want to quantify an effect size for a single variable, or include more than one variable into a regression model to account for the effects of multiple variables.\nThe Cox regression model is a semi-parametric model that can be used to fit univariate and multivariable regression models that have survival outcomes.\n\\[h(t|X_i) = h_0(t) \\exp(\\beta_1 X_{i1} + \\cdots + \\beta_p X_{ip})\\]\n\\(h(t)\\): hazard, or the instantaneous rate at which events occur \\(h_0(t)\\): underlying baseline hazard"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#cox-regression-assumptions",
+    "href": "talks/2024-rladies-philly/slides.html#cox-regression-assumptions",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Cox regression assumptions",
+    "text": "Cox regression assumptions\nSome key assumptions of the model:\n\nnon-informative censoring\nproportional hazards\n\nNote that parametric regression models for survival outcomes are also available, but they won’t be addressed in this tutorial."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#how-to-interpret-a-hazard-ratio",
+    "href": "talks/2024-rladies-philly/slides.html#how-to-interpret-a-hazard-ratio",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "How to interpret a hazard ratio",
+    "text": "How to interpret a hazard ratio\nThe quantity of interest from a Cox regression model is a hazard ratio (HR), which represents the instantaneous rate of occurrence of the event of interest in those who are still at risk for the event.\n\nIf you have a regression parameter \\(\\beta\\), then HR = \\(\\exp(\\beta)\\).\n\nA HR &lt; 1 indicates reduced hazard of event whereas a HR &gt; 1 indicates an increased hazard of event."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#fitting-cox-models",
+    "href": "talks/2024-rladies-philly/slides.html#fitting-cox-models",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Fitting Cox models",
+    "text": "Fitting Cox models\nFit regression models using the coxph() function from the survival package, which takes a Surv() object on the left hand side and has standard syntax for regression formulas in R on the right hand side.\n\nmod1 &lt;- coxph(Surv(os_years, os_event) ~ rt, data = bc_rt_data)"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#table-of-cox-model-results",
+    "href": "talks/2024-rladies-philly/slides.html#table-of-cox-model-results",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Table of Cox model results",
+    "text": "Table of Cox model results\nWe can creates tables of results using the tbl_regression() function from the gtsummary package, with the option to exponentiate set to TRUE to return the hazard ratio rather than the log hazard ratio:\n\n\nmod1 |&gt; \n  tbl_regression(\n    exp = TRUE,\n    label = list(rt ~ \"PMRT\")\n    ) \n\n\n\n\n\n\n\n\nCharacteristic\nHR1\n95% CI1\np-value\n\n\n\n\nPMRT\n0.72\n0.60, 0.86\n&lt;0.001\n\n\n\n1 HR = Hazard Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\n\nHR = 0.72 implies that receipt of PMRT is associated with 0.72 times the hazard of death as compared to no PMRT."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#cox-regression-common-mistakes",
+    "href": "talks/2024-rladies-philly/slides.html#cox-regression-common-mistakes",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Cox regression: common mistakes",
+    "text": "Cox regression: common mistakes\n\nOverfitting. This occurs when there are too few events to support the number of included variables. Rule of thumb is 10-15 events per degree of freedom.\nInterpreting a hazard as a risk - they are related, but they are not the same.\nOverlooking the proportional hazards assumption"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#connect-with-me",
+    "href": "talks/2024-rladies-philly/slides.html#connect-with-me",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Connect with me",
+    "text": "Connect with me\n\n\n zabore2@ccf.org\n https://www.emilyzabor.com/\n https://github.com/zabore\n https://www.linkedin.com/in/emily-zabor-59b902b7/\n https://bsky.app/profile/zabore.bsky.social/"
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/slides.html#further-reading",
+    "href": "talks/2024-rladies-philly/slides.html#further-reading",
+    "title": "Introduction to Survival Analysis in R",
+    "section": "Further reading",
+    "text": "Further reading\n\n\nClark, T., Bradburn, M., Love, S., & Altman, D. (2003). Survival analysis part I: Basic concepts and first analyses. 232-238. ISSN 0007-0920.\n\n\nM J Bradburn, T G Clark, S B Love, & D G Altman. (2003). Survival Analysis Part II: Multivariate data analysis – an introduction to concepts and methods. British Journal of Cancer, 89(3), 431-436.\n\n\nBradburn, M., Clark, T., Love, S., & Altman, D. (2003). Survival analysis Part III: Multivariate data analysis – choosing a model and assessing its adequacy and fit. 89(4), 605-11.\n\n\nClark, T., Bradburn, M., Love, S., & Altman, D. (2003). Survival analysis part IV: Further concepts and methods in survival analysis. 781-786. ISSN 0007-0920."
+  },
+  {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Software",
+    "section": "",
+    "text": "An R package of functions to design clinical trials with sequential Bayesian predictive probability monitoring for futility. Currently functionality is available for one-arm and two-arm clinical trials, and functionality for basket trials is under development.\n\n\n\n\n\n\n\n\n\nDetails at http://www.emilyzabor.com/ppseq/"
+  },
+  {
+    "objectID": "software.html#ppseq",
+    "href": "software.html#ppseq",
+    "title": "Software",
+    "section": "",
+    "text": "An R package of functions to design clinical trials with sequential Bayesian predictive probability monitoring for futility. Currently functionality is available for one-arm and two-arm clinical trials, and functionality for basket trials is under development.\n\n\n\n\n\n\n\n\n\nDetails at http://www.emilyzabor.com/ppseq/"
+  },
+  {
+    "objectID": "software.html#riskclustr",
+    "href": "software.html#riskclustr",
+    "title": "Software",
+    "section": "riskclustr",
+    "text": "riskclustr\nAn R package of functions for the study of etiologic heterogeneity.\nDetails at https://www.emilyzabor.com/riskclustr/"
+  },
+  {
+    "objectID": "software.html#condsurv",
+    "href": "software.html#condsurv",
+    "title": "Software",
+    "section": "condsurv",
+    "text": "condsurv\nA package for conditional survival analysis.\n\n\n\n\n\n\n\n\n\nDetails at https://www.emilyzabor.com/condsurv/"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Emily C. Zabor",
+    "section": "",
+    "text": "I am an Associate Staff Biostatistician at the Cleveland Clinic in the Department of Quantitative Health Sciences, with a joint appointment in the Taussig Cancer Institute. I also hold an academic appointment as Associate Professor of Medicine at the Cleveland Clinic Lerner College of Medicine of Case Western Reserve University.\nMy research interests are in early phase clinical trial design, statistical methods for observational studies, prediction models, and survival analysis. I am an enthusiastic R user.\nI earned an MS degree in biostatistics from The University of Minnesota and a DrPH degree in biostatistics from Columbia University.\nPlease see my CV for details of my academic work."
+  },
+  {
+    "objectID": "talks/2024-rladies-philly/index.html",
+    "href": "talks/2024-rladies-philly/index.html",
+    "title": "R-Ladies Philly: Introduction to Survival Analysis in R",
+    "section": "",
+    "text": "Full Screen"
+  },
+  {
+    "objectID": "talks.html",
+    "href": "talks.html",
+    "title": "Talks",
+    "section": "",
+    "text": "2024-12-17\n\nFull Screen"
+  },
+  {
+    "objectID": "talks.html#r-ladies-philly-introduction-to-survival-analysis-in-r",
+    "href": "talks.html#r-ladies-philly-introduction-to-survival-analysis-in-r",
+    "title": "Talks",
+    "section": "",
+    "text": "2024-12-17\n\nFull Screen"
+  }
+]

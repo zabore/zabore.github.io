@@ -1,0 +1,31 @@
+---
+title: "Software"
+---
+
+## ppseq
+
+An R package of functions to design clinical trials with sequential Bayesian predictive probability monitoring for futility. Currently functionality is available for one-arm and two-arm clinical trials, and functionality for basket trials is under development. 
+
+```{r out.width='300px', echo=FALSE}
+knitr::include_graphics("images/ppseq.png")
+```
+
+Details at [http://www.emilyzabor.com/ppseq/](http://www.emilyzabor.com/ppseq/)
+
+
+## riskclustr
+
+An R  package of functions for the study of etiologic heterogeneity. 
+
+Details at [https://www.emilyzabor.com/riskclustr/](https://www.emilyzabor.com/riskclustr/)
+
+
+## condsurv
+
+A package for conditional survival analysis. 
+
+```{r out.width='300px', echo=FALSE}
+knitr::include_graphics("images/condsurv.png")
+```
+
+Details at [https://www.emilyzabor.com/condsurv/](https://www.emilyzabor.com/condsurv/)

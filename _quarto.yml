@@ -1,0 +1,22 @@
+project:
+  type: website
+
+website:
+  title: "Emily C. Zabor"
+  navbar:
+    left:
+      - text: Software
+        href: software.qmd
+      - text: Teaching
+        href: teaching.qmd
+      - text: Talks
+        href: talks.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

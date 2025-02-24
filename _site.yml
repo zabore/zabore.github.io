@@ -1,8 +1,0 @@
-name: "emilyzabor"
-output_dir: "docs"
-base_url: emilyzabor.com
-description: |
-  Emily Zabor's website
-title: "Emily C. Zabor"
-output: distill::distill_article
-theme: theme.css

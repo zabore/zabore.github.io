@@ -1,0 +1,11 @@
+---
+title: "Teaching"
+---
+
+# Tutorials
+
+[Survival analysis in R](https://www.emilyzabor.com/tutorials/survival_analysis_in_r_tutorial.html): A detailed tutorial on conducting survival analyses in R, including an introduction to the basics of survival analysis, landmark analyses and time-dependent covariates, competing risks, and a selection of advanced topics.
+
+# Courses
+
+[R for Cleveland Clinic Molecular Medicine PhD program](https://www.emilyzabor.com/mmedr/): Five one-hour sessions on the basics of R, followed by two two-hour sessions introducing biostatistics and epidemiology methods in R.
