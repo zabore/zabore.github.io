@@ -17,3 +17,14 @@ Note that this page is a work in progress, mostly hosting slides from R talks pr
 [Full Screen](talks/2024-rladies-philly/slides.html)
 
 
+## UMass Chan R Café: Making your workflow reproducible
+
+**2025-10-24**
+
+```{=html}
+<iframe class="slide-deck" src="talks/2025-umass-r-cafe/slides.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+```
+
+[Full Screen](talks/2025-umass-r-cafe/slides.html)
+
+

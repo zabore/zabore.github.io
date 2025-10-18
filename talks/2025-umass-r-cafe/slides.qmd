@@ -1,0 +1,215 @@
+---
+title: "Making your workflow reproducible"
+subtitle: "UMass Chan R Café"
+date: 2025-10-24
+author: "Emily C. Zabor"
+format:
+  revealjs:
+    embed-resources: true
+    slide-number: false
+    logo: CC_c.png
+    theme: [default, custom.scss]
+title-slide-attributes:
+  data-background-image: CC_hires_r.png
+  data-background-position: bottom
+  data-background-size: 20%
+  data-background-color: "#0078bf"
+include-in-header:
+  - text: |
+      <style>
+      #title-slide .title {
+        color: #FFFFFF;
+        font-size: 1.2em;
+      } .subtitle {
+        color: #FFFFFF;
+      } .quarto-title-authors {
+        color: #FFFFFF;
+      } .date {
+        color: #FFFFFF;
+      }
+      </style>
+  - text: |
+      <style>
+      .reveal .slide-logo {
+        max-height: unset;
+        height: 40px !important;
+      }
+      </style>
+include-after-body: nologo-script.js
+---
+  
+  
+```{r}
+library(tibble)
+library(ggplot2)
+library(ezfun)
+library(survival)
+library(dplyr)
+```
+
+```{r}
+# See https://github.com/posit-conf-2023/quarto-r/blob/main/materials/1-single-docs/1-welcome-to-quarto/index.qmd 
+# And associated https://posit-conf-2023.github.io/quarto-r/
+# For example of how I set this up folder-structure-wise
+# And how I embedded the slides in the webpage
+```
+
+
+## Hello
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Who am I**
+  
+Associate Staff Biostatistician at the Cleveland Clinic in the Department of Quantitative Health Sciences and the Taussig Cancer Institute.
+
+
+:::
+  
+::: {.column width="50%"}
+<br>
+  
+Applied cancer biostatistics and methods research in early phase oncology clinical trial design and methods for retrospective data analyses.
+:::
+
+<br>
+
+Checkout [my website](https://www.emilyzabor.com/tutorials/survival_analysis_in_r_tutorial.html) for more.
+::::
+
+
+## Why am I here?
+
+**Good question.**
+
+1. This is not my area of expertise
+2. But I have been doing data analysis projects in R for 15+ years
+3. And I've learned a few things along the way
+4. If *you* are an expert, chime in anytime!
+
+
+## What will I cover today?
+
+**How I try to make my project workflow reproducible, including:**
+
+1. {starter} to create standard project frameworks
+2. Folder structure and naming conventions
+3. R projects and {here} package for portability
+4. Quarto for reproducible reporting
+5. {renv} for reproducible environments
+
+
+## The {starter} package
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](images/starter.png)
+
+:::
+  
+::: {.column width="50%"}
+<br>
+
+"Provides a toolkit for starting new projects"
+
+:::
+
+::::
+
+
+## Using {starter} with default settings
+
+```{r eval = FALSE, echo = TRUE}
+install.packages("starter") # Initial package installation
+```
+<br>
+```{r echo = TRUE}
+library(starter)
+
+create_project(
+  path = fs::path(tempdir(), "My Project Folder"),
+  open = FALSE # don't open project in new RStudio session
+)
+```
+
+
+## Resulting project structure
+
+![](images/starter-default-structure.jpg)
+
+## Custom {starter} templates
+
+The default is a great start, but I want a bit more:
+
+1. Shell code files
+2. Include Word template for Quarto
+
+<br>
+
+See the {starter} [website](https://www.danieldsjoberg.com/starter/articles/create_project.html#custom_template) for details on creating custom templates.
+
+
+## Using {starter} with my personal template
+
+```{r echo = TRUE, eval = FALSE}
+# Template stored in my personal GitHub package ezfun
+devtools::install_github("zabore/ezfun") 
+```
+<br>
+```{r echo = TRUE}
+create_project(
+  path = fs::path(tempdir(), "example-custom-project"),
+  template = ezfun::ez_analysis_template,
+  open = FALSE
+)
+```
+
+
+## Resulting custom project structure
+
+![](images/ez-analysis-template-structure.jpg)
+
+
+## Structure inside the code folder
+
+![](images/ez-analysis-template-structure-code.jpg)
+
+
+## Munge file template
+
+![](images/munge-file-example.jpg)
+
+
+## Quarto file template
+
+![](images/qmd-file-example.jpg)
+
+
+## Structure inside the templates folder
+
+![](images/ez-analysis-template-structure-code-templates.jpg)
+
+See details on how to create your own reference document for Word output [here](https://quarto.org/docs/output-formats/ms-word-templates.html).
+
+
+## Folder structure and naming conventions 
+
+Find something that works for **you** and stick with it.
+
+What I do as a collaborative biostatistician:
+
+1. Store all project folders on the same drive, which is backed up by my organization
+2. Give each project a folder
+3. Name the folder as "PIName-brief-project-description". 
+
+    - For example, a project with Jane Smith about treatment for metastatic breast cancer might be "Smith-metastatic-breast-trt"
+    
+4. Initialize using {starter}
+5. Also add a "data" folder 
+6. Project reports produced by Quarto saved in main project folder as, e.g., "Smith-metastatic-breast-trt-report-2025-10-18" for version control
+
+
+## R projects
