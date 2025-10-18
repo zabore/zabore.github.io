@@ -195,21 +195,23 @@ create_project(
 See details on how to create your own reference document for Word output [here](https://quarto.org/docs/output-formats/ms-word-templates.html).
 
 
-## Folder structure and naming conventions 
+## Folder structure and naming
 
 Find something that works for **you** and stick with it.
 
+::: {style="font-size: 75%;"}
 What I do as a collaborative biostatistician:
 
-1. Store all project folders on the same drive, which is backed up by my organization
+1. Store all project folders on the same drive, backed up by my organization
 2. Give each project a folder
 3. Name the folder as "PIName-brief-project-description". 
 
     - For example, a project with Jane Smith about treatment for metastatic breast cancer might be "Smith-metastatic-breast-trt"
-    
+
 4. Initialize using {starter}
 5. Also add a "data" folder 
 6. Project reports produced by Quarto saved in main project folder as, e.g., "Smith-metastatic-breast-trt-report-2025-10-18" for version control
+:::
 
 
 ## R projects

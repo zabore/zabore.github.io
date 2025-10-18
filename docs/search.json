@@ -39,7 +39,7 @@
     "href": "talks/2025-umass-r-cafe/slides.html#using-starter-with-default-settings",
     "title": "Making your workflow reproducible",
     "section": "Using {starter} with default settings",
-    "text": "Using {starter} with default settings\n\ninstall.packages(\"starter\") # Initial package installation\n\n\n\nlibrary(starter)\n\ncreate_project(\n  path = fs::path(tempdir(), \"My Project Folder\"),\n  open = FALSE # don't open project in new RStudio session\n)\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/RtmpY5kQMy/My Project Folder/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/RtmpY5kQMy/My Project Folder\"."
+    "text": "Using {starter} with default settings\n\ninstall.packages(\"starter\") # Initial package installation\n\n\n\nlibrary(starter)\n\ncreate_project(\n  path = fs::path(tempdir(), \"My Project Folder\"),\n  open = FALSE # don't open project in new RStudio session\n)\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/Rtmp2VIElr/My Project Folder/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/Rtmp2VIElr/My Project Folder\"."
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#resulting-project-structure",
@@ -60,7 +60,7 @@
     "href": "talks/2025-umass-r-cafe/slides.html#using-starter-with-my-personal-template",
     "title": "Making your workflow reproducible",
     "section": "Using {starter} with my personal template",
-    "text": "Using {starter} with my personal template\n\n# Template stored in my personal GitHub package ezfun\ndevtools::install_github(\"zabore/ezfun\") \n\n\n\ncreate_project(\n  path = fs::path(tempdir(), \"example-custom-project\"),\n  template = ezfun::ez_analysis_template,\n  open = FALSE\n)\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/RtmpY5kQMy/example-custom-project/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/RtmpY5kQMy/example-custom-project\"."
+    "text": "Using {starter} with my personal template\n\n# Template stored in my personal GitHub package ezfun\ndevtools::install_github(\"zabore/ezfun\") \n\n\n\ncreate_project(\n  path = fs::path(tempdir(), \"example-custom-project\"),\n  template = ezfun::ez_analysis_template,\n  open = FALSE\n)\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/Rtmp2VIElr/example-custom-project/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/Rtmp2VIElr/example-custom-project\"."
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#resulting-custom-project-structure",
@@ -98,11 +98,11 @@
     "text": "Structure inside the templates folder\n\nSee details on how to create your own reference document for Word output here."
   },
   {
-    "objectID": "talks/2025-umass-r-cafe/slides.html#folder-structure-and-naming-conventions",
-    "href": "talks/2025-umass-r-cafe/slides.html#folder-structure-and-naming-conventions",
+    "objectID": "talks/2025-umass-r-cafe/slides.html#folder-structure-and-naming",
+    "href": "talks/2025-umass-r-cafe/slides.html#folder-structure-and-naming",
     "title": "Making your workflow reproducible",
-    "section": "Folder structure and naming conventions",
-    "text": "Folder structure and naming conventions\nFind something that works for you and stick with it.\nWhat I do as a collaborative biostatistician:\n\nStore all project folders on the same drive, which is backed up by my organization\nGive each project a folder\nName the folder as “PIName-brief-project-description”.\n\nFor example, a project with Jane Smith about treatment for metastatic breast cancer might be “Smith-metastatic-breast-trt”\n\nInitialize using {starter}\nAlso add a “data” folder\nProject reports produced by Quarto saved in main project folder as, e.g., “Smith-metastatic-breast-trt-report-2025-10-18” for version control"
+    "section": "Folder structure and naming",
+    "text": "Folder structure and naming\nFind something that works for you and stick with it.\n\nWhat I do as a collaborative biostatistician:\n\nStore all project folders on the same drive, backed up by my organization\nGive each project a folder\nName the folder as “PIName-brief-project-description”.\n\nFor example, a project with Jane Smith about treatment for metastatic breast cancer might be “Smith-metastatic-breast-trt”\n\nInitialize using {starter}\nAlso add a “data” folder\nProject reports produced by Quarto saved in main project folder as, e.g., “Smith-metastatic-breast-trt-report-2025-10-18” for version control"
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#r-projects",
@@ -721,17 +721,17 @@
     "text": "Note that this page is a work in progress, mostly hosting slides from R talks prospectively. Many other slide decks from past talks are available on GitHub."
   },
   {
-    "objectID": "talks.html#r-ladies-philly-introduction-to-survival-analysis-in-r",
-    "href": "talks.html#r-ladies-philly-introduction-to-survival-analysis-in-r",
-    "title": "Talks",
-    "section": "R-Ladies Philly: Introduction to Survival Analysis in R",
-    "text": "R-Ladies Philly: Introduction to Survival Analysis in R\n2024-12-17\n\nFull Screen"
-  },
-  {
     "objectID": "talks.html#umass-chan-r-café-making-your-workflow-reproducible",
     "href": "talks.html#umass-chan-r-café-making-your-workflow-reproducible",
     "title": "Talks",
     "section": "UMass Chan R Café: Making your workflow reproducible",
     "text": "UMass Chan R Café: Making your workflow reproducible\n2025-10-24\n\nFull Screen"
+  },
+  {
+    "objectID": "talks.html#r-ladies-philly-introduction-to-survival-analysis-in-r",
+    "href": "talks.html#r-ladies-philly-introduction-to-survival-analysis-in-r",
+    "title": "Talks",
+    "section": "R-Ladies Philly: Introduction to Survival Analysis in R",
+    "text": "R-Ladies Philly: Introduction to Survival Analysis in R\n2024-12-17\n\nFull Screen"
   }
 ]
