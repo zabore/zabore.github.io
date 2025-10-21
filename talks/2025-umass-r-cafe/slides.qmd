@@ -94,10 +94,21 @@ Checkout [my website](https://www.emilyzabor.com/tutorials/survival_analysis_in_
 **How I try to make my project workflow reproducible, including:**
 
 1. {starter} to create standard project frameworks
-2. Folder structure and naming conventions
-3. R projects and {here} package for portability
+2. Folder structure and naming
+3. RStudio projects and {here} package for portability
 4. Quarto for reproducible reporting
 5. {renv} for reproducible environments
+
+
+## Context
+
+Everything here evolved in the context of the work I do and how I do it.
+
+1. Collaborate with doctors on clinical research projects: they send me data, I analyze it
+2. Work independently as the only statistician/programmer for a given project
+3. Patient data is sensitive 
+4. 2 and 3 mean nothing goes on GitHub
+5. 2 also means that my interest in reproducibility is for future Emily and for sound science
 
 
 ## The {starter} package
@@ -122,14 +133,10 @@ Checkout [my website](https://www.emilyzabor.com/tutorials/survival_analysis_in_
 
 ## Using {starter} with default settings
 
-```{r eval = FALSE, echo = TRUE}
-install.packages("starter") # Initial package installation
-```
-<br>
-```{r echo = TRUE}
-library(starter)
+```{r echo = TRUE, message = TRUE}
+# install.packages("starter") 
 
-create_project(
+starter::create_project(
   path = fs::path(tempdir(), "My Project Folder"),
   open = FALSE # don't open project in new RStudio session
 )
@@ -151,16 +158,17 @@ The default is a great start, but I want a bit more:
 
 See the {starter} [website](https://www.danieldsjoberg.com/starter/articles/create_project.html#custom_template) for details on creating custom templates.
 
+<br>
+
+The R script that created my custom template in my personal R package on GitHub [here](https://github.com/zabore/ezfun/blob/master/data-raw/project_template.R).
+
 
 ## Using {starter} with my personal template
 
-```{r echo = TRUE, eval = FALSE}
-# Template stored in my personal GitHub package ezfun
-devtools::install_github("zabore/ezfun") 
-```
-<br>
-```{r echo = TRUE}
-create_project(
+```{r echo = TRUE, message = TRUE}
+# devtools::install_github("zabore/ezfun") 
+
+starter::create_project(
   path = fs::path(tempdir(), "example-custom-project"),
   template = ezfun::ez_analysis_template,
   open = FALSE
@@ -214,4 +222,315 @@ What I do as a collaborative biostatistician:
 :::
 
 
-## R projects
+## RStudio projects
+
+Benefits of working inside an RStudio project include:
+
+- Starts a fresh R session every time the project is opened
+- The current working directory is set to the project directory
+- Previously open R scripts are restored at project startup
+- Other RStudio settings are restored
+- Multiple RStudio sessions can be open at one time, running independently in different RStudio projects
+
+
+## Creating RStudio projects
+
+1. Automatically using the {starter} package
+2. File menu in RStudio
+3. Project menu in RStudio
+
+
+## RStudio project from the file menu
+
+![](images/rstudio-new-project.png)
+
+
+## RStudio project from the file menu
+
+![](images/rstudio-new-project-existing.png)
+
+
+## RStudio project from the file menu
+
+![](images/rstudio-new-project-existing-create.png)
+
+
+## RStudio project from the project menu
+
+![](images/rstudio-new-project-project-menu.jpg)
+
+
+## Workflow with RStudio project
+
+![](images/profit-rstudio.jpg)
+
+
+## The {here} package
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](images/here.png)
+
+:::
+  
+::: {.column width="50%"}
+<br>
+
+"Easy file referencing in project-oriented workflows"
+
+:::
+
+::::
+
+
+## What does it do?
+
+Creates paths relative to the top-level directory.
+
+```{r echo = TRUE}
+# install.packages("here")
+
+here::here()
+```
+
+
+## How to use it: examples
+
+**Read in data**
+
+```{r echo = TRUE, eval = FALSE}
+# install.packages("readr")
+df <- readr::read_csv(here::here("data", "mydata.csv"))
+```
+
+<br>
+
+**Save files**
+
+```{r echo = TRUE, eval = FALSE}
+myplot <- hist(rnorm(100))
+save(here::here("plots", "myhistogram.jpg"))
+```
+
+
+## Quarto reports
+
+* Started using RMarkdown reports, switched to Quarto. 
+
+* Very easy to switch and I still use a lot of RMarkdown style programming in my Quarto files.
+
+* Never again:
+ 
+    - hardcode a number 
+    - have separate documents for text and tables
+    - manually create tables
+    - have difficulty updating results when data change
+    
+* Easily mix code chunks with text
+
+* Report numbers in line in a programmatic way
+
+    
+## Separate files for data preparation and data reporting
+
+Recall my starter template created two shell documents:
+
+1. R script where data are cleaned and coded and saved into .rda
+2. Quarto file where clean data are read in, analyses done, results reported
+
+
+## What do I include?
+
+I write my Quarto reports with three main sections:
+
+1. Notes/questions: these are notes on things I did in the data cleaning process that I want to call attention to, i.e. how categories were combined, missing data to address, etc.
+2. Methods: A formal statistical methods section that can be copied and pasted directly into the eventual scientific publication
+3. Results: Mostly tables and figures with some text interpretation mixed in.
+
+
+## Quarto output options
+
+- html: probably the most popular, has many more customization options
+- pdf: the trickiest to use, in my opinion, requires LaTeX
+- Word: unpopular, but my preference as it makes it easy to copy and paste entire tables and blocks of text from my report into the publication
+
+
+## Components of a Quarto file
+
+1. The YAML header
+2. Code chunks
+3. Markdown text
+
+
+## The YAML header
+
+![](images/quarto-yml.jpg)
+
+
+## Code chunks
+
+![](images/quarto-code.jpg)
+
+
+## Markdown text
+
+![](images/quarto-text-annotate.jpg)
+
+
+## Rendering
+
+![](images/quarto-render.jpg)
+
+* This places the output file inside the same folder where the .qmd file is saved, in this case in the code folder
+* I always "Save As" to the main project folder with the date of the file creation for version control
+
+
+## The {renv} package
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](images/renv.png)
+
+:::
+  
+::: {.column width="50%"}
+<br>
+
+"create reproducible environments for your R projects"
+
+:::
+
+::::
+
+
+## Initialize the project
+
+First run `renv::init()` to initialize a new library. This was done for us with `starter::create_project()`.
+
+![](images/inside-renv-folder.jpg)
+
+
+## Other {renv} functions
+
+* `install()` to install packages from CRAN, GitHub, or Bioconductor
+
+* `update()` gets the latest versions of all dependencies
+
+For collaboration with others:
+
+* `snapshot()` adds metadata about currently used packages to the lockfile
+
+* `restore()` uses metadata from the lockfile to install exactly the same version of every package 
+
+
+## Put it all together
+
+I am starting a new project with Dr. Jane Smith about the association between radiation treatment and overall survival in women with breast cancer. Dr. Smith has emailed me an Excel dataset to analyze for the project.
+
+
+## Run `starter::create_project()`
+
+```{r echo = TRUE, message = TRUE}
+# devtools::install_github("zabore/ezfun") 
+starter::create_project(
+  path = fs::path("G:/StatTeam/zabore/Smith-breast-radiation"),
+  template = ezfun::ez_analysis_template,
+  open = FALSE
+)
+```
+
+Notes:
+
+* "G:/StatTeam/zabore" is my organization's preferred and backed-up drive on my computer
+* A new project folder named "Smith-breast-radiation" will be created and populated
+
+![](images/Smith-starter.jpg)
+
+
+## Add a data folder and save the data there
+
+* The investigator sent me an Excel file, which I save as is
+* I also "Save As" a csv, which I'll import to R for data cleaning
+
+![](images/Smith-data.jpg)
+
+
+## Open the RStudio project
+
+Once in the RStudio project:
+
+* Open the two shell files (R script and qmd)
+* Start to install needed packages using `renv::install()`
+
+![](images/renv-install.jpg)
+
+*Insert comments on speed and other issues*
+
+
+## Read in, clean up, and save the data
+
+* This is one place where the {here} package will come in handy
+
+```{r eval = FALSE, echo = TRUE}
+library(dplyr)
+library(readr)
+
+# Import data ------------------------------------
+df0 <-
+  read_csv(
+    file = here::here("data", "breastcancer.csv")
+  )  |>
+  janitor::clean_names() |>
+  janitor::remove_empty()
+
+# Clean data -------------------------------------
+df <- 
+  df0 |> 
+  mutate(
+    # Insert data cleaning steps here
+  ) |>
+  labelled::set_variable_labels(
+    # Insert variable labels here
+  )
+
+# Save the data ----------------------------------
+save(
+  df,
+  file = here::here("data", "smith-breast-rt-data.rda"))
+```
+
+*Insert comments on {janitor}*
+
+
+## Analyze and report in Quarto
+
+![](images/Smith-quarto.jpg)
+
+## View the resulting report
+
+![](images/Smith-word.jpg)
+
+
+## Save the report with a new name
+
+![](images/Smith-word-saved.jpg)
+
+
+## Connect with me
+
+<!-- I installed these icons through the terminal by running the code "quarto add quarto-ext/fontawesome" -->
+<!-- The _extensions folder was built under the zabore.github.io folder and I didn't know how to access it so I copied it under the 2024-rladies-philly folder -->
+
+{{< iconify ic:baseline-email >}} [zabore2@ccf.org](zabore2@ccf.org)
+
+{{< iconify hugeicons:internet >}} [https://www.emilyzabor.com/](https://www.emilyzabor.com/)
+
+{{< iconify mdi:github >}} [https://github.com/zabore](https://github.com/zabore)
+
+{{< iconify mdi:linkedin >}} [https://www.linkedin.com/in/emily-zabor-59b902b7/](https://www.linkedin.com/in/emily-zabor-59b902b7/)
+
+{{< iconify ri:bluesky-fill >}} [https://bsky.app/profile/zabore.bsky.social/](https://bsky.app/profile/zabore.bsky.social/)

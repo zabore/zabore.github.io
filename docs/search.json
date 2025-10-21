@@ -25,7 +25,14 @@
     "href": "talks/2025-umass-r-cafe/slides.html#what-will-i-cover-today",
     "title": "Making your workflow reproducible",
     "section": "What will I cover today?",
-    "text": "What will I cover today?\nHow I try to make my project workflow reproducible, including:\n\n{starter} to create standard project frameworks\nFolder structure and naming conventions\nR projects and {here} package for portability\nQuarto for reproducible reporting\n{renv} for reproducible environments"
+    "text": "What will I cover today?\nHow I try to make my project workflow reproducible, including:\n\n{starter} to create standard project frameworks\nFolder structure and naming\nRStudio projects and {here} package for portability\nQuarto for reproducible reporting\n{renv} for reproducible environments"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#context",
+    "href": "talks/2025-umass-r-cafe/slides.html#context",
+    "title": "Making your workflow reproducible",
+    "section": "Context",
+    "text": "Context\nEverything here evolved in the context of the work I do and how I do it.\n\nCollaborate with doctors on clinical research projects: they send me data, I analyze it\nWork independently as the only statistician/programmer for a given project\nPatient data is sensitive\n2 and 3 mean nothing goes on GitHub\n2 also means that my interest in reproducibility is for future Emily and for sound science"
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#the-starter-package",
@@ -39,7 +46,7 @@
     "href": "talks/2025-umass-r-cafe/slides.html#using-starter-with-default-settings",
     "title": "Making your workflow reproducible",
     "section": "Using {starter} with default settings",
-    "text": "Using {starter} with default settings\n\ninstall.packages(\"starter\") # Initial package installation\n\n\n\nlibrary(starter)\n\ncreate_project(\n  path = fs::path(tempdir(), \"My Project Folder\"),\n  open = FALSE # don't open project in new RStudio session\n)\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/Rtmp2VIElr/My Project Folder/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/Rtmp2VIElr/My Project Folder\"."
+    "text": "Using {starter} with default settings\n\n# install.packages(\"starter\") \n\nstarter::create_project(\n  path = fs::path(tempdir(), \"My Project Folder\"),\n  open = FALSE # don't open project in new RStudio session\n)\n\n✔ Using \"Default Project Template\" template\n\n\n✔ Writing folder 'C:/Users/zabore2/AppData/Local/Temp/Rtmp4AN2BX/My Project Folder'\n\n\n✔ Writing files \"README.md\", \".gitignore\", \"My Project Folder.Rproj\", and \".Rprofile\"\n\n\n✔ Initialising Git repo\n\n\n✔ Initialising renv project\n\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/Rtmp4AN2BX/My Project Folder/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/Rtmp4AN2BX/My Project Folder\"."
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#resulting-project-structure",
@@ -53,14 +60,14 @@
     "href": "talks/2025-umass-r-cafe/slides.html#custom-starter-templates",
     "title": "Making your workflow reproducible",
     "section": "Custom {starter} templates",
-    "text": "Custom {starter} templates\nThe default is a great start, but I want a bit more:\n\nShell code files\nInclude Word template for Quarto\n\n\nSee the {starter} website for details on creating custom templates."
+    "text": "Custom {starter} templates\nThe default is a great start, but I want a bit more:\n\nShell code files\nInclude Word template for Quarto\n\n\nSee the {starter} website for details on creating custom templates.\n\nThe R script that created my custom template in my personal R package on GitHub here."
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#using-starter-with-my-personal-template",
     "href": "talks/2025-umass-r-cafe/slides.html#using-starter-with-my-personal-template",
     "title": "Making your workflow reproducible",
     "section": "Using {starter} with my personal template",
-    "text": "Using {starter} with my personal template\n\n# Template stored in my personal GitHub package ezfun\ndevtools::install_github(\"zabore/ezfun\") \n\n\n\ncreate_project(\n  path = fs::path(tempdir(), \"example-custom-project\"),\n  template = ezfun::ez_analysis_template,\n  open = FALSE\n)\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/Rtmp2VIElr/example-custom-project/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/Rtmp2VIElr/example-custom-project\"."
+    "text": "Using {starter} with my personal template\n\n# devtools::install_github(\"zabore/ezfun\") \n\nstarter::create_project(\n  path = fs::path(tempdir(), \"example-custom-project\"),\n  template = ezfun::ez_analysis_template,\n  open = FALSE\n)\n\n✔ Using \"EZ Analysis Template\" template\n\n\n✔ Writing folder 'C:/Users/zabore2/AppData/Local/Temp/Rtmp4AN2BX/example-custom-project'\n\n\n✔ Creating 'C:/Users/zabore2/AppData/Local/Temp/Rtmp4AN2BX/example-custom-project/code'\n\n\n✔ Creating 'C:/Users/zabore2/AppData/Local/Temp/Rtmp4AN2BX/example-custom-project/code/templates'\n\n\n✔ Writing files \"README.md\", \".gitignore\", \"example-custom-project.Rproj\", \".Rprofile\", \"code/example-custom-project-munge.R\", \"code/example-custom-project-report.qmd\", and \"code/templates/doc_template.docx\"\n\n\n✔ Initialising Git repo\n\n\n✔ Initialising renv project\n\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/Rtmp4AN2BX/example-custom-project/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/Rtmp4AN2BX/example-custom-project\"."
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#resulting-custom-project-structure",
@@ -105,11 +112,221 @@
     "text": "Folder structure and naming\nFind something that works for you and stick with it.\n\nWhat I do as a collaborative biostatistician:\n\nStore all project folders on the same drive, backed up by my organization\nGive each project a folder\nName the folder as “PIName-brief-project-description”.\n\nFor example, a project with Jane Smith about treatment for metastatic breast cancer might be “Smith-metastatic-breast-trt”\n\nInitialize using {starter}\nAlso add a “data” folder\nProject reports produced by Quarto saved in main project folder as, e.g., “Smith-metastatic-breast-trt-report-2025-10-18” for version control"
   },
   {
-    "objectID": "talks/2025-umass-r-cafe/slides.html#r-projects",
-    "href": "talks/2025-umass-r-cafe/slides.html#r-projects",
+    "objectID": "talks/2025-umass-r-cafe/slides.html#rstudio-projects",
+    "href": "talks/2025-umass-r-cafe/slides.html#rstudio-projects",
     "title": "Making your workflow reproducible",
-    "section": "R projects",
-    "text": "R projects"
+    "section": "RStudio projects",
+    "text": "RStudio projects\nBenefits of working inside an RStudio project include:\n\nStarts a fresh R session every time the project is opened\nThe current working directory is set to the project directory\nPreviously open R scripts are restored at project startup\nOther RStudio settings are restored\nMultiple RStudio sessions can be open at one time, running independently in different RStudio projects"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#creating-rstudio-projects",
+    "href": "talks/2025-umass-r-cafe/slides.html#creating-rstudio-projects",
+    "title": "Making your workflow reproducible",
+    "section": "Creating RStudio projects",
+    "text": "Creating RStudio projects\n\nAutomatically using the {starter} package\nFile menu in RStudio\nProject menu in RStudio"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#rstudio-project-from-the-file-menu",
+    "href": "talks/2025-umass-r-cafe/slides.html#rstudio-project-from-the-file-menu",
+    "title": "Making your workflow reproducible",
+    "section": "RStudio project from the file menu",
+    "text": "RStudio project from the file menu"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#rstudio-project-from-the-file-menu-1",
+    "href": "talks/2025-umass-r-cafe/slides.html#rstudio-project-from-the-file-menu-1",
+    "title": "Making your workflow reproducible",
+    "section": "RStudio project from the file menu",
+    "text": "RStudio project from the file menu"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#rstudio-project-from-the-file-menu-2",
+    "href": "talks/2025-umass-r-cafe/slides.html#rstudio-project-from-the-file-menu-2",
+    "title": "Making your workflow reproducible",
+    "section": "RStudio project from the file menu",
+    "text": "RStudio project from the file menu"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#rstudio-project-from-the-project-menu",
+    "href": "talks/2025-umass-r-cafe/slides.html#rstudio-project-from-the-project-menu",
+    "title": "Making your workflow reproducible",
+    "section": "RStudio project from the project menu",
+    "text": "RStudio project from the project menu"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#workflow-with-rstudio-project",
+    "href": "talks/2025-umass-r-cafe/slides.html#workflow-with-rstudio-project",
+    "title": "Making your workflow reproducible",
+    "section": "Workflow with RStudio project",
+    "text": "Workflow with RStudio project"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#the-here-package",
+    "href": "talks/2025-umass-r-cafe/slides.html#the-here-package",
+    "title": "Making your workflow reproducible",
+    "section": "The {here} package",
+    "text": "The {here} package\n\n\n\n\n\n“Easy file referencing in project-oriented workflows”"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#what-does-it-do",
+    "href": "talks/2025-umass-r-cafe/slides.html#what-does-it-do",
+    "title": "Making your workflow reproducible",
+    "section": "What does it do?",
+    "text": "What does it do?\nCreates paths relative to the top-level directory.\n\n# install.packages(\"here\")\n\nhere::here()\n\n[1] \"D:/zabore.github.io\""
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#how-to-use-it-examples",
+    "href": "talks/2025-umass-r-cafe/slides.html#how-to-use-it-examples",
+    "title": "Making your workflow reproducible",
+    "section": "How to use it: examples",
+    "text": "How to use it: examples\nRead in data\n\n# install.packages(\"readr\")\ndf &lt;- readr::read_csv(here::here(\"data\", \"mydata.csv\"))\n\n\nSave files\n\nmyplot &lt;- hist(rnorm(100))\nsave(here::here(\"plots\", \"myhistogram.jpg\"))"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#quarto-reports",
+    "href": "talks/2025-umass-r-cafe/slides.html#quarto-reports",
+    "title": "Making your workflow reproducible",
+    "section": "Quarto reports",
+    "text": "Quarto reports\n\nStarted using RMarkdown reports, switched to Quarto.\nVery easy to switch and I still use a lot of RMarkdown style programming in my Quarto files.\nNever again:\n\nhardcode a number\nhave separate documents for text and tables\nmanually create tables\nhave difficulty updating results when data change\n\nEasily mix code chunks with text\nReport numbers in line in a programmatic way"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#separate-files-for-data-preparation-and-data-reporting",
+    "href": "talks/2025-umass-r-cafe/slides.html#separate-files-for-data-preparation-and-data-reporting",
+    "title": "Making your workflow reproducible",
+    "section": "Separate files for data preparation and data reporting",
+    "text": "Separate files for data preparation and data reporting\nRecall my starter template created two shell documents:\n\nR script where data are cleaned and coded and saved into .rda\nQuarto file where clean data are read in, analyses done, results reported"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#what-do-i-include",
+    "href": "talks/2025-umass-r-cafe/slides.html#what-do-i-include",
+    "title": "Making your workflow reproducible",
+    "section": "What do I include?",
+    "text": "What do I include?\nI write my Quarto reports with three main sections:\n\nNotes/questions: these are notes on things I did in the data cleaning process that I want to call attention to, i.e. how categories were combined, missing data to address, etc.\nMethods: A formal statistical methods section that can be copied and pasted directly into the eventual scientific publication\nResults: Mostly tables and figures with some text interpretation mixed in."
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#quarto-output-options",
+    "href": "talks/2025-umass-r-cafe/slides.html#quarto-output-options",
+    "title": "Making your workflow reproducible",
+    "section": "Quarto output options",
+    "text": "Quarto output options\n\nhtml: probably the most popular, has many more customization options\npdf: the trickiest to use, in my opinion, requires LaTeX\nWord: unpopular, but my preference as it makes it easy to copy and paste entire tables and blocks of text from my report into the publication"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#components-of-a-quarto-file",
+    "href": "talks/2025-umass-r-cafe/slides.html#components-of-a-quarto-file",
+    "title": "Making your workflow reproducible",
+    "section": "Components of a Quarto file",
+    "text": "Components of a Quarto file\n\nThe YAML header\nCode chunks\nMarkdown text"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#the-yaml-header",
+    "href": "talks/2025-umass-r-cafe/slides.html#the-yaml-header",
+    "title": "Making your workflow reproducible",
+    "section": "The YAML header",
+    "text": "The YAML header"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#code-chunks",
+    "href": "talks/2025-umass-r-cafe/slides.html#code-chunks",
+    "title": "Making your workflow reproducible",
+    "section": "Code chunks",
+    "text": "Code chunks"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#markdown-text",
+    "href": "talks/2025-umass-r-cafe/slides.html#markdown-text",
+    "title": "Making your workflow reproducible",
+    "section": "Markdown text",
+    "text": "Markdown text"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#rendering",
+    "href": "talks/2025-umass-r-cafe/slides.html#rendering",
+    "title": "Making your workflow reproducible",
+    "section": "Rendering",
+    "text": "Rendering\n\n\nThis places the output file inside the same folder where the .qmd file is saved, in this case in the code folder\nI always “Save As” to the main project folder with the date of the file creation for version control"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#the-renv-package",
+    "href": "talks/2025-umass-r-cafe/slides.html#the-renv-package",
+    "title": "Making your workflow reproducible",
+    "section": "The {renv} package",
+    "text": "The {renv} package\n\n\n\n\n\n“create reproducible environments for your R projects”"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#initialize-the-project",
+    "href": "talks/2025-umass-r-cafe/slides.html#initialize-the-project",
+    "title": "Making your workflow reproducible",
+    "section": "Initialize the project",
+    "text": "Initialize the project\nFirst run renv::init() to initialize a new library. This was done for us with starter::create_project()."
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#other-renv-functions",
+    "href": "talks/2025-umass-r-cafe/slides.html#other-renv-functions",
+    "title": "Making your workflow reproducible",
+    "section": "Other {renv} functions",
+    "text": "Other {renv} functions\n\ninstall() to install packages from CRAN, GitHub, or Bioconductor\nupdate() gets the latest versions of all dependencies\n\nFor collaboration with others:\n\nsnapshot() adds metadata about currently used packages to the lockfile\nrestore() uses metadata from the lockfile to install exactly the same version of every package"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#put-it-all-together",
+    "href": "talks/2025-umass-r-cafe/slides.html#put-it-all-together",
+    "title": "Making your workflow reproducible",
+    "section": "Put it all together",
+    "text": "Put it all together\nI am starting a new project with Dr. Jane Smith about the association between radiation treatment and overall survival in women with breast cancer. Dr. Smith has emailed me an Excel dataset to analyze for the project."
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#run-startercreate_project",
+    "href": "talks/2025-umass-r-cafe/slides.html#run-startercreate_project",
+    "title": "Making your workflow reproducible",
+    "section": "Run starter::create_project()",
+    "text": "Run starter::create_project()\n\n# devtools::install_github(\"zabore/ezfun\") \nstarter::create_project(\n  path = fs::path(\"G:/StatTeam/zabore/Smith-breast-radiation\"),\n  template = ezfun::ez_analysis_template,\n  open = FALSE\n)\n\n✔ Using \"EZ Analysis Template\" template\n\n\n✔ Writing files \n\n\n✔ Initialising renv project\n\n\n- Lockfile written to \"G:/StatTeam/zabore/Smith-breast-radiation/renv.lock\".\n- renv infrastructure has been generated for project \"G:/StatTeam/zabore/Smith-breast-radiation\".\n\n\nNotes:\n\n“G:/StatTeam/zabore” is my organization’s preferred and backed-up drive on my computer\nA new project folder named “Smith-breast-radiation” will be created and populated"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#add-a-data-folder-and-save-the-data-there",
+    "href": "talks/2025-umass-r-cafe/slides.html#add-a-data-folder-and-save-the-data-there",
+    "title": "Making your workflow reproducible",
+    "section": "Add a data folder and save the data there",
+    "text": "Add a data folder and save the data there\n\nThe investigator sent me an Excel file, which I save as is\nI also “Save As” a csv, which I’ll import to R for data cleaning"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#open-the-rstudio-project",
+    "href": "talks/2025-umass-r-cafe/slides.html#open-the-rstudio-project",
+    "title": "Making your workflow reproducible",
+    "section": "Open the RStudio project",
+    "text": "Open the RStudio project\nOnce in the RStudio project:\n\nOpen the two shell files (R script and qmd)\nStart to install needed packages using renv::install()\n\n\nInsert comments on speed and other issues"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#read-in-clean-up-and-save-the-data",
+    "href": "talks/2025-umass-r-cafe/slides.html#read-in-clean-up-and-save-the-data",
+    "title": "Making your workflow reproducible",
+    "section": "Read in, clean up, and save the data",
+    "text": "Read in, clean up, and save the data\n\nThis is one place where the {here} package will come in handy\n\n\nlibrary(dplyr)\nlibrary(readr)\n\n# Import data ------------------------------------\ndf0 &lt;-\n  read_csv(\n    file = here::here(\"data\", \"breastcancer.csv\")\n  )  |&gt;\n  janitor::clean_names() |&gt;\n  janitor::remove_empty()\n\n# Clean data -------------------------------------\ndf &lt;- \n  df0 |&gt; \n  mutate(\n    # Insert data cleaning steps here\n  ) |&gt;\n  labelled::set_variable_labels(\n    # Insert variable labels here\n  )\n\n# Save the data ----------------------------------\nsave(\n  df,\n  file = here::here(\"data\", \"smith-breast-rt-data.rda\"))\n\nInsert comments on {janitor}"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#analyze-and-report-in-quarto",
+    "href": "talks/2025-umass-r-cafe/slides.html#analyze-and-report-in-quarto",
+    "title": "Making your workflow reproducible",
+    "section": "Analyze and report in Quarto",
+    "text": "Analyze and report in Quarto"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#view-the-resulting-report",
+    "href": "talks/2025-umass-r-cafe/slides.html#view-the-resulting-report",
+    "title": "Making your workflow reproducible",
+    "section": "View the resulting report",
+    "text": "View the resulting report"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#save-the-report-with-a-new-name",
+    "href": "talks/2025-umass-r-cafe/slides.html#save-the-report-with-a-new-name",
+    "title": "Making your workflow reproducible",
+    "section": "Save the report with a new name",
+    "text": "Save the report with a new name"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#connect-with-me",
+    "href": "talks/2025-umass-r-cafe/slides.html#connect-with-me",
+    "title": "Making your workflow reproducible",
+    "section": "Connect with me",
+    "text": "Connect with me\n\n\n zabore2@ccf.org\n https://www.emilyzabor.com/\n https://github.com/zabore\n https://www.linkedin.com/in/emily-zabor-59b902b7/\n https://bsky.app/profile/zabore.bsky.social/"
   },
   {
     "objectID": "talks/2024-rladies-philly/index.html",
@@ -158,7 +375,7 @@
     "href": "survival-analysis-in-r.html",
     "title": "Survival analysis in R",
     "section": "",
-    "text": "This tutorial provides an introduction to survival analysis, and to conducting a survival analysis in R. This tutorial was originally presented at the Memorial Sloan Kettering Cancer Center R-Presenters series on August 30, 2018. It was then modified for a more extensive training at Memorial Sloan Kettering Cancer Center in March, 2019. Updates, sometimes significant, are made when new functionality becomes available in R. This tutorial reflects my own opinions about the best functionality available in R for survival analysis.\nLast updated: 2025-10-18\nFirst, install and load some packages that will be used throughout.\n# Install packages if needed\n# install.packages(c(\"knitr\", \"dplyr\", \"survival\", \"ggplot2\", \"here\", \"tibble\"))\nlibrary(knitr)\nlibrary(dplyr)\nlibrary(survival)\nlibrary(ggplot2)\nlibrary(tibble)\n\n# devtools::install_github(\"zabore/ezfun\")\nezfun::set_ccf_palette(\"contrast\")"
+    "text": "This tutorial provides an introduction to survival analysis, and to conducting a survival analysis in R. This tutorial was originally presented at the Memorial Sloan Kettering Cancer Center R-Presenters series on August 30, 2018. It was then modified for a more extensive training at Memorial Sloan Kettering Cancer Center in March, 2019. Updates, sometimes significant, are made when new functionality becomes available in R. This tutorial reflects my own opinions about the best functionality available in R for survival analysis.\nLast updated: 2025-10-21\nFirst, install and load some packages that will be used throughout.\n# Install packages if needed\n# install.packages(c(\"knitr\", \"dplyr\", \"survival\", \"ggplot2\", \"here\", \"tibble\"))\nlibrary(knitr)\nlibrary(dplyr)\nlibrary(survival)\nlibrary(ggplot2)\nlibrary(tibble)\n\n# devtools::install_github(\"zabore/ezfun\")\nezfun::set_ccf_palette(\"contrast\")"
   },
   {
     "objectID": "survival-analysis-in-r.html#part-1-introduction-to-survival-analysis",
