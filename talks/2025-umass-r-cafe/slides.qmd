@@ -60,7 +60,7 @@ library(dplyr)
 :::: {.columns}
 
 ::: {.column width="50%"}
-**Who am I**
+**Who am I?**
   
 Associate Staff Biostatistician at the Cleveland Clinic in the Department of Quantitative Health Sciences and the Taussig Cancer Institute.
 
@@ -108,7 +108,7 @@ Everything here evolved in the context of the work I do and how I do it.
 2. Work independently as the only statistician/programmer for a given project
 3. Patient data is sensitive 
 4. 2 and 3 mean nothing goes on GitHub
-5. 2 also means that my interest in reproducibility is for future Emily and for sound science
+5. 2 also means that my interest in reproducibility is for future me and for sound science
 
 
 ## The {starter} package
@@ -131,7 +131,7 @@ Everything here evolved in the context of the work I do and how I do it.
 ::::
 
 
-## Using {starter} with default settings
+## Using {starter}: default settings
 
 ```{r echo = TRUE, message = TRUE}
 # install.packages("starter") 
@@ -152,7 +152,7 @@ starter::create_project(
 The default is a great start, but I want a bit more:
 
 1. Shell code files
-2. Include Word template for Quarto
+2. Include Word reference document for Quarto
 
 <br>
 
@@ -160,10 +160,10 @@ See the {starter} [website](https://www.danieldsjoberg.com/starter/articles/crea
 
 <br>
 
-The R script that created my custom template in my personal R package on GitHub [here](https://github.com/zabore/ezfun/blob/master/data-raw/project_template.R).
+The R script that created my custom template is in my personal R package on GitHub [here](https://github.com/zabore/ezfun/blob/master/data-raw/project_template.R).
 
 
-## Using {starter} with my personal template
+## Using {starter}: custom template
 
 ```{r echo = TRUE, message = TRUE}
 # devtools::install_github("zabore/ezfun") 
@@ -178,25 +178,31 @@ starter::create_project(
 
 ## Resulting custom project structure
 
-![](images/ez-analysis-template-structure.jpg)
+![](images/ez-analysis-template-structure-annotate.jpg)
 
 
 ## Structure inside the code folder
 
-![](images/ez-analysis-template-structure-code.jpg)
+![](images/ez-analysis-template-structure-code-annotate.jpg)
 
 
 ## Munge file template
+
+**Used for data cleaning and pre-processing**
 
 ![](images/munge-file-example.jpg)
 
 
 ## Quarto file template
 
-![](images/qmd-file-example.jpg)
+**Used for analysis and text**
+
+![](images/qmd-file-example-annotate.jpg)
 
 
 ## Structure inside the templates folder
+
+**Note how this was referenced in the YAML of the Quarto report**
 
 ![](images/ez-analysis-template-structure-code-templates.jpg)
 
@@ -211,7 +217,7 @@ Find something that works for **you** and stick with it.
 What I do as a collaborative biostatistician:
 
 1. Store all project folders on the same drive, backed up by my organization
-2. Give each project a folder
+2. Each project gets its own folder
 3. Name the folder as "PIName-brief-project-description". 
 
     - For example, a project with Jane Smith about treatment for metastatic breast cancer might be "Smith-metastatic-breast-trt"
@@ -226,7 +232,7 @@ What I do as a collaborative biostatistician:
 
 Benefits of working inside an RStudio project include:
 
-- Starts a fresh R session every time the project is opened
+- Start a fresh R session every time the project is opened
 - The current working directory is set to the project directory
 - Previously open R scripts are restored at project startup
 - Other RStudio settings are restored
@@ -330,31 +336,35 @@ save(here::here("plots", "myhistogram.jpg"))
     
 * Easily mix code chunks with text
 
-* Report numbers in line in a programmatic way
+* Report numbers in-line in a programmatic way
 
     
 ## Separate files for data preparation and data reporting
 
 Recall my starter template created two shell documents:
 
-1. R script where data are cleaned and coded and saved into .rda
+1. R script where data are cleaned and coded and saved into a .rda file
 2. Quarto file where clean data are read in, analyses done, results reported
 
 
 ## What do I include?
 
-I write my Quarto reports with three main sections:
+I write my Quarto reports with four main sections:
 
-1. Notes/questions: these are notes on things I did in the data cleaning process that I want to call attention to, i.e. how categories were combined, missing data to address, etc.
-2. Methods: A formal statistical methods section that can be copied and pasted directly into the eventual scientific publication
-3. Results: Mostly tables and figures with some text interpretation mixed in.
+1. **Notes/questions**: these are notes on things I did in the data cleaning process that I want to call attention to, i.e. how categories were combined, missing data to address, data issues or inconsistencies, etc
+2. **Background**: a brief description of the problem or question being addressed by the project
+3. **Methods**: A formal statistical methods section that can be copied and pasted directly into the eventual scientific publication
+4. **Results**: Mostly tables and figures with some text interpretation mixed in.
 
 
 ## Quarto output options
 
-- html: probably the most popular, has many more customization options
-- pdf: the trickiest to use, in my opinion, requires LaTeX
-- Word: unpopular, but my preference as it makes it easy to copy and paste entire tables and blocks of text from my report into the publication
+- **html**: probably the most popular, with many customization options
+- **pdf**: the trickiest to use, in my opinion, requires a LaTeX installation
+- **Word**: unpopular, but my preference as it makes it easy to copy and paste entire tables and blocks of text from my report into the publication
+
+<br>
+**Note that you can also make slides in Quarto, like these slides, but that is not our focus today**
 
 
 ## Components of a Quarto file
@@ -411,7 +421,7 @@ I write my Quarto reports with three main sections:
 
 First run `renv::init()` to initialize a new library. This was done for us with `starter::create_project()`.
 
-![](images/inside-renv-folder.jpg)
+![](images/renv-folder-structure.jpg)
 
 
 ## Other {renv} functions
@@ -429,13 +439,12 @@ For collaboration with others:
 
 ## Put it all together
 
-I am starting a new project with Dr. Jane Smith about the association between radiation treatment and overall survival in women with breast cancer. Dr. Smith has emailed me an Excel dataset to analyze for the project.
+**Case study**: I am starting a new project with Dr. Jane Smith about the association between radiation treatment and overall survival in women with breast cancer. Dr. Smith has emailed me an Excel dataset to analyze for the project, and we have discussed the analysis plan.
 
 
 ## Run `starter::create_project()`
 
 ```{r echo = TRUE, message = TRUE}
-# devtools::install_github("zabore/ezfun") 
 starter::create_project(
   path = fs::path("G:/StatTeam/zabore/Smith-breast-radiation"),
   template = ezfun::ez_analysis_template,
@@ -520,7 +529,13 @@ save(
 ![](images/Smith-word-saved.jpg)
 
 
-## Connect with me
+## Thank you
+
+<br>
+
+**Connect with me:**
+
+<br>
 
 <!-- I installed these icons through the terminal by running the code "quarto add quarto-ext/fontawesome" -->
 <!-- The _extensions folder was built under the zabore.github.io folder and I didn't know how to access it so I copied it under the 2024-rladies-philly folder -->

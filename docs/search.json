@@ -11,7 +11,7 @@
     "href": "talks/2025-umass-r-cafe/slides.html#hello",
     "title": "Making your workflow reproducible",
     "section": "Hello",
-    "text": "Hello\n\n\nWho am I\nAssociate Staff Biostatistician at the Cleveland Clinic in the Department of Quantitative Health Sciences and the Taussig Cancer Institute.\n\n\nApplied cancer biostatistics and methods research in early phase oncology clinical trial design and methods for retrospective data analyses.\nCheckout my website for more."
+    "text": "Hello\n\n\nWho am I?\nAssociate Staff Biostatistician at the Cleveland Clinic in the Department of Quantitative Health Sciences and the Taussig Cancer Institute.\n\n\nApplied cancer biostatistics and methods research in early phase oncology clinical trial design and methods for retrospective data analyses.\nCheckout my website for more."
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#why-am-i-here",
@@ -32,7 +32,7 @@
     "href": "talks/2025-umass-r-cafe/slides.html#context",
     "title": "Making your workflow reproducible",
     "section": "Context",
-    "text": "Context\nEverything here evolved in the context of the work I do and how I do it.\n\nCollaborate with doctors on clinical research projects: they send me data, I analyze it\nWork independently as the only statistician/programmer for a given project\nPatient data is sensitive\n2 and 3 mean nothing goes on GitHub\n2 also means that my interest in reproducibility is for future Emily and for sound science"
+    "text": "Context\nEverything here evolved in the context of the work I do and how I do it.\n\nCollaborate with doctors on clinical research projects: they send me data, I analyze it\nWork independently as the only statistician/programmer for a given project\nPatient data is sensitive\n2 and 3 mean nothing goes on GitHub\n2 also means that my interest in reproducibility is for future me and for sound science"
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#the-starter-package",
@@ -60,7 +60,7 @@
     "href": "talks/2025-umass-r-cafe/slides.html#custom-starter-templates",
     "title": "Making your workflow reproducible",
     "section": "Custom {starter} templates",
-    "text": "Custom {starter} templates\nThe default is a great start, but I want a bit more:\n\nShell code files\nInclude Word template for Quarto\n\n\nSee the {starter} website for details on creating custom templates.\n\nThe R script that created my custom template in my personal R package on GitHub here."
+    "text": "Custom {starter} templates\nThe default is a great start, but I want a bit more:\n\nShell code files\nInclude Word reference document for Quarto\n\n\nSee the {starter} website for details on creating custom templates.\n\nThe R script that created my custom template is in my personal R package on GitHub here."
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#using-starter-with-my-personal-template",
@@ -88,35 +88,35 @@
     "href": "talks/2025-umass-r-cafe/slides.html#munge-file-template",
     "title": "Making your workflow reproducible",
     "section": "Munge file template",
-    "text": "Munge file template"
+    "text": "Munge file template\nUsed for data cleaning and pre-processing"
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#quarto-file-template",
     "href": "talks/2025-umass-r-cafe/slides.html#quarto-file-template",
     "title": "Making your workflow reproducible",
     "section": "Quarto file template",
-    "text": "Quarto file template"
+    "text": "Quarto file template\nUsed for analysis and text"
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#structure-inside-the-templates-folder",
     "href": "talks/2025-umass-r-cafe/slides.html#structure-inside-the-templates-folder",
     "title": "Making your workflow reproducible",
     "section": "Structure inside the templates folder",
-    "text": "Structure inside the templates folder\n\nSee details on how to create your own reference document for Word output here."
+    "text": "Structure inside the templates folder\nNote how this was referenced in the YAML of the Quarto report\n\nSee details on how to create your own reference document for Word output here."
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#folder-structure-and-naming",
     "href": "talks/2025-umass-r-cafe/slides.html#folder-structure-and-naming",
     "title": "Making your workflow reproducible",
     "section": "Folder structure and naming",
-    "text": "Folder structure and naming\nFind something that works for you and stick with it.\n\nWhat I do as a collaborative biostatistician:\n\nStore all project folders on the same drive, backed up by my organization\nGive each project a folder\nName the folder as “PIName-brief-project-description”.\n\nFor example, a project with Jane Smith about treatment for metastatic breast cancer might be “Smith-metastatic-breast-trt”\n\nInitialize using {starter}\nAlso add a “data” folder\nProject reports produced by Quarto saved in main project folder as, e.g., “Smith-metastatic-breast-trt-report-2025-10-18” for version control"
+    "text": "Folder structure and naming\nFind something that works for you and stick with it.\n\nWhat I do as a collaborative biostatistician:\n\nStore all project folders on the same drive, backed up by my organization\nEach project gets its own folder\nName the folder as “PIName-brief-project-description”.\n\nFor example, a project with Jane Smith about treatment for metastatic breast cancer might be “Smith-metastatic-breast-trt”\n\nInitialize using {starter}\nAlso add a “data” folder\nProject reports produced by Quarto saved in main project folder as, e.g., “Smith-metastatic-breast-trt-report-2025-10-18” for version control"
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#rstudio-projects",
     "href": "talks/2025-umass-r-cafe/slides.html#rstudio-projects",
     "title": "Making your workflow reproducible",
     "section": "RStudio projects",
-    "text": "RStudio projects\nBenefits of working inside an RStudio project include:\n\nStarts a fresh R session every time the project is opened\nThe current working directory is set to the project directory\nPreviously open R scripts are restored at project startup\nOther RStudio settings are restored\nMultiple RStudio sessions can be open at one time, running independently in different RStudio projects"
+    "text": "RStudio projects\nBenefits of working inside an RStudio project include:\n\nStart a fresh R session every time the project is opened\nThe current working directory is set to the project directory\nPreviously open R scripts are restored at project startup\nOther RStudio settings are restored\nMultiple RStudio sessions can be open at one time, running independently in different RStudio projects"
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#creating-rstudio-projects",
@@ -186,28 +186,28 @@
     "href": "talks/2025-umass-r-cafe/slides.html#quarto-reports",
     "title": "Making your workflow reproducible",
     "section": "Quarto reports",
-    "text": "Quarto reports\n\nStarted using RMarkdown reports, switched to Quarto.\nVery easy to switch and I still use a lot of RMarkdown style programming in my Quarto files.\nNever again:\n\nhardcode a number\nhave separate documents for text and tables\nmanually create tables\nhave difficulty updating results when data change\n\nEasily mix code chunks with text\nReport numbers in line in a programmatic way"
+    "text": "Quarto reports\n\nStarted using RMarkdown reports, switched to Quarto.\nVery easy to switch and I still use a lot of RMarkdown style programming in my Quarto files.\nNever again:\n\nhardcode a number\nhave separate documents for text and tables\nmanually create tables\nhave difficulty updating results when data change\n\nEasily mix code chunks with text\nReport numbers in-line in a programmatic way"
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#separate-files-for-data-preparation-and-data-reporting",
     "href": "talks/2025-umass-r-cafe/slides.html#separate-files-for-data-preparation-and-data-reporting",
     "title": "Making your workflow reproducible",
     "section": "Separate files for data preparation and data reporting",
-    "text": "Separate files for data preparation and data reporting\nRecall my starter template created two shell documents:\n\nR script where data are cleaned and coded and saved into .rda\nQuarto file where clean data are read in, analyses done, results reported"
+    "text": "Separate files for data preparation and data reporting\nRecall my starter template created two shell documents:\n\nR script where data are cleaned and coded and saved into a .rda file\nQuarto file where clean data are read in, analyses done, results reported"
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#what-do-i-include",
     "href": "talks/2025-umass-r-cafe/slides.html#what-do-i-include",
     "title": "Making your workflow reproducible",
     "section": "What do I include?",
-    "text": "What do I include?\nI write my Quarto reports with three main sections:\n\nNotes/questions: these are notes on things I did in the data cleaning process that I want to call attention to, i.e. how categories were combined, missing data to address, etc.\nMethods: A formal statistical methods section that can be copied and pasted directly into the eventual scientific publication\nResults: Mostly tables and figures with some text interpretation mixed in."
+    "text": "What do I include?\nI write my Quarto reports with four main sections:\n\nNotes/questions: these are notes on things I did in the data cleaning process that I want to call attention to, i.e. how categories were combined, missing data to address, data issues or inconsistencies, etc\nBackground: a brief description of the problem or question being addressed by the project\nMethods: A formal statistical methods section that can be copied and pasted directly into the eventual scientific publication\nResults: Mostly tables and figures with some text interpretation mixed in."
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#quarto-output-options",
     "href": "talks/2025-umass-r-cafe/slides.html#quarto-output-options",
     "title": "Making your workflow reproducible",
     "section": "Quarto output options",
-    "text": "Quarto output options\n\nhtml: probably the most popular, has many more customization options\npdf: the trickiest to use, in my opinion, requires LaTeX\nWord: unpopular, but my preference as it makes it easy to copy and paste entire tables and blocks of text from my report into the publication"
+    "text": "Quarto output options\n\nhtml: probably the most popular, with many customization options\npdf: the trickiest to use, in my opinion, requires a LaTeX installation\nWord: unpopular, but my preference as it makes it easy to copy and paste entire tables and blocks of text from my report into the publication\n\n Note that you can also make slides in Quarto, like these slides, but that is not our focus today"
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#components-of-a-quarto-file",
@@ -270,14 +270,14 @@
     "href": "talks/2025-umass-r-cafe/slides.html#put-it-all-together",
     "title": "Making your workflow reproducible",
     "section": "Put it all together",
-    "text": "Put it all together\nI am starting a new project with Dr. Jane Smith about the association between radiation treatment and overall survival in women with breast cancer. Dr. Smith has emailed me an Excel dataset to analyze for the project."
+    "text": "Put it all together\nCase study: I am starting a new project with Dr. Jane Smith about the association between radiation treatment and overall survival in women with breast cancer. Dr. Smith has emailed me an Excel dataset to analyze for the project, and we have discussed the analysis plan."
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#run-startercreate_project",
     "href": "talks/2025-umass-r-cafe/slides.html#run-startercreate_project",
     "title": "Making your workflow reproducible",
     "section": "Run starter::create_project()",
-    "text": "Run starter::create_project()\n\n# devtools::install_github(\"zabore/ezfun\") \nstarter::create_project(\n  path = fs::path(\"G:/StatTeam/zabore/Smith-breast-radiation\"),\n  template = ezfun::ez_analysis_template,\n  open = FALSE\n)\n\n✔ Using \"EZ Analysis Template\" template\n\n\n✔ Writing files \n\n\n✔ Initialising renv project\n\n\n- Lockfile written to \"G:/StatTeam/zabore/Smith-breast-radiation/renv.lock\".\n- renv infrastructure has been generated for project \"G:/StatTeam/zabore/Smith-breast-radiation\".\n\n\nNotes:\n\n“G:/StatTeam/zabore” is my organization’s preferred and backed-up drive on my computer\nA new project folder named “Smith-breast-radiation” will be created and populated"
+    "text": "Run starter::create_project()\n\nstarter::create_project(\n  path = fs::path(\"G:/StatTeam/zabore/Smith-breast-radiation\"),\n  template = ezfun::ez_analysis_template,\n  open = FALSE\n)\n\n✔ Using \"EZ Analysis Template\" template\n\n\n✔ Writing files \n\n\n✔ Initialising renv project\n\n\n- Lockfile written to \"G:/StatTeam/zabore/Smith-breast-radiation/renv.lock\".\n- renv infrastructure has been generated for project \"G:/StatTeam/zabore/Smith-breast-radiation\".\n\n\nNotes:\n\n“G:/StatTeam/zabore” is my organization’s preferred and backed-up drive on my computer\nA new project folder named “Smith-breast-radiation” will be created and populated"
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#add-a-data-folder-and-save-the-data-there",
@@ -950,5 +950,26 @@
     "title": "Talks",
     "section": "R-Ladies Philly: Introduction to Survival Analysis in R",
     "text": "R-Ladies Philly: Introduction to Survival Analysis in R\n2024-12-17\n\nFull Screen"
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#using-starter-default-settings",
+    "href": "talks/2025-umass-r-cafe/slides.html#using-starter-default-settings",
+    "title": "Making your workflow reproducible",
+    "section": "Using {starter}: default settings",
+    "text": "Using {starter}: default settings\n\n# install.packages(\"starter\") \n\nstarter::create_project(\n  path = fs::path(tempdir(), \"My Project Folder\"),\n  open = FALSE # don't open project in new RStudio session\n)\n\n✔ Using \"Default Project Template\" template\n\n\n✔ Writing folder 'C:/Users/zabore2/AppData/Local/Temp/RtmpMTUbvb/My Project Folder'\n\n\n✔ Writing files \"README.md\", \".gitignore\", \"My Project Folder.Rproj\", and \".Rprofile\"\n\n\n✔ Initialising Git repo\n\n\n✔ Initialising renv project\n\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/RtmpMTUbvb/My Project Folder/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/RtmpMTUbvb/My Project Folder\"."
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#using-starter-custom-template",
+    "href": "talks/2025-umass-r-cafe/slides.html#using-starter-custom-template",
+    "title": "Making your workflow reproducible",
+    "section": "Using {starter}: custom template",
+    "text": "Using {starter}: custom template\n\n# devtools::install_github(\"zabore/ezfun\") \n\nstarter::create_project(\n  path = fs::path(tempdir(), \"example-custom-project\"),\n  template = ezfun::ez_analysis_template,\n  open = FALSE\n)\n\n✔ Using \"EZ Analysis Template\" template\n\n\n✔ Writing folder 'C:/Users/zabore2/AppData/Local/Temp/RtmpMTUbvb/example-custom-project'\n\n\n✔ Creating 'C:/Users/zabore2/AppData/Local/Temp/RtmpMTUbvb/example-custom-project/code'\n\n\n✔ Creating 'C:/Users/zabore2/AppData/Local/Temp/RtmpMTUbvb/example-custom-project/code/templates'\n\n\n✔ Writing files \"README.md\", \".gitignore\", \"example-custom-project.Rproj\", \".Rprofile\", \"code/example-custom-project-munge.R\", \"code/example-custom-project-report.qmd\", and \"code/templates/doc_template.docx\"\n\n\n✔ Initialising Git repo\n\n\n✔ Initialising renv project\n\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/RtmpMTUbvb/example-custom-project/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/RtmpMTUbvb/example-custom-project\"."
+  },
+  {
+    "objectID": "talks/2025-umass-r-cafe/slides.html#thank-you",
+    "href": "talks/2025-umass-r-cafe/slides.html#thank-you",
+    "title": "Making your workflow reproducible",
+    "section": "Thank you",
+    "text": "Thank you\n\nConnect with me:\n\n\n\n zabore2@ccf.org\n https://www.emilyzabor.com/\n https://github.com/zabore\n https://www.linkedin.com/in/emily-zabor-59b902b7/\n https://bsky.app/profile/zabore.bsky.social/"
   }
 ]
