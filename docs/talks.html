@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Talks – Emily C. Zabor</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -36,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -118,6 +121,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#umass-chan-r-café-making-your-workflow-reproducible" id="toc-umass-chan-r-café-making-your-workflow-reproducible" class="nav-link active" data-scroll-target="#umass-chan-r-café-making-your-workflow-reproducible">UMass Chan R Café: Making your workflow reproducible</a></li>
+  <li><a href="#new-york-r-conference-reporting-survival-analysis-results-with-the-gtsummary-and-ggsurvfit-packages" id="toc-new-york-r-conference-reporting-survival-analysis-results-with-the-gtsummary-and-ggsurvfit-packages" class="nav-link" data-scroll-target="#new-york-r-conference-reporting-survival-analysis-results-with-the-gtsummary-and-ggsurvfit-packages">New York R Conference: Reporting survival analysis results with the gtsummary and ggsurvfit packages</a></li>
+  <li><a href="#rmedicine-reporting-survival-analysis-results-with-the-gtsummary-and-ggsurvfit-packages" id="toc-rmedicine-reporting-survival-analysis-results-with-the-gtsummary-and-ggsurvfit-packages" class="nav-link" data-scroll-target="#rmedicine-reporting-survival-analysis-results-with-the-gtsummary-and-ggsurvfit-packages">R/Medicine: Reporting survival analysis results with the gtsummary and ggsurvfit packages</a></li>
   <li><a href="#r-ladies-philly-introduction-to-survival-analysis-in-r" id="toc-r-ladies-philly-introduction-to-survival-analysis-in-r" class="nav-link" data-scroll-target="#r-ladies-philly-introduction-to-survival-analysis-in-r">R-Ladies Philly: Introduction to Survival Analysis in R</a></li>
   </ul>
 </nav>
@@ -150,6 +155,18 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>2025-10-24</strong></p>
 <iframe class="slide-deck" src="talks/2025-umass-r-cafe/slides.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
 <p><a href="talks/2025-umass-r-cafe/slides.html">Full Screen</a></p>
+</section>
+<section id="new-york-r-conference-reporting-survival-analysis-results-with-the-gtsummary-and-ggsurvfit-packages" class="level2">
+<h2 class="anchored" data-anchor-id="new-york-r-conference-reporting-survival-analysis-results-with-the-gtsummary-and-ggsurvfit-packages">New York R Conference: Reporting survival analysis results with the gtsummary and ggsurvfit packages</h2>
+<p><strong>2024-05-17</strong></p>
+<iframe class="slide-deck" src="talks/2024-NYR/2024-NYR-Zabor.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+<p><a href="talks/2024-NYR/2024-NYR-Zabor.html">Full Screen</a></p>
+</section>
+<section id="rmedicine-reporting-survival-analysis-results-with-the-gtsummary-and-ggsurvfit-packages" class="level2">
+<h2 class="anchored" data-anchor-id="rmedicine-reporting-survival-analysis-results-with-the-gtsummary-and-ggsurvfit-packages">R/Medicine: Reporting survival analysis results with the gtsummary and ggsurvfit packages</h2>
+<p><strong>2024-06-13</strong></p>
+<iframe class="slide-deck" src="talks/2024-rmedicine/2024-RMedicine-Zabor.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+<p><a href="talks/2024-rmedicine/2024-RMedicine-Zabor.html">Full Screen</a></p>
 </section>
 <section id="r-ladies-philly-introduction-to-survival-analysis-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="r-ladies-philly-introduction-to-survival-analysis-in-r">R-Ladies Philly: Introduction to Survival Analysis in R</h2>
@@ -212,13 +229,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

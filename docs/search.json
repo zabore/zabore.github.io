@@ -42,11 +42,11 @@
     "text": "The {starter} package\n\n\n\n\n\n“Provides a toolkit for starting new projects”"
   },
   {
-    "objectID": "talks/2025-umass-r-cafe/slides.html#using-starter-with-default-settings",
-    "href": "talks/2025-umass-r-cafe/slides.html#using-starter-with-default-settings",
+    "objectID": "talks/2025-umass-r-cafe/slides.html#using-starter-default-settings",
+    "href": "talks/2025-umass-r-cafe/slides.html#using-starter-default-settings",
     "title": "Making your workflow reproducible",
-    "section": "Using {starter} with default settings",
-    "text": "Using {starter} with default settings\n\n# install.packages(\"starter\") \n\nstarter::create_project(\n  path = fs::path(tempdir(), \"My Project Folder\"),\n  open = FALSE # don't open project in new RStudio session\n)\n\n✔ Using \"Default Project Template\" template\n\n\n✔ Writing folder 'C:/Users/zabore2/AppData/Local/Temp/Rtmp4AN2BX/My Project Folder'\n\n\n✔ Writing files \"README.md\", \".gitignore\", \"My Project Folder.Rproj\", and \".Rprofile\"\n\n\n✔ Initialising Git repo\n\n\n✔ Initialising renv project\n\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/Rtmp4AN2BX/My Project Folder/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/Rtmp4AN2BX/My Project Folder\"."
+    "section": "Using {starter}: default settings",
+    "text": "Using {starter}: default settings\n\n# install.packages(\"starter\") \n\nstarter::create_project(\n  path = fs::path(tempdir(), \"My Project Folder\"),\n  open = FALSE # don't open project in new RStudio session\n)\n\n✔ Using \"Default Project Template\" template\n\n\n✔ Writing folder 'C:/Users/zabore2/AppData/Local/Temp/RtmpEj8Y62/My Project Folder'\n\n\n✔ Writing files \"README.md\", \".gitignore\", \"My Project Folder.Rproj\", and \".Rprofile\"\n\n\n✔ Initialising Git repo\n\n\n✔ Initialising renv project\n\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/RtmpEj8Y62/My Project Folder/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/RtmpEj8Y62/My Project Folder\"."
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#resulting-project-structure",
@@ -63,11 +63,11 @@
     "text": "Custom {starter} templates\nThe default is a great start, but I want a bit more:\n\nShell code files\nInclude Word reference document for Quarto\n\n\nSee the {starter} website for details on creating custom templates.\n\nThe R script that created my custom template is in my personal R package on GitHub here."
   },
   {
-    "objectID": "talks/2025-umass-r-cafe/slides.html#using-starter-with-my-personal-template",
-    "href": "talks/2025-umass-r-cafe/slides.html#using-starter-with-my-personal-template",
+    "objectID": "talks/2025-umass-r-cafe/slides.html#using-starter-custom-template",
+    "href": "talks/2025-umass-r-cafe/slides.html#using-starter-custom-template",
     "title": "Making your workflow reproducible",
-    "section": "Using {starter} with my personal template",
-    "text": "Using {starter} with my personal template\n\n# devtools::install_github(\"zabore/ezfun\") \n\nstarter::create_project(\n  path = fs::path(tempdir(), \"example-custom-project\"),\n  template = ezfun::ez_analysis_template,\n  open = FALSE\n)\n\n✔ Using \"EZ Analysis Template\" template\n\n\n✔ Writing folder 'C:/Users/zabore2/AppData/Local/Temp/Rtmp4AN2BX/example-custom-project'\n\n\n✔ Creating 'C:/Users/zabore2/AppData/Local/Temp/Rtmp4AN2BX/example-custom-project/code'\n\n\n✔ Creating 'C:/Users/zabore2/AppData/Local/Temp/Rtmp4AN2BX/example-custom-project/code/templates'\n\n\n✔ Writing files \"README.md\", \".gitignore\", \"example-custom-project.Rproj\", \".Rprofile\", \"code/example-custom-project-munge.R\", \"code/example-custom-project-report.qmd\", and \"code/templates/doc_template.docx\"\n\n\n✔ Initialising Git repo\n\n\n✔ Initialising renv project\n\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/Rtmp4AN2BX/example-custom-project/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/Rtmp4AN2BX/example-custom-project\"."
+    "section": "Using {starter}: custom template",
+    "text": "Using {starter}: custom template\n\n# devtools::install_github(\"zabore/ezfun\") \n\nstarter::create_project(\n  path = fs::path(tempdir(), \"example-custom-project\"),\n  template = ezfun::ez_analysis_template,\n  open = FALSE\n)\n\n✔ Using \"EZ Analysis Template\" template\n\n\n✔ Writing folder 'C:/Users/zabore2/AppData/Local/Temp/RtmpEj8Y62/example-custom-project'\n\n\n✔ Creating 'C:/Users/zabore2/AppData/Local/Temp/RtmpEj8Y62/example-custom-project/code'\n\n\n✔ Creating 'C:/Users/zabore2/AppData/Local/Temp/RtmpEj8Y62/example-custom-project/code/templates'\n\n\n✔ Writing files \"README.md\", \".gitignore\", \"example-custom-project.Rproj\", \".Rprofile\", \"code/example-custom-project-munge.R\", \"code/example-custom-project-report.qmd\", and \"code/templates/doc_template.docx\"\n\n\n✔ Initialising Git repo\n\n\n✔ Initialising renv project\n\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/RtmpEj8Y62/example-custom-project/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/RtmpEj8Y62/example-custom-project\"."
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#resulting-custom-project-structure",
@@ -322,11 +322,130 @@
     "text": "Save the report with a new name"
   },
   {
-    "objectID": "talks/2025-umass-r-cafe/slides.html#connect-with-me",
-    "href": "talks/2025-umass-r-cafe/slides.html#connect-with-me",
+    "objectID": "talks/2025-umass-r-cafe/slides.html#thank-you",
+    "href": "talks/2025-umass-r-cafe/slides.html#thank-you",
     "title": "Making your workflow reproducible",
-    "section": "Connect with me",
-    "text": "Connect with me\n\n\n zabore2@ccf.org\n https://www.emilyzabor.com/\n https://github.com/zabore\n https://www.linkedin.com/in/emily-zabor-59b902b7/\n https://bsky.app/profile/zabore.bsky.social/"
+    "section": "Thank you",
+    "text": "Thank you\n\nConnect with me:\n\n\n\n zabore2@ccf.org\n https://www.emilyzabor.com/\n https://github.com/zabore\n https://www.linkedin.com/in/emily-zabor-59b902b7/\n https://bsky.app/profile/zabore.bsky.social/"
+  },
+  {
+    "objectID": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#time-to-event-endpoints-are-common-in-biomedical-research",
+    "href": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#time-to-event-endpoints-are-common-in-biomedical-research",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Time-to-event endpoints are common in biomedical research",
+    "text": "Time-to-event endpoints are common in biomedical research"
+  },
+  {
+    "objectID": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#common-research-questions-relate-to-times-and-probabilities",
+    "href": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#common-research-questions-relate-to-times-and-probabilities",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Common research questions relate to times and probabilities",
+    "text": "Common research questions relate to times and probabilities\n\n\n\n\n\n\n\nWhat is the probability of remaining event-free for a certain number of years?\nWhat is the average amount of event-free time?"
+  },
+  {
+    "objectID": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#survival-analysis-methods-needed-when-follow-up-time-varies",
+    "href": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#survival-analysis-methods-needed-when-follow-up-time-varies",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Survival analysis methods needed when follow-up time varies",
+    "text": "Survival analysis methods needed when follow-up time varies"
+  },
+  {
+    "objectID": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#the-survival-package-is-the-basis-of-the-survival-ecosystem-in-r",
+    "href": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#the-survival-package-is-the-basis-of-the-survival-ecosystem-in-r",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "The {survival} package is the basis of the survival ecosystem in R",
+    "text": "The {survival} package is the basis of the survival ecosystem in R\n\n\n\n\n\n\n\n\nBegan development in 1985\nTotal of 11.9M downloads\nActive development ongoing\nMany detailed vignettes covering both the basics and advanced topics\nIncludes the essential methods\n\n\n\ninstall.packages(\"survival\")\nlibrary(survival)"
+  },
+  {
+    "objectID": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#happiness-is-reproducible-publication-ready-tables-and-plots",
+    "href": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#happiness-is-reproducible-publication-ready-tables-and-plots",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Happiness is reproducible publication-ready tables and plots",
+    "text": "Happiness is reproducible publication-ready tables and plots\n\n\n\n\ninstall.packages(c(\"gtsummary\", \"ggsurvfit\"))\nlibrary(gtsummary)\nlibrary(ggsurvfit)"
+  },
+  {
+    "objectID": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#example-dataset",
+    "href": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#example-dataset",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Example dataset",
+    "text": "Example dataset\nThe colon data come from a clinical trial of adjuvant therapy for colon cancer, and are included in the {survival} package.\n\nVariables of interest:\n\n\n\n\n\n\n\n\nVariable\nVariable description\nLevels\n\n\n\n\nrx\nTreatment assignment\nObs(ervation), Lev(amisole), Lev(amisole)+5-FU\n\n\nsex\nSex\n1=male, 0=female\n\n\nyears\nYears to status\nContinuous years\n\n\nstatus\nCensoring status\n0=censored, 1=recurrence\n\n\n\n\n\n\n\n\n\nSee appendix slide for code to generate altered example data colonr."
+  },
+  {
+    "objectID": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#survival-tables-with-gtsummary",
+    "href": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#survival-tables-with-gtsummary",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Survival tables with {gtsummary}",
+    "text": "Survival tables with {gtsummary}\nUse tbl_survfit() to create:\n\nTables of median event-free time\nTables of x-time event-free probability\n\nUse tbl_uvregression() to create:\n\nTables of univariate Cox regression results\n\nUse tbl_regression() to create:\n\nTables of multivariable Cox regression results\n\nTables are highly customizable, see https://www.danieldsjoberg.com/gtsummary/ for details and vignettes to get started"
+  },
+  {
+    "objectID": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#table-of-median-event-free-time",
+    "href": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#table-of-median-event-free-time",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Table of median event-free time",
+    "text": "Table of median event-free time\nUse tbl_survfit() with the probs = 0.5 argument:\n\n\nlist(\n  survfit(\n    Surv(years, status) ~ 1, \n    data = colonr),\n  survfit(\n    Surv(years, status) ~ rx, \n    data = colonr)\n  ) |&gt; \n  tbl_survfit(\n    probs = 0.5,\n    label_header = \n      \"Median (95% CI)\"\n    )\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nMedian (95% CI)\n\n\n\n\nOverall\n5.5 (4.0, —)\n\n\nTreatment\n\n\n\n\n    Obs\n3.4 (2.2, 5.6)\n\n\n    Lev\n3.2 (2.2, 5.7)\n\n\n    Lev+5FU\n— (—, —)\n\n\n\n\n\n\n\n\n\nHighly customizable\nCan set labels, titles, subtitles, footnotes, and more"
+  },
+  {
+    "objectID": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#table-of-x-year-event-free-probability",
+    "href": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#table-of-x-year-event-free-probability",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Table of x-year event-free probability",
+    "text": "Table of x-year event-free probability\nUse tbl_survfit() with the times = 5 argument:\n\n\nlist(\n  survfit(\n    Surv(years, status) ~ 1, \n    data = colonr),\n  survfit(\n    Surv(years, status) ~ rx, \n    data = colonr)\n  ) |&gt; \n  tbl_survfit(\n    times = 5,\n    label_header = \n      \"{time}-year RFS (95% CI)\"\n    )\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n5-year RFS (95% CI)\n\n\n\n\nOverall\n51% (48%, 54%)\n\n\nTreatment\n\n\n\n\n    Obs\n45% (40%, 51%)\n\n\n    Lev\n46% (41%, 52%)\n\n\n    Lev+5FU\n62% (56%, 67%)\n\n\n\n\n\n\n\n\n\nNote the use of {glue} syntax in the label header to dynamically code the column header"
+  },
+  {
+    "objectID": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#inline-results-reporting",
+    "href": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#inline-results-reporting",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Inline results reporting",
+    "text": "Inline results reporting\nSave the tbl_survfit() result to an object (here, tab1) so that table statistics can be extracted for use inline with the inline_text() function.\n\nThe inline code:\n\nThe median (95% CI) recurrence-free time for the Levamisole treatment group is `r inline_text(tab1, variable = rx, level = 'Lev', prob = 0.5)`.\n\n\nWill show as:\n\nThe median (95% CI) recurrence-free time for the Levamisole treatment group is 3.2 (2.2, 5.7)."
+  },
+  {
+    "objectID": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#univariate-cox-regression-table",
+    "href": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#univariate-cox-regression-table",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Univariate Cox regression table",
+    "text": "Univariate Cox regression table\nUse tbl_uvregression():\n\n\ncolonr |&gt; \n  tbl_uvregression(\n    method = coxph,\n    y = Surv(years, status),\n    include = c(rx, sex),\n    exponentiate = T\n    ) |&gt; \n  add_global_p()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN\nHR\n95% CI\np-value\n\n\n\n\nTreatment\n929\n\n\n\n\n&lt;0.001\n\n\n    Obs\n\n\n—\n—\n\n\n\n\n    Lev\n\n\n0.98\n0.80, 1.21\n\n\n\n\n    Lev+5FU\n\n\n0.60\n0.47, 0.76\n\n\n\n\nSex\n929\n\n\n\n\n0.4\n\n\n    Female\n\n\n—\n—\n\n\n\n\n    Male\n\n\n0.92\n0.77, 1.10\n\n\n\n\n\nAbbreviations: CI = Confidence Interval, HR = Hazard Ratio\n\n\n\n\n\n\n\n\n\n\nFits models for all variables listed in include =\nexponentiate = T to obtain hazard ratios\nAdd global p-values"
+  },
+  {
+    "objectID": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#multivariable-cox-regression-table",
+    "href": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#multivariable-cox-regression-table",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Multivariable Cox regression table",
+    "text": "Multivariable Cox regression table\nPass fitted model results directly to tbl_regression():\n\n\ncoxph(\n  Surv(years, status) ~ \n    rx + sex, \n  data = colonr\n  ) |&gt; \n  tbl_regression(\n    exponentiate = T\n  ) |&gt; \n  add_global_p()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nHR\n95% CI\np-value\n\n\n\n\nTreatment\n\n\n\n\n&lt;0.001\n\n\n    Obs\n—\n—\n\n\n\n\n    Lev\n0.99\n0.80, 1.22\n\n\n\n\n    Lev+5FU\n0.60\n0.47, 0.75\n\n\n\n\nSex\n\n\n\n\n0.3\n\n\n    Female\n—\n—\n\n\n\n\n    Male\n0.90\n0.75, 1.08\n\n\n\n\n\nAbbreviations: CI = Confidence Interval, HR = Hazard Ratio"
+  },
+  {
+    "objectID": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#time-to-event-plots-with-ggsurvfit",
+    "href": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#time-to-event-plots-with-ggsurvfit",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Time-to-event plots with {ggsurvfit}",
+    "text": "Time-to-event plots with {ggsurvfit}\nUses {ggplot2} as the basis so known customizations are available with the + operator.\n\nPlot Kaplan-Meier curves using ggsurvfit\nPlot cumulative incidence curves for competing risks using ggcuminc\nPlot multi-state models using ggsurvfit\n\nOptions to:\n\nAdd confidence intervals\nAdd risk tables\nAdd quantiles\nAnd more\n\nSee https://www.danieldsjoberg.com/ggsurvfit/ for details and vignettes to get started"
+  },
+  {
+    "objectID": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#kaplan-meier-curves-with-ggsurvfit",
+    "href": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#kaplan-meier-curves-with-ggsurvfit",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Kaplan-Meier curves with ggsurvfit()",
+    "text": "Kaplan-Meier curves with ggsurvfit()\n\n\nsurvfit2(\n  Surv(years, status) ~ 1, \n  data = colonr\n  ) |&gt;\n  ggsurvfit() + \n  add_confidence_interval() + \n  add_risktable() +\n  scale_y_continuous(\n    limits = c(0, 1)\n    ) + \n  scale_x_continuous(\n    limits = c(0, 8), \n    breaks = seq(0, 8, 2)\n  ) +\n  labs(\n    x = \"Years from treatment start\",\n    y = \"Recurrence-free probability\"\n  )"
+  },
+  {
+    "objectID": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#put-it-all-together",
+    "href": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#put-it-all-together",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Put it all together",
+    "text": "Put it all together"
+  },
+  {
+    "objectID": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#thank-you-and-please-get-in-touch",
+    "href": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#thank-you-and-please-get-in-touch",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Thank you, and please get in touch",
+    "text": "Thank you, and please get in touch\n\n zabore2@ccf.org\n https://www.emilyzabor.com/\n https://github.com/zabore\n https://www.linkedin.com/in/emily-zabor-59b902b7/"
+  },
+  {
+    "objectID": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#appendix-create-example-dataset",
+    "href": "talks/2024-rmedicine/2024-RMedicine-Zabor.html#appendix-create-example-dataset",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Appendix: Create example dataset",
+    "text": "Appendix: Create example dataset\n\ncolon dataset from {survival} altered to:\n\nLimit to one row per patient with interest in recurrence rather than death\nScale time from days to years\nRecode sex levels to informative values\nLabel variables of interest\n\n\n\ncolonr &lt;- \n  colon |&gt; \n  filter(etype == 1) |&gt; \n  mutate(\n    years = time / 365.25,\n    sex = case_match(\n      sex,\n      0 ~ \"Female\",\n      1 ~ \"Male\"\n    )\n  ) |&gt; \n  labelled::set_variable_labels(\n    rx = \"Treatment\", \n    sex = \"Sex\"\n  )"
   },
   {
     "objectID": "talks/2024-rladies-philly/index.html",
@@ -334,6 +453,167 @@
     "title": "R-Ladies Philly: Introduction to Survival Analysis in R",
     "section": "",
     "text": "Full Screen"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#time-to-event-endpoints-are-common-in-biomedical-research",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#time-to-event-endpoints-are-common-in-biomedical-research",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Time-to-event endpoints are common in biomedical research",
+    "text": "Time-to-event endpoints are common in biomedical research"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#common-research-questions-relate-to-times-and-probabilities",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#common-research-questions-relate-to-times-and-probabilities",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Common research questions relate to times and probabilities",
+    "text": "Common research questions relate to times and probabilities\n\n\n\n\n\n\n\nWhat is the probability of remaining event-free for a certain number of years?\nWhat is the average amount of event-free time?"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#survival-analysis-methods-needed-when-follow-up-time-varies",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#survival-analysis-methods-needed-when-follow-up-time-varies",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Survival analysis methods needed when follow-up time varies",
+    "text": "Survival analysis methods needed when follow-up time varies"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#the-survival-package-is-the-basis-of-the-survival-ecosystem-in-r",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#the-survival-package-is-the-basis-of-the-survival-ecosystem-in-r",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "The {survival} package is the basis of the survival ecosystem in R",
+    "text": "The {survival} package is the basis of the survival ecosystem in R\n\n\n\n\n\n\n\n\nBegan development in 1985\nTotal of 11.9M downloads\nActive development ongoing\nMany detailed vignettes covering both the basics and advanced topics\nIncludes the essential methods\n\n\n\ninstall.packages(\"survival\")\nlibrary(survival)"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#example-dataset",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#example-dataset",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Example dataset",
+    "text": "Example dataset\nThe colon data come from a clinical trial of adjuvant therapy for colon cancer, and are included in the {survival} package.\n\nVariables of interest:\n\n\n\n\n\n\n\n\nVariable\nVariable description\nLevels\n\n\n\n\nrx\nTreatment assignment\nObs(ervation), Lev(amisole), Lev(amisole)+5-FU\n\n\nsex\nSex\n1=male, 0=female\n\n\nyears\nYears to status\nContinuous years\n\n\nstatus\nCensoring status\n0=censored, 1=recurrence\n\n\n\n\n\n\n\n\n\nSee appendix slide for code to generate altered example data colonr."
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#estimate-median-event-free-time",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#estimate-median-event-free-time",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Estimate median event-free time",
+    "text": "Estimate median event-free time\nUse survfit() to create the survival curves from which the median recurrence-free years and 95% confidence interval are obtained:\n\n\nsurvfit(Surv(years, status) ~ 1, data = colonr)\n\nCall: survfit(formula = Surv(years, status) ~ 1, data = colonr)\n\n       n events median 0.95LCL 0.95UCL\n[1,] 929    468   5.52    4.01      NA"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#estimate-x-year-event-free-probability",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#estimate-x-year-event-free-probability",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Estimate x-year event-free probability",
+    "text": "Estimate x-year event-free probability\nRun summary() on the survfit() object to estimate the 5-year recurrence-free probability and 95% confidence interval:\n\n\nsummary(survfit(Surv(years, status) ~ 1, data = colonr), times = 5)\n\nCall: survfit(formula = Surv(years, status) ~ 1, data = colonr)\n\n time n.risk n.event survival std.err lower 95% CI upper 95% CI\n    5    437     451    0.508  0.0166        0.476        0.541"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#fit-cox-regression-models",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#fit-cox-regression-models",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Fit Cox regression models",
+    "text": "Fit Cox regression models\nUse coxph() to fit univariate and multivariable Cox regression models:\n\n\ncoxph(Surv(years, status) ~ rx, data = colonr)\n\nCall:\ncoxph(formula = Surv(years, status) ~ rx, data = colonr)\n\n              coef exp(coef) se(coef)      z        p\nrxLev     -0.01512   0.98499  0.10708 -0.141    0.888\nrxLev+5FU -0.51209   0.59924  0.11863 -4.317 1.58e-05\n\nLikelihood ratio test=24.34  on 2 df, p=5.175e-06\nn= 929, number of events= 468"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#plot-kaplan-meier-curves",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#plot-kaplan-meier-curves",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Plot Kaplan-Meier curves",
+    "text": "Plot Kaplan-Meier curves\nRun plot() on the survfit() object to generate the Kaplan-Meier plot:\n\nplot(survfit(Surv(years, status) ~ 1, data = colonr), \n  xlab = \"Years from treatment start\",\n  ylab = \"Recurrence-free probability\")"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#done-thats-everything-we-need",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#done-thats-everything-we-need",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Done! That’s everything we need!",
+    "text": "Done! That’s everything we need!\n\n\n\nBut what if we need to put our results in a reproducible and publication-ready report?"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#section",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#section",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "",
+    "text": "install.packages(c(\"gtsummary\", \"ggsurvfit\"))\nlibrary(gtsummary)\nlibrary(ggsurvfit)"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#survival-tables-with-gtsummary",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#survival-tables-with-gtsummary",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Survival tables with {gtsummary}",
+    "text": "Survival tables with {gtsummary}\nUse tbl_survfit() to create:\n\nTables of median event-free time\nTables of x-time event-free probability\n\nUse tbl_uvregression() to create:\n\nTables of univariate Cox regression results\n\nUse tbl_regression() to create:\n\nTables of multivariable Cox regression results\n\nTables are highly customizable, see https://www.danieldsjoberg.com/gtsummary/ for details and vignettes to get started"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#table-of-median-event-free-time",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#table-of-median-event-free-time",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Table of median event-free time",
+    "text": "Table of median event-free time\nUse tbl_survfit() with the probs = 0.5 argument:\n\n\nlist(\n  survfit(\n    Surv(years, status) ~ 1, \n    data = colonr),\n  survfit(\n    Surv(years, status) ~ rx, \n    data = colonr)\n  ) |&gt; \n  tbl_survfit(\n    probs = 0.5,\n    label_header = \n      \"Median (95% CI)\"\n    )\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nMedian (95% CI)\n\n\n\n\nOverall\n5.5 (4.0, —)\n\n\nTreatment\n\n\n\n\n    Obs\n3.4 (2.2, 5.6)\n\n\n    Lev\n3.2 (2.2, 5.7)\n\n\n    Lev+5FU\n— (—, —)\n\n\n\n\n\n\n\n\n\nHighly customizable\nCan set labels, titles, subtitles, footnotes, and more"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#table-of-x-year-event-free-probability",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#table-of-x-year-event-free-probability",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Table of x-year event-free probability",
+    "text": "Table of x-year event-free probability\nUse tbl_survfit() with the times = 5 argument:\n\n\nlist(\n  survfit(\n    Surv(years, status) ~ 1, \n    data = colonr),\n  survfit(\n    Surv(years, status) ~ rx, \n    data = colonr)\n  ) |&gt; \n  tbl_survfit(\n    times = 5,\n    label_header = \n      \"{time}-year RFS (95% CI)\"\n    )\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n5-year RFS (95% CI)\n\n\n\n\nOverall\n51% (48%, 54%)\n\n\nTreatment\n\n\n\n\n    Obs\n45% (40%, 51%)\n\n\n    Lev\n46% (41%, 52%)\n\n\n    Lev+5FU\n62% (56%, 67%)\n\n\n\n\n\n\n\n\n\nNote the use of {glue} syntax in the label header to dynamically code the column header"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#inline-results-reporting",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#inline-results-reporting",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Inline results reporting",
+    "text": "Inline results reporting\nSave the tbl_survfit() result to an object (here, tab1) so that table statistics can be extracted for use inline with the inline_text() function.\n\nThe inline code:\n\nThe median (95% CI) recurrence-free time for the Levamisole treatment group is `r inline_text(tab1, variable = rx, level = 'Lev', prob = 0.5)`.\n\n\nWill show as:\n\nThe median (95% CI) recurrence-free time for the Levamisole treatment group is 3.2 (2.2, 5.7)."
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#univariate-cox-regression-table",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#univariate-cox-regression-table",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Univariate Cox regression table",
+    "text": "Univariate Cox regression table\nUse tbl_uvregression():\n\n\ncolonr |&gt; \n  tbl_uvregression(\n    method = coxph,\n    y = Surv(years, status),\n    include = c(rx, sex),\n    exponentiate = T\n    ) |&gt; \n  add_global_p()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN\nHR\n95% CI\np-value\n\n\n\n\nTreatment\n929\n\n\n\n\n&lt;0.001\n\n\n    Obs\n\n\n—\n—\n\n\n\n\n    Lev\n\n\n0.98\n0.80, 1.21\n\n\n\n\n    Lev+5FU\n\n\n0.60\n0.47, 0.76\n\n\n\n\nSex\n929\n\n\n\n\n0.4\n\n\n    Female\n\n\n—\n—\n\n\n\n\n    Male\n\n\n0.92\n0.77, 1.10\n\n\n\n\n\nAbbreviations: CI = Confidence Interval, HR = Hazard Ratio\n\n\n\n\n\n\n\n\n\n\nFits models for all variables listed in include =\nexponentiate = T to obtain hazard ratios\nAdd global p-values"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#multivariable-cox-regression-table",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#multivariable-cox-regression-table",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Multivariable Cox regression table",
+    "text": "Multivariable Cox regression table\nPass fitted model results directly to tbl_regression():\n\n\ncoxph(\n  Surv(years, status) ~ \n    rx + sex, \n  data = colonr\n  ) |&gt; \n  tbl_regression(\n    exponentiate = T\n  ) |&gt; \n  add_global_p()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nHR\n95% CI\np-value\n\n\n\n\nTreatment\n\n\n\n\n&lt;0.001\n\n\n    Obs\n—\n—\n\n\n\n\n    Lev\n0.99\n0.80, 1.22\n\n\n\n\n    Lev+5FU\n0.60\n0.47, 0.75\n\n\n\n\nSex\n\n\n\n\n0.3\n\n\n    Female\n—\n—\n\n\n\n\n    Male\n0.90\n0.75, 1.08\n\n\n\n\n\nAbbreviations: CI = Confidence Interval, HR = Hazard Ratio"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#time-to-event-plots-with-ggsurvfit",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#time-to-event-plots-with-ggsurvfit",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Time-to-event plots with {ggsurvfit}",
+    "text": "Time-to-event plots with {ggsurvfit}\nUses {ggplot2} as the basis so known customizations are available with the + operator.\n\nPlot Kaplan-Meier curves using ggsurvfit\nPlot cumulative incidence curves for competing risks using ggcuminc\nPlot multi-state models using ggsurvfit\n\nOptions to:\n\nAdd confidence intervals\nAdd risk tables\nAdd quantiles\nAnd more\n\nSee https://www.danieldsjoberg.com/ggsurvfit/ for details and vignettes to get started"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#kaplan-meier-curves-with-ggsurvfit",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#kaplan-meier-curves-with-ggsurvfit",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Kaplan-Meier curves with ggsurvfit()",
+    "text": "Kaplan-Meier curves with ggsurvfit()\n\n\nsurvfit2(\n  Surv(years, status) ~ 1, \n  data = colonr\n  ) |&gt;\n  ggsurvfit() + \n  add_confidence_interval() + \n  add_risktable() +\n  scale_y_continuous(\n    limits = c(0, 1)\n    ) + \n  scale_x_continuous(\n    limits = c(0, 8), \n    breaks = seq(0, 8, 2)\n  ) +\n  labs(\n    x = \"Years from treatment start\",\n    y = \"Recurrence-free probability\"\n  )"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#put-it-all-together",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#put-it-all-together",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Put it all together",
+    "text": "Put it all together"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#thank-you-and-please-get-in-touch",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#thank-you-and-please-get-in-touch",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Thank you, and please get in touch",
+    "text": "Thank you, and please get in touch\n\n zabore2@ccf.org\n https://www.emilyzabor.com/\n https://github.com/zabore\n https://www.linkedin.com/in/emily-zabor-59b902b7/\n\nLink to slides: https://github.com/zabore/slidedecks/blob/master/2024-NYR-Zabor.html"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#section-1",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#section-1",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "",
+    "text": "https://rconsortium.github.io/RMedicine_website/"
+  },
+  {
+    "objectID": "talks/2024-NYR/2024-NYR-Zabor.html#appendix-create-example-dataset",
+    "href": "talks/2024-NYR/2024-NYR-Zabor.html#appendix-create-example-dataset",
+    "title": "Reporting survival analysis results with the {gtsummary} and {ggsurvfit} packages",
+    "section": "Appendix: Create example dataset",
+    "text": "Appendix: Create example dataset\n\ncolon dataset from {survival} altered to:\n\nLimit to one row per patient with interest in recurrence rather than death\nScale time from days to years\nRecode sex levels to informative values\nLabel variables of interest\n\n\n\ncolonr &lt;- \n  colon |&gt; \n  filter(etype == 1) |&gt; \n  mutate(\n    years = time / 365.25,\n    sex = case_match(\n      sex,\n      0 ~ \"Female\",\n      1 ~ \"Male\"\n    )\n  ) |&gt; \n  labelled::set_variable_labels(\n    rx = \"Treatment\", \n    sex = \"Sex\"\n  )"
   },
   {
     "objectID": "software.html",
@@ -375,7 +655,7 @@
     "href": "survival-analysis-in-r.html",
     "title": "Survival analysis in R",
     "section": "",
-    "text": "This tutorial provides an introduction to survival analysis, and to conducting a survival analysis in R. This tutorial was originally presented at the Memorial Sloan Kettering Cancer Center R-Presenters series on August 30, 2018. It was then modified for a more extensive training at Memorial Sloan Kettering Cancer Center in March, 2019. Updates, sometimes significant, are made when new functionality becomes available in R. This tutorial reflects my own opinions about the best functionality available in R for survival analysis.\nLast updated: 2025-10-21\nFirst, install and load some packages that will be used throughout.\n# Install packages if needed\n# install.packages(c(\"knitr\", \"dplyr\", \"survival\", \"ggplot2\", \"here\", \"tibble\"))\nlibrary(knitr)\nlibrary(dplyr)\nlibrary(survival)\nlibrary(ggplot2)\nlibrary(tibble)\n\n# devtools::install_github(\"zabore/ezfun\")\nezfun::set_ccf_palette(\"contrast\")"
+    "text": "This tutorial provides an introduction to survival analysis, and to conducting a survival analysis in R. This tutorial was originally presented at the Memorial Sloan Kettering Cancer Center R-Presenters series on August 30, 2018. It was then modified for a more extensive training at Memorial Sloan Kettering Cancer Center in March, 2019. Updates, sometimes significant, are made when new functionality becomes available in R. This tutorial reflects my own opinions about the best functionality available in R for survival analysis.\nLast updated: 2026-05-21\nFirst, install and load some packages that will be used throughout.\n# Install packages if needed\n# install.packages(c(\"knitr\", \"dplyr\", \"survival\", \"ggplot2\", \"here\", \"tibble\"))\nlibrary(knitr)\nlibrary(dplyr)\nlibrary(survival)\nlibrary(ggplot2)\nlibrary(tibble)\n\n# devtools::install_github(\"zabore/ezfun\")\nezfun::set_ccf_palette(\"contrast\")"
   },
   {
     "objectID": "survival-analysis-in-r.html#part-1-introduction-to-survival-analysis",
@@ -516,6 +796,13 @@
     "title": "Survival analysis in R",
     "section": "Conditional survival",
     "text": "Conditional survival\nSometimes it is of interest to generate survival estimates among a group of patients who have already survived for some length of time.\n\\[S(y|x) = \\frac{S(x + y)}{S(x)}\\]\n\n\\(y\\): number of additional survival years of interest\n\\(x\\): number of years a patient has already survived\n\n\nZabor, E., Gonen, M., Chapman, P., & Panageas, K. (2013). Dynamic prognostication using conditional survival estimates. Cancer, 119(20), 3589-3592.\n\nThe estimates are easy to generate with basic math on your own, and are also implemented in the {condsurv} package available from https://github.com/zabore/condsurv.\nWe can use the conditional_surv_est() function from the {condsurv} package to get estimates and 95% confidence intervals. Let’s condition on survival to 6-months\n\nfit1 &lt;- survfit(Surv(time, status) ~ 1, data = lung)\n\nprob_times &lt;- seq(365.25, 182.625 * 4, 182.625)\n\npurrr::map_df(\n  prob_times, \n  ~conditional_surv_est(\n    basekm = fit1, \n    t1 = 182.625, \n    t2 = .x) \n  ) |&gt; \n  mutate(months = round(prob_times / 30.4)) |&gt; \n  select(months, everything()) |&gt; \n  kable()\n\n\n\n\nmonths\ncs_est\ncs_lci\ncs_uci\n\n\n\n\n12\n0.58\n0.49\n0.66\n\n\n18\n0.36\n0.27\n0.45\n\n\n24\n0.16\n0.10\n0.25\n\n\n\n\n\nRecall that our initial \\(1\\)-year survival estimate was 0.41. We see that for patients who have already survived 12 months this increases to 0.58.\nWe can also visualize conditional survival data based on different lengths of time survived using the condKMggplot() function from the {condsurv} package:\n\ngg_conditional_surv(\n  basekm = fit1, \n  at = prob_times,\n  main = \"Conditional survival in lung data\",\n  xlab = \"Days\"\n  ) +\n  labs(color = \"Conditional time\")\n\n\n\n\n\n\n\n\nThe resulting plot has one survival curve for each time on which we condition. In this case the first line is the overall survival curve since it is conditioning on time 0."
+  },
+  {
+    "objectID": "talks/2024-NYR/colon-example-report.html",
+    "href": "talks/2024-NYR/colon-example-report.html",
+    "title": "Colon recurrence report",
+    "section": "",
+    "text": "In a clinical trial, patients were randomized to receive adjuvant chemotherapy with either levamisole, levamisole + 5-FU, or placebo. Interest was in whether treatment group was associated with time to recurrence.\nTime to recurrence was measured from the date of treatment start to the date of recurrence or last known date the patient was recurrence-free. The Kaplan-Meier method was used to estimate recurrence-free probabilities. Multivariable Cox regression adjusted for age and sex.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n5-year RFS (95% CI)\n\n\n\n\nTreatment\n\n\n\n\n    Obs\n45% (40%, 51%)\n\n\n    Lev\n46% (41%, 52%)\n\n\n    Lev+5FU\n62% (56%, 67%)\n\n\n\n\n\n\n\nThe 5-year (95% CI) recurrence-free probability is 45% (40%, 51%), 46% (41%, 52%), and 62% (56%, 67%) for the placebo, levamisole, and levamisole + 5-FU groups, respectively.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nHR\n95% CI\np-value\n\n\n\n\nTreatment\n\n\n\n\n&lt;0.001\n\n\n    Obs\n—\n—\n\n\n\n\n    Lev\n0.99\n0.80, 1.22\n\n\n\n\n    Lev+5FU\n0.60\n0.48, 0.76\n\n\n\n\nSex\n\n\n\n\n0.3\n\n\n    Female\n—\n—\n\n\n\n\n    Male\n0.90\n0.75, 1.08\n\n\n\n\nage\n0.99\n0.99, 1.00\n0.11\n\n\n\nAbbreviations: CI = Confidence Interval, HR = Hazard Ratio\n\n\n\n\n\n\n\n\nLevamisole + 5-FU was associated with a hazard ratio of 0.60 (95% CI 0.48, 0.76) for recurrence as compared to placebo."
   },
   {
     "objectID": "talks/2024-rladies-philly/slides.html#hello",
@@ -931,6 +1218,13 @@
     "text": "Further reading\n\n\nClark, T., Bradburn, M., Love, S., & Altman, D. (2003). Survival analysis part I: Basic concepts and first analyses. 232-238. ISSN 0007-0920.\n\n\nM J Bradburn, T G Clark, S B Love, & D G Altman. (2003). Survival Analysis Part II: Multivariate data analysis – an introduction to concepts and methods. British Journal of Cancer, 89(3), 431-436.\n\n\nBradburn, M., Clark, T., Love, S., & Altman, D. (2003). Survival analysis Part III: Multivariate data analysis – choosing a model and assessing its adequacy and fit. 89(4), 605-11.\n\n\nClark, T., Bradburn, M., Love, S., & Altman, D. (2003). Survival analysis part IV: Further concepts and methods in survival analysis. 781-786. ISSN 0007-0920."
   },
   {
+    "objectID": "talks/2024-rmedicine/colon-example-report.html",
+    "href": "talks/2024-rmedicine/colon-example-report.html",
+    "title": "Colon recurrence report",
+    "section": "",
+    "text": "In a clinical trial, patients were randomized to receive adjuvant chemotherapy with either levamisole, levamisole + 5-FU, or placebo. Interest was in whether treatment group was associated with time to recurrence.\nTime to recurrence was measured from the date of treatment start to the date of recurrence or last known date the patient was recurrence-free. The Kaplan-Meier method was used to estimate recurrence-free probabilities. Multivariable Cox regression adjusted for age and sex.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n5-year RFS (95% CI)\n\n\n\n\nTreatment\n\n\n\n\n    Obs\n45% (40%, 51%)\n\n\n    Lev\n46% (41%, 52%)\n\n\n    Lev+5FU\n62% (56%, 67%)\n\n\n\n\n\n\n\nThe 5-year (95% CI) recurrence-free probability is 45% (40%, 51%), 46% (41%, 52%), and 62% (56%, 67%) for the placebo, levamisole, and levamisole + 5-FU groups, respectively.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nHR\n95% CI\np-value\n\n\n\n\nTreatment\n\n\n\n\n&lt;0.001\n\n\n    Obs\n—\n—\n\n\n\n\n    Lev\n0.99\n0.80, 1.22\n\n\n\n\n    Lev+5FU\n0.60\n0.48, 0.76\n\n\n\n\nSex\n\n\n\n\n0.3\n\n\n    Female\n—\n—\n\n\n\n\n    Male\n0.90\n0.75, 1.08\n\n\n\n\nage\n0.99\n0.99, 1.00\n0.11\n\n\n\nAbbreviations: CI = Confidence Interval, HR = Hazard Ratio\n\n\n\n\n\n\n\n\nLevamisole + 5-FU was associated with a hazard ratio of 0.60 (95% CI 0.48, 0.76) for recurrence as compared to placebo."
+  },
+  {
     "objectID": "talks.html",
     "href": "talks.html",
     "title": "Talks",
@@ -945,31 +1239,24 @@
     "text": "UMass Chan R Café: Making your workflow reproducible\n2025-10-24\n\nFull Screen"
   },
   {
+    "objectID": "talks.html#new-york-r-conference-reporting-survival-analysis-results-with-the-gtsummary-and-ggsurvfit-packages",
+    "href": "talks.html#new-york-r-conference-reporting-survival-analysis-results-with-the-gtsummary-and-ggsurvfit-packages",
+    "title": "Talks",
+    "section": "New York R Conference: Reporting survival analysis results with the gtsummary and ggsurvfit packages",
+    "text": "New York R Conference: Reporting survival analysis results with the gtsummary and ggsurvfit packages\n2024-05-17\n\nFull Screen"
+  },
+  {
+    "objectID": "talks.html#rmedicine-reporting-survival-analysis-results-with-the-gtsummary-and-ggsurvfit-packages",
+    "href": "talks.html#rmedicine-reporting-survival-analysis-results-with-the-gtsummary-and-ggsurvfit-packages",
+    "title": "Talks",
+    "section": "R/Medicine: Reporting survival analysis results with the gtsummary and ggsurvfit packages",
+    "text": "R/Medicine: Reporting survival analysis results with the gtsummary and ggsurvfit packages\n2024-06-13\n\nFull Screen"
+  },
+  {
     "objectID": "talks.html#r-ladies-philly-introduction-to-survival-analysis-in-r",
     "href": "talks.html#r-ladies-philly-introduction-to-survival-analysis-in-r",
     "title": "Talks",
     "section": "R-Ladies Philly: Introduction to Survival Analysis in R",
     "text": "R-Ladies Philly: Introduction to Survival Analysis in R\n2024-12-17\n\nFull Screen"
-  },
-  {
-    "objectID": "talks/2025-umass-r-cafe/slides.html#using-starter-default-settings",
-    "href": "talks/2025-umass-r-cafe/slides.html#using-starter-default-settings",
-    "title": "Making your workflow reproducible",
-    "section": "Using {starter}: default settings",
-    "text": "Using {starter}: default settings\n\n# install.packages(\"starter\") \n\nstarter::create_project(\n  path = fs::path(tempdir(), \"My Project Folder\"),\n  open = FALSE # don't open project in new RStudio session\n)\n\n✔ Using \"Default Project Template\" template\n\n\n✔ Writing folder 'C:/Users/zabore2/AppData/Local/Temp/RtmpMTUbvb/My Project Folder'\n\n\n✔ Writing files \"README.md\", \".gitignore\", \"My Project Folder.Rproj\", and \".Rprofile\"\n\n\n✔ Initialising Git repo\n\n\n✔ Initialising renv project\n\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/RtmpMTUbvb/My Project Folder/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/RtmpMTUbvb/My Project Folder\"."
-  },
-  {
-    "objectID": "talks/2025-umass-r-cafe/slides.html#using-starter-custom-template",
-    "href": "talks/2025-umass-r-cafe/slides.html#using-starter-custom-template",
-    "title": "Making your workflow reproducible",
-    "section": "Using {starter}: custom template",
-    "text": "Using {starter}: custom template\n\n# devtools::install_github(\"zabore/ezfun\") \n\nstarter::create_project(\n  path = fs::path(tempdir(), \"example-custom-project\"),\n  template = ezfun::ez_analysis_template,\n  open = FALSE\n)\n\n✔ Using \"EZ Analysis Template\" template\n\n\n✔ Writing folder 'C:/Users/zabore2/AppData/Local/Temp/RtmpMTUbvb/example-custom-project'\n\n\n✔ Creating 'C:/Users/zabore2/AppData/Local/Temp/RtmpMTUbvb/example-custom-project/code'\n\n\n✔ Creating 'C:/Users/zabore2/AppData/Local/Temp/RtmpMTUbvb/example-custom-project/code/templates'\n\n\n✔ Writing files \"README.md\", \".gitignore\", \"example-custom-project.Rproj\", \".Rprofile\", \"code/example-custom-project-munge.R\", \"code/example-custom-project-report.qmd\", and \"code/templates/doc_template.docx\"\n\n\n✔ Initialising Git repo\n\n\n✔ Initialising renv project\n\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/RtmpMTUbvb/example-custom-project/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/RtmpMTUbvb/example-custom-project\"."
-  },
-  {
-    "objectID": "talks/2025-umass-r-cafe/slides.html#thank-you",
-    "href": "talks/2025-umass-r-cafe/slides.html#thank-you",
-    "title": "Making your workflow reproducible",
-    "section": "Thank you",
-    "text": "Thank you\n\nConnect with me:\n\n\n\n zabore2@ccf.org\n https://www.emilyzabor.com/\n https://github.com/zabore\n https://www.linkedin.com/in/emily-zabor-59b902b7/\n https://bsky.app/profile/zabore.bsky.social/"
   }
 ]

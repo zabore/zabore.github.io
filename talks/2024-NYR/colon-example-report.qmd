@@ -1,0 +1,79 @@
+---
+title: "Colon recurrence report"
+format: html
+execute: 
+  echo: false
+  warning: false
+  error: false
+---
+
+```{r}
+library(survival)
+library(ggsurvfit)
+library(gtsummary)
+library(dplyr)
+```
+
+```{r}
+colonr <- 
+  colon |> 
+  filter(etype == 1) |> 
+  mutate(
+    years = time / 365.25,
+    sex = case_match(
+      sex,
+      0 ~ "Female",
+      1 ~ "Male"
+    )
+  ) |> 
+  labelled::set_variable_labels(
+    rx = "Treatment", 
+    sex = "Sex"
+  )
+```
+
+In a clinical trial, patients were randomized to receive adjuvant chemotherapy with either levamisole, levamisole + 5-FU, or placebo. Interest was in whether treatment group was associated with time to recurrence.
+
+Time to recurrence was measured from the date of treatment start to the date of recurrence or last known date the patient was recurrence-free. The Kaplan-Meier method was used to estimate recurrence-free probabilities. Multivariable Cox regression adjusted for age and sex. 
+
+```{r fig.width = 5, fig.height = 4.5}
+survfit2(Surv(years, status) ~ rx, data = colonr) |>
+  ggsurvfit() + 
+  add_risktable(risktable_stats = "n.risk") +
+  scale_y_continuous(limits = c(0, 1)) + 
+  scale_x_continuous(limits = c(0, 8), breaks = seq(0, 8, 2)) +
+  scale_color_manual(values = ezfun::ccf_palette("contrast")) +
+  labs(
+    x = "Years from treatment start",
+    y = "Recurrence-free probability"
+  ) + 
+  add_pvalue()
+```
+
+```{r}
+tab1 <-
+  colonr |> 
+  tbl_survfit(
+    y = Surv(years, status),
+    include = rx,
+    times = 5,
+    label_header = "{time}-year RFS (95% CI)"
+    )
+
+tab1
+```
+
+The 5-year (95% CI) recurrence-free probability is `r inline_text(tab1, variable = rx, level = 'Obs', time = 5)`, `r inline_text(tab1, variable = rx, level = 'Lev', time = 5)`, and `r inline_text(tab1, variable = rx, level = 'Lev+5FU', time = 5)` for the placebo, levamisole, and levamisole + 5-FU groups, respectively.
+
+```{r}
+tab2 <-
+  coxph(Surv(years, status) ~ rx + sex + age, data = colonr) |> 
+  tbl_regression(exponentiate = T) |> 
+  add_global_p()
+
+tab2
+```
+
+Levamisole + 5-FU was associated with a hazard ratio of `r inline_text(tab2, variable = rx, level = 'Lev+5FU', pattern = "{estimate} (95% CI {conf.low}, {conf.high})")` for recurrence as compared to placebo.
+
+
