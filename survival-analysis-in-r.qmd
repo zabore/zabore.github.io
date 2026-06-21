@@ -185,7 +185,7 @@ Throughout this section, we will use the `lung` dataset from the {survival} pack
 lung <- 
   lung |> 
   mutate(
-    status = recode(status, `1` = 0, `2` = 1)
+    status = replace_values(status, 1 ~ 0, 2 ~ 1)
   )
 ```
 
