@@ -14,7 +14,7 @@ about:
       href: https://scholar.google.com/citations?user=tLbQTZMAAAAJ&hl=en&oi=ao
 ---
 
-I am an Associate Staff Biostatistician at the Cleveland Clinic in the Department of Quantitative Health Sciences, with a joint appointment in the Taussig Cancer Institute. I also hold an academic appointment as Associate Professor of Medicine at the Cleveland Clinic Lerner College of Medicine of Case Western Reserve University. 
+I am an Associate Staff Biostatistician at Cleveland Clinic in the Department of Quantitative Health Sciences, with a joint appointment in the Taussig Cancer Institute. I also hold an academic appointment as Associate Professor of Medicine at the Cleveland Clinic Lerner College of Medicine of Case Western Reserve University. 
 
 My research interests are in early phase clinical trial design, statistical methods for observational studies, prediction models, and survival analysis. I am an enthusiastic R user.
 
