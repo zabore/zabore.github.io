@@ -1,0 +1,92 @@
+/* One wide card per package, stacked in a single column */
+.package-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.package-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-radius: 10px;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.package-card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.package-card h2 {
+  margin-top: 0;
+  border-bottom: none;
+  font-family: var(--bs-font-monospace, monospace);
+  font-size: 1.5rem;
+}
+
+/* Figures: wide plot fills the card, narrow plot is capped, logos are small */
+.package-card img {
+  height: auto;
+  max-width: 100%;
+  margin: 0.25rem 0 0.75rem 0;
+}
+
+.package-card img.fig-wide {
+  width: 100%;
+}
+
+.package-card img.fig-narrow {
+  width: 100%;
+  max-width: 560px;
+}
+
+.package-card img.fig-logo {
+  max-width: 300px;
+}
+
+.package-card pre {
+  margin: 0.5rem 0 1rem 0;
+}
+
+.package-card p:last-child {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  background: #198754;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-block;
+  margin-right: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.btn-alt {
+  opacity: 0.75;
+}
+
+@media (max-width: 768px) {
+  .package-card {
+    padding: 1rem;
+  }
+}

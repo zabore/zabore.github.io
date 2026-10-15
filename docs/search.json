@@ -46,7 +46,7 @@
     "href": "talks/2025-umass-r-cafe/slides.html#using-starter-default-settings",
     "title": "Making your workflow reproducible",
     "section": "Using {starter}: default settings",
-    "text": "Using {starter}: default settings\n\n# install.packages(\"starter\") \n\nstarter::create_project(\n  path = fs::path(tempdir(), \"My Project Folder\"),\n  open = FALSE # don't open project in new RStudio session\n)\n\n✔ Using \"Default Project Template\" template\n\n\n✔ Writing folder 'C:/Users/zabore2/AppData/Local/Temp/RtmpEj8Y62/My Project Folder'\n\n\n✔ Writing files \"README.md\", \".gitignore\", \"My Project Folder.Rproj\", and \".Rprofile\"\n\n\n✔ Initialising Git repo\n\n\n✔ Initialising renv project\n\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/RtmpEj8Y62/My Project Folder/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/RtmpEj8Y62/My Project Folder\"."
+    "text": "Using {starter}: default settings\n\n# install.packages(\"starter\") \n\nstarter::create_project(\n  path = fs::path(tempdir(), \"My Project Folder\"),\n  open = FALSE # don't open project in new RStudio session\n)\n\n✔ Using \"Default Project Template\" template\n\n\n✔ Writing folder 'C:/Users/ZABORE2/AppData/Local/Temp/RtmpqQeCyI/My Project Folder'\n\n\n✔ Writing files \"README.md\", \".gitignore\", \"My Project Folder.Rproj\", and \".Rprofile\"\n\n\n✔ Initialising Git repo\n\n\n✔ Initialising renv project\n\n\n- Lockfile written to \"C:/Users/ZABORE2/AppData/Local/Temp/RtmpqQeCyI/My Project Folder/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/ZABORE2/AppData/Local/Temp/RtmpqQeCyI/My Project Folder\"."
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#resulting-project-structure",
@@ -67,7 +67,7 @@
     "href": "talks/2025-umass-r-cafe/slides.html#using-starter-custom-template",
     "title": "Making your workflow reproducible",
     "section": "Using {starter}: custom template",
-    "text": "Using {starter}: custom template\n\n# devtools::install_github(\"zabore/ezfun\") \n\nstarter::create_project(\n  path = fs::path(tempdir(), \"example-custom-project\"),\n  template = ezfun::ez_analysis_template,\n  open = FALSE\n)\n\n✔ Using \"EZ Analysis Template\" template\n\n\n✔ Writing folder 'C:/Users/zabore2/AppData/Local/Temp/RtmpEj8Y62/example-custom-project'\n\n\n✔ Creating 'C:/Users/zabore2/AppData/Local/Temp/RtmpEj8Y62/example-custom-project/code'\n\n\n✔ Creating 'C:/Users/zabore2/AppData/Local/Temp/RtmpEj8Y62/example-custom-project/code/templates'\n\n\n✔ Writing files \"README.md\", \".gitignore\", \"example-custom-project.Rproj\", \".Rprofile\", \"code/example-custom-project-munge.R\", \"code/example-custom-project-report.qmd\", and \"code/templates/doc_template.docx\"\n\n\n✔ Initialising Git repo\n\n\n✔ Initialising renv project\n\n\n- Lockfile written to \"C:/Users/zabore2/AppData/Local/Temp/RtmpEj8Y62/example-custom-project/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/zabore2/AppData/Local/Temp/RtmpEj8Y62/example-custom-project\"."
+    "text": "Using {starter}: custom template\n\n# devtools::install_github(\"zabore/ezfun\") \n\nstarter::create_project(\n  path = fs::path(tempdir(), \"example-custom-project\"),\n  template = ezfun::ez_analysis_template,\n  open = FALSE\n)\n\n✔ Using \"EZ Analysis Template\" template\n\n\n✔ Writing folder 'C:/Users/ZABORE2/AppData/Local/Temp/RtmpqQeCyI/example-custom-project'\n\n\n✔ Creating 'C:/Users/ZABORE2/AppData/Local/Temp/RtmpqQeCyI/example-custom-project/code'\n\n\n✔ Creating 'C:/Users/ZABORE2/AppData/Local/Temp/RtmpqQeCyI/example-custom-project/code/templates'\n\n\n✔ Writing files \"README.md\", \".gitignore\", \"example-custom-project.Rproj\", \".Rprofile\", \"code/example-custom-project-munge.R\", \"code/example-custom-project-report.qmd\", and \"code/templates/doc_template.docx\"\n\n\n✔ Initialising Git repo\n\n\n✔ Initialising renv project\n\n\n- Lockfile written to \"C:/Users/ZABORE2/AppData/Local/Temp/RtmpqQeCyI/example-custom-project/renv.lock\".\n- renv infrastructure has been generated for project \"C:/Users/ZABORE2/AppData/Local/Temp/RtmpqQeCyI/example-custom-project\"."
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#resulting-custom-project-structure",
@@ -172,7 +172,7 @@
     "href": "talks/2025-umass-r-cafe/slides.html#what-does-it-do",
     "title": "Making your workflow reproducible",
     "section": "What does it do?",
-    "text": "What does it do?\nCreates paths relative to the top-level directory.\n\n# install.packages(\"here\")\n\nhere::here()\n\n[1] \"D:/zabore.github.io\""
+    "text": "What does it do?\nCreates paths relative to the top-level directory.\n\n# install.packages(\"here\")\n\nhere::here()\n\n[1] \"C:/Users/ZABORE2/repos/zabore.github.io\""
   },
   {
     "objectID": "talks/2025-umass-r-cafe/slides.html#how-to-use-it-examples",
@@ -620,28 +620,35 @@
     "href": "software.html",
     "title": "Software",
     "section": "",
-    "text": "An R package of functions to design clinical trials with sequential Bayesian predictive probability monitoring for futility. Currently functionality is available for one-arm and two-arm clinical trials, and functionality for basket trials is under development.\n\n\n\n\n\n\n\n\n\nDetails at http://www.emilyzabor.com/ppseq/"
+    "text": "Open-source R packages I develop and maintain. Each package has its own documentation site with function references and worked examples."
+  },
+  {
+    "objectID": "software.html#ipcw",
+    "href": "software.html#ipcw",
+    "title": "Software",
+    "section": "ipcw",
+    "text": "ipcw\nNew\nInverse probability of censoring weighted (IPCW) methods for right-censored data, with a single event or competing risks. Corrects Kaplan-Meier, cumulative incidence, Cox, and Fine-Gray analyses for dependent censoring. Companion to Zabor & Eaton (2025).\n\npak::pak(\"zabore/ipcw\")\nDocumentation GitHub"
   },
   {
     "objectID": "software.html#ppseq",
     "href": "software.html#ppseq",
     "title": "Software",
-    "section": "",
-    "text": "An R package of functions to design clinical trials with sequential Bayesian predictive probability monitoring for futility. Currently functionality is available for one-arm and two-arm clinical trials, and functionality for basket trials is under development.\n\n\n\n\n\n\n\n\n\nDetails at http://www.emilyzabor.com/ppseq/"
+    "section": "ppseq",
+    "text": "ppseq\nDesign clinical trials with sequential Bayesian predictive probability monitoring for futility. Supports one-arm and two-arm trials; basket trial functionality is under development.\n\ninstall.packages(\"ppseq\")\nDocumentation GitHub"
   },
   {
     "objectID": "software.html#riskclustr",
     "href": "software.html#riskclustr",
     "title": "Software",
     "section": "riskclustr",
-    "text": "riskclustr\nAn R package of functions for the study of etiologic heterogeneity.\nDetails at https://www.emilyzabor.com/riskclustr/"
+    "text": "riskclustr\nFunctions for the study of etiologic heterogeneity: quantify how much risk factor effects differ across disease subtypes in case-control and case-only studies, and test for heterogeneity across subtypes or individual disease markers.\n\ninstall.packages(\"riskclustr\")\nDocumentation GitHub"
   },
   {
     "objectID": "software.html#condsurv",
     "href": "software.html#condsurv",
     "title": "Software",
     "section": "condsurv",
-    "text": "condsurv\nA package for conditional survival analysis.\n\n\n\n\n\n\n\n\n\nDetails at https://www.emilyzabor.com/condsurv/"
+    "text": "condsurv\nConditional survival analysis: estimate survival probabilities given that a patient has already survived for some period of time.\n\npak::pak(\"zabore/condsurv\")\nDocumentation GitHub"
   },
   {
     "objectID": "index.html",
@@ -651,11 +658,39 @@
     "text": "I am an Associate Staff Biostatistician at the Cleveland Clinic in the Department of Quantitative Health Sciences, with a joint appointment in the Taussig Cancer Institute. I also hold an academic appointment as Associate Professor of Medicine at the Cleveland Clinic Lerner College of Medicine of Case Western Reserve University.\nMy research interests are in early phase clinical trial design, statistical methods for observational studies, prediction models, and survival analysis. I am an enthusiastic R user.\nI earned an MS degree in biostatistics from The University of Minnesota and a DrPH degree in biostatistics from Columbia University.\nPlease see my CV for details of my academic work."
   },
   {
+    "objectID": "software-old.html",
+    "href": "software-old.html",
+    "title": "Software",
+    "section": "",
+    "text": "An R package of functions to design clinical trials with sequential Bayesian predictive probability monitoring for futility. Currently functionality is available for one-arm and two-arm clinical trials, and functionality for basket trials is under development.\n\n\n\n\n\n\n\n\n\nDetails at http://www.emilyzabor.com/ppseq/"
+  },
+  {
+    "objectID": "software-old.html#ppseq",
+    "href": "software-old.html#ppseq",
+    "title": "Software",
+    "section": "",
+    "text": "An R package of functions to design clinical trials with sequential Bayesian predictive probability monitoring for futility. Currently functionality is available for one-arm and two-arm clinical trials, and functionality for basket trials is under development.\n\n\n\n\n\n\n\n\n\nDetails at http://www.emilyzabor.com/ppseq/"
+  },
+  {
+    "objectID": "software-old.html#riskclustr",
+    "href": "software-old.html#riskclustr",
+    "title": "Software",
+    "section": "riskclustr",
+    "text": "riskclustr\nAn R package of functions for the study of etiologic heterogeneity.\nDetails at https://www.emilyzabor.com/riskclustr/"
+  },
+  {
+    "objectID": "software-old.html#condsurv",
+    "href": "software-old.html#condsurv",
+    "title": "Software",
+    "section": "condsurv",
+    "text": "condsurv\nA package for conditional survival analysis.\n\n\n\n\n\n\n\n\n\nDetails at https://www.emilyzabor.com/condsurv/"
+  },
+  {
     "objectID": "survival-analysis-in-r.html",
     "href": "survival-analysis-in-r.html",
     "title": "Survival analysis in R",
     "section": "",
-    "text": "This tutorial provides an introduction to survival analysis, and to conducting a survival analysis in R. This tutorial was originally presented at the Memorial Sloan Kettering Cancer Center R-Presenters series on August 30, 2018. It was then modified for a more extensive training at Memorial Sloan Kettering Cancer Center in March, 2019. Updates, sometimes significant, are made when new functionality becomes available in R. This tutorial reflects my own opinions about the best functionality available in R for survival analysis.\nLast updated: 2026-05-21\nFirst, install and load some packages that will be used throughout.\n# Install packages if needed\n# install.packages(c(\"knitr\", \"dplyr\", \"survival\", \"ggplot2\", \"here\", \"tibble\"))\nlibrary(knitr)\nlibrary(dplyr)\nlibrary(survival)\nlibrary(ggplot2)\nlibrary(tibble)\n\n# devtools::install_github(\"zabore/ezfun\")\nezfun::set_ccf_palette(\"contrast\")"
+    "text": "This tutorial provides an introduction to survival analysis, and to conducting a survival analysis in R. This tutorial was originally presented at the Memorial Sloan Kettering Cancer Center R-Presenters series on August 30, 2018. It was then modified for a more extensive training at Memorial Sloan Kettering Cancer Center in March, 2019. Updates, sometimes significant, are made when new functionality becomes available in R. This tutorial reflects my own opinions about the best functionality available in R for survival analysis.\nLast updated: 2026-10-15\nFirst, install and load some packages that will be used throughout.\n# Install packages if needed\n# install.packages(c(\"knitr\", \"dplyr\", \"survival\", \"ggplot2\", \"here\", \"tibble\"))\nlibrary(knitr)\nlibrary(dplyr)\nlibrary(survival)\nlibrary(ggplot2)\nlibrary(tibble)\n\n# devtools::install_github(\"zabore/ezfun\")\nezfun::set_ccf_palette(\"contrast\")"
   },
   {
     "objectID": "survival-analysis-in-r.html#part-1-introduction-to-survival-analysis",

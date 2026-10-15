@@ -1,31 +1,74 @@
 ---
 title: "Software"
+subtitle: "R packages for clinical trial design and survival analysis"
+toc: false
+css: software.css
 ---
 
+Open-source R packages I develop and maintain. Each package has its own documentation site with function references and worked examples.
+
+::::: {.package-grid .column-page}
+
+::: {.package-card}
+## ipcw
+
+[New]{.badge}
+
+Inverse probability of censoring weighted (IPCW) methods for right-censored data, with a single event or competing risks. Corrects Kaplan-Meier, cumulative incidence, Cox, and Fine-Gray analyses for dependent censoring. Companion to Zabor & Eaton (2025).
+
+![](images/ipcw-km.png){.fig-narrow fig-alt="Unadjusted and IPCW-adjusted Kaplan-Meier curves for two groups, showing that ignoring dependent censoring overestimates survival"}
+
+```r
+pak::pak("zabore/ipcw")
+```
+
+[Documentation](https://www.emilyzabor.com/ipcw/){.btn}
+[GitHub](https://github.com/zabore/ipcw){.btn .btn-alt}
+:::
+
+::: {.package-card}
 ## ppseq
 
-An R package of functions to design clinical trials with sequential Bayesian predictive probability monitoring for futility. Currently functionality is available for one-arm and two-arm clinical trials, and functionality for basket trials is under development. 
+Design clinical trials with sequential Bayesian predictive probability monitoring for futility. Supports one-arm and two-arm trials; basket trial functionality is under development.
 
-```{r out.width='300px', echo=FALSE}
-knitr::include_graphics("images/ppseq.png")
+![](images/ppseq.png){.fig-logo fig-alt="ppseq package logo"}
+
+```r
+install.packages("ppseq")
 ```
 
-Details at [http://www.emilyzabor.com/ppseq/](http://www.emilyzabor.com/ppseq/)
+[Documentation](http://www.emilyzabor.com/ppseq/){.btn}
+[GitHub](https://github.com/zabore/ppseq){.btn .btn-alt}
+:::
 
-
+::: {.package-card}
 ## riskclustr
 
-An R  package of functions for the study of etiologic heterogeneity. 
+Functions for the study of etiologic heterogeneity: quantify how much risk factor effects differ across disease subtypes in case-control and case-only studies, and test for heterogeneity across subtypes or individual disease markers.
 
-Details at [https://www.emilyzabor.com/riskclustr/](https://www.emilyzabor.com/riskclustr/)
+![](images/riskclustr.png){.fig-wide fig-alt="Forest plot of subtype-specific odds ratios for three risk factors across four disease subtypes"}
 
-
-## condsurv
-
-A package for conditional survival analysis. 
-
-```{r out.width='300px', echo=FALSE}
-knitr::include_graphics("images/condsurv.png")
+```r
+install.packages("riskclustr")
 ```
 
-Details at [https://www.emilyzabor.com/condsurv/](https://www.emilyzabor.com/condsurv/)
+[Documentation](https://www.emilyzabor.com/riskclustr/){.btn}
+[GitHub](https://github.com/zabore/riskclustr){.btn .btn-alt}
+:::
+
+::: {.package-card}
+## condsurv
+
+Conditional survival analysis: estimate survival probabilities given that a patient has already survived for some period of time.
+
+![](images/condsurv.png){.fig-logo fig-alt="condsurv package logo"}
+
+```r
+pak::pak("zabore/condsurv")
+```
+
+[Documentation](https://www.emilyzabor.com/condsurv/){.btn}
+[GitHub](https://github.com/zabore/condsurv){.btn .btn-alt}
+:::
+
+:::::
